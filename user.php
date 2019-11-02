@@ -1,4 +1,7 @@
-<?php include 'assets/connect.php'; ?>
+<?php include 'assets/connect.php';
+//sumit
+
+?>
 <!doctype html>
 <html lang="en">
 
