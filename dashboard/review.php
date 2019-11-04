@@ -126,7 +126,7 @@
 							<h3><i class="icon-material-outline-face"></i> Rate Freelancers</h3>
 						</div>
 						<?php
-						$sql="SELECT * FROM review where reciver_uid='$uid' ORDER BY id DESC LIMIT 9,16";
+						$sql="SELECT * FROM review where reciver_uid='$uid' ORDER BY id DESC LIMIT 8,16";
 						$run=mysqli_query($conn,$sql);
 
 							if(mysqli_num_rows($run) > 0){
