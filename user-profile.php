@@ -102,7 +102,7 @@ include 'assets/show_result.php';
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 </head>
-<body onload="visitor();">
+<body>
 
 <!-- Wrapper -->
 <div id="wrapper">
@@ -380,7 +380,7 @@ include 'assets/show_result.php';
 				<!-- Profile Overview -->
 				<div class="profile-overview">
 					<div class="overview-item"><a href="#" title="Ping to write guest post for his website"><button type="button" class="btn btn-success btn-block btn-lg">Ping</button></a></div>
-					<div class="overview-item"><a href="#" title="Report the User Profile"><button type="button" class="btn btn-danger btn-block btn-lg"><i class="fa fa-bug"></i> &nbsp;Report</button></a></div>
+					<div class="overview-item"><a href="#" title="Report the User Profile"><button type="button" class="btn btn-danger btn-block btn-lg"  onclick="userid()"><i class="fa fa-bug"></i> &nbsp;Report</button></a></div>
 				</div>
 
 				<!-- Button -->
@@ -412,7 +412,40 @@ include 'assets/show_result.php';
 						 ?>
 					</div>
 				</div>
-
+				<!-- reported user -->
+				<?php
+				$id1=$_GET['uid'];
+				
+				?>
+				<script type="text/javascript">
+					function userid()
+					{
+						   <?php
+						
+						$currentDateTime = date('Y-m-d');
+						$sql1="SELECT * FROM `report` WHERE report_uid='$id1'";
+						$run=mysqli_query($conn,$sql1);
+						$num=mysqli_num_rows($run);
+						$result=mysqli_fetch_assoc($run);
+						
+						if($num == 0 )
+							{
+								$s="You are Reported by Someone ";
+							
+							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$id1','$currentDateTime')";
+							mysqli_query($conn,$sql);
+							$sql1="INSERT INTO `notification`(`uid`, `notify`, `send_by`) VALUES ('$id1','$s','$uid')";
+							mysqli_query($conn,$sql1);
+						}
+						else
+						{
+							?>
+							alert("You are Already Reported this User");
+							<?php
+						}
+						?>
+					}
+				</script>
 				<!-- Widget -->
 				<div class="sidebar-widget">
 					<h3>Attachments</h3>
@@ -822,20 +855,7 @@ $('.copy-url-button').click(function() {
  		});
  	}
  </script>
- 
- <script type="text/javascript">
- 	function visitor(){
- 		$.ajax({
- 			url : 'assets/visitor.php',
- 			type : 'GET',
- 			data : {uid_v : "<?php echo $prof_uid; ?>"},
 
- 			success: function(date) {
- 				console.log('Thanks For Visiting');
- 			}
- 		});
- 	}
- </script>
 </body>
 
 <!-- Mirrored from www.vasterad.com/themes/hireo_082019/single-freelancer-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Sep 2019 13:59:11 GMT -->
