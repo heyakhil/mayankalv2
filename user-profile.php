@@ -380,7 +380,7 @@ include 'assets/show_result.php';
 				<!-- Profile Overview -->
 				<div class="profile-overview">
 					<div class="overview-item"><a href="#" title="Ping to write guest post for his website"><button type="button" class="btn btn-success btn-block btn-lg">Ping</button></a></div>
-					<div class="overview-item"><a href="#" title="Report the User Profile"><button type="button" class="btn btn-danger btn-block btn-lg"  onclick="userid()"><i class="fa fa-bug"></i> &nbsp;Report</button></a></div>
+					<div class="overview-item"><a href="#" title="Report the User Profile"><button type="button" class="btn btn-danger btn-block btn-lg"  onclick="userid();"><i class="fa fa-bug"></i> &nbsp;Report</button></a></div>
 				</div>
 
 				<!-- Button -->
@@ -420,7 +420,7 @@ include 'assets/show_result.php';
 				<script type="text/javascript">
 					function userid()
 					{
-						   <?php
+					<?php
 						
 						$currentDateTime = date('Y-m-d');
 						$sql1="SELECT * FROM `report` WHERE report_uid='$id1'";
@@ -430,7 +430,7 @@ include 'assets/show_result.php';
 						
 						if($num == 0 )
 							{
-								$s="You are Reported by Someone ";
+							$s="You are Reported by Someone ";
 							
 							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$id1','$currentDateTime')";
 							mysqli_query($conn,$sql);
