@@ -384,7 +384,7 @@ include 'assets/show_result.php';
 				</div>
 
 				<!-- Button -->
-				<a href="#small-dialog" class="apply-now-button popup-with-zoom-anim margin-bottom-50">Make an Offer <i class="icon-material-outline-arrow-right-alt"></i></a>
+				<a href="assets/new_order.php?psu=<?php echo $prof_uid; ?>" class="apply-now-button margin-bottom-50">Place Order <i class="icon-material-outline-arrow-right-alt"></i></a>
 
 				<!-- Freelancer Indicators -->
 				<!-- Widget -->
