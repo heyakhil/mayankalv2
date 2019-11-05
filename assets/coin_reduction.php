@@ -9,7 +9,7 @@ if (mysqli_num_rows($result) > 0) {
         if ($tot_coins<50) {
             ?>
             <script type="text/javascript">
-                window.open("../single-freelancer-profile.php?uid=<?php echo $uuid; ?>", "_self");
+                window.open("../user-profile.php?uid=<?php echo $uuid; ?>", "_self");
                 alert("Sorry! you have very less coins, Earn Some");
             </script>
             <?php
@@ -26,10 +26,10 @@ if (mysqli_num_rows($result) > 0) {
 
         if (mysqli_query($conn, $sql)) {
             ?>
-            <script type="text/javascript">
-                window.open("../single-freelancer-profile.php?uid=<?php echo $uuid; ?>", "_self");
+             <script type="text/javascript">
+                window.open("../user-profile.php?uid=<?php echo $uuid; ?>", "_self");
                 alert("Your Order is send successfully");
-            </script>
+             </script>
             <?php
         } else {
             echo "Error updating record: " . mysqli_error($conn);
