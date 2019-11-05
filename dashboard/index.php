@@ -401,7 +401,30 @@ $('#snackbar-user-status label').click(function() {
 <!-- Chart.js // documentation: http://www.chartjs.org/docs/latest/ -->
 <script src="../js/chart.min.js"></script>
 <script>
-	Chart.defaults.global.defaultFontFamily = "Nunito";
+$(document).ready(function() {
+	/**
+	 * call the data.php file to fetch the result from db table.
+	 */
+	$.ajax({
+
+		url : "http://localhost/Akhil/Mayankalv2/assets/visitgraph.php",
+		type : "GET",
+		success : function(data){
+			console.log(data);
+
+			 var no_visit = {
+			 	Months : [],
+			 	lab : [],
+			 };
+
+			 var len = data.length;
+
+			 for (var i = 0; i < len; i++) {
+			 	no_visit.lab.push(data[i].dates);
+		        no_visit.Months.push(data[i].no_visit);
+		    }
+
+		    Chart.defaults.global.defaultFontFamily = "Nunito";
 	Chart.defaults.global.defaultFontColor = '#888';
 	Chart.defaults.global.defaultFontSize = '14';
 
@@ -409,17 +432,16 @@ $('#snackbar-user-status label').click(function() {
 
 	var chart = new Chart(ctx, {
 		type: 'line',
-
 		// The data for our dataset
 		data: {
-			labels: ["January", "February", "March", "April", "May", "June", "July"],
+			labels: no_visit.lab,
 			// Information about the dataset
 	   		datasets: [{
-				label: "Views",
+				label: "Visits",
 				backgroundColor: 'rgba(42,65,232,0.08)',
 				borderColor: '#2a41e8',
 				borderWidth: "3",
-				data: [<?php echo "196,349,34"; ?>],
+				data: no_visit.Months,
 				//data: [196,134,215,134,210,252, 236],
 				pointRadius: 5,
 				pointHoverRadius:5,
@@ -473,6 +495,18 @@ $('#snackbar-user-status label').click(function() {
 
 });
 
+
+			  
+		},
+		error : function(data){
+			console.log(data);
+		}
+
+	});
+});
+
+
+	
 </script>
 
 </body>
