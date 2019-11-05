@@ -102,7 +102,7 @@ include 'assets/show_result.php';
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 </head>
-<body>
+<body onload="visitor();">
 
 <!-- Wrapper -->
 <div id="wrapper">
@@ -822,7 +822,20 @@ $('.copy-url-button').click(function() {
  		});
  	}
  </script>
+ 
+ <script type="text/javascript">
+ 	function visitor(){
+ 		$.ajax({
+ 			url : 'assets/visitor.php',
+ 			type : 'GET',
+ 			data : {uid_v : "<?php echo $prof_uid; ?>"},
 
+ 			success: function(date) {
+ 				console.log('Thanks For Visiting');
+ 			}
+ 		});
+ 	}
+ </script>
 </body>
 
 <!-- Mirrored from www.vasterad.com/themes/hireo_082019/single-freelancer-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Sep 2019 13:59:11 GMT -->
