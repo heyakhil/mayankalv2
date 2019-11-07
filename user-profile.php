@@ -413,16 +413,16 @@ include 'assets/show_result.php';
 					</div>
 				</div>
 				<!-- reported user -->
-				<?php
-				$id1=$_GET['uid'];
-				
-				?>
+
 				<script type="text/javascript">
 					function userid()
 					{
+
 				<?php		
+					<?php
+						
 						$currentDateTime = date('Y-m-d');
-						$sql1="SELECT * FROM `report` WHERE report_uid='$id1'";
+						$sql1="SELECT * FROM `report` WHERE `report_uid`='$prof_uid'";
 						$run=mysqli_query($conn,$sql1);
 						$num=mysqli_num_rows($run);
 						$result=mysqli_fetch_assoc($run);
@@ -431,8 +431,12 @@ include 'assets/show_result.php';
 							{
 							$s="You Have Been Reported By SomeOne";
 							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$id1','$currentDateTime')";
+
+							$s="You are Reported by Someone ";
+							
+							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$prof_uid','$currentDateTime')";
 							mysqli_query($conn,$sql);
-							$sql1="INSERT INTO `notification`(`uid`, `notify`, `send_by`) VALUES ('$id1','$s','$uid')";
+							$sql1="INSERT INTO `notification`(`uid`, `notify`, `send_by`) VALUES ('$prof_uid','$s','$uid')";
 							mysqli_query($conn,$sql1);
 						}
 						else

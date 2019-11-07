@@ -16,7 +16,8 @@
 		$describe = $_POST['describe'];
 		$order_id = date("d-m").mt_rand(1000, 99999).date("Y");
 		include_once 'coin_reduction.php';
-			}else{
+			
+	}else{
 		header("location:../index.php");
 	}
 

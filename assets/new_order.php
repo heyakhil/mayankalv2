@@ -65,7 +65,7 @@
 	
 			<!-- Row -->
 			<div class="row">
-		<form action="assets/submit_new_order.php?psu=<?php echo $uuid ?>" method="post">		
+		<form action="submit_new_order.php?psu=<?php echo $uuid ?>" method="post">		
 				<!-- Dashboard Box -->
 				<div class="col-xl-12">
 					<div class="dashboard-box margin-top-0">
