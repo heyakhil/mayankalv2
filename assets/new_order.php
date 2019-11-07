@@ -91,21 +91,7 @@
 										<input type="number" class="with-border" name="mword">
 									</div>
 								</div>
-
-								<div class="col-xl-4">
-									<div class="submit-field">
-										<h5>Min Images</h5>
-										<input type="number" class="with-border" name="mimage">
-									</div>
-								</div>
-
-								<div class="col-xl-4">
-									<div class="submit-field">
-										<h5>Min Video</h5>
-										<input type="number" class="with-border" name="mvideo">
-									</div>
-								</div>
-
+								
 								<div class="col-xl-8">
 									<div class="submit-field">
 										<h5><b>Important Notice:- (if any)</b></h5>
