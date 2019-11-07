@@ -417,6 +417,8 @@ include 'assets/show_result.php';
 				<script type="text/javascript">
 					function userid()
 					{
+
+				<?php		
 					<?php
 						
 						$currentDateTime = date('Y-m-d');
@@ -427,6 +429,9 @@ include 'assets/show_result.php';
 						
 						if($num == 0 )
 							{
+							$s="You Have Been Reported By SomeOne";
+							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$id1','$currentDateTime')";
+
 							$s="You are Reported by Someone ";
 							
 							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$prof_uid','$currentDateTime')";
