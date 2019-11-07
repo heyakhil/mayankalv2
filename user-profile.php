@@ -417,8 +417,7 @@ include 'assets/show_result.php';
 				<script type="text/javascript">
 					function userid()
 					{
-
-				
+	
 					<?php
 						
 						$currentDateTime = date('Y-m-d');
