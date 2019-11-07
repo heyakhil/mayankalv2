@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="en">
-
+<!-- akhil here -->
 <!-- Mirrored from www.vasterad.com/themes/hireo_082019/pages-pricing-plans.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Sep 2019 13:59:34 GMT -->
 <head>
 
