@@ -14,7 +14,7 @@ if (mysqli_num_rows($result) > 0) {
             </script>
             <?php
         }else{
-        $sql = "INSERT INTO `orders`(`uid`, `orderof_uid`, `post_cat`, `min_word`, `min_image`, `min_video`, `imp_not`, `descrip`, `order_id`) VALUES ('$uuid','$uid','$cata','$min_word','$min_images','$min_video','$imp_n','$describe','$order_id')";
+        $sql = "INSERT INTO `orders`(`uid`, `orderof_uid`, `post_cat`, `min_word`, `imp_not`, `descrip`, `order_id`) VALUES ('$uuid','$uid','$cata','$min_word','$min_images','$min_video','$imp_n','$describe','$order_id')";
 
         if (mysqli_query($conn, $sql)) {
             include_once 'order_notify.php';

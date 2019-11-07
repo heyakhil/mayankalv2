@@ -78,21 +78,21 @@
 						<div class="content with-padding padding-bottom-10">
 							<div class="row">
 
-								<div class="col-xl-4">
+								<div class="col-xl-6">
 									<div class="submit-field">
 										<h5>Post Catagory</h5>
 										<input type="text" class="with-border" name="post_cat" required>
 									</div>
 								</div>
 
-								<div class="col-xl-4">
+								<div class="col-xl-6">
 									<div class="submit-field">
 										<h5>Min Words</h5>
 										<input type="number" class="with-border" name="mword">
 									</div>
 								</div>
-								
-								<div class="col-xl-8">
+
+								<div class="col-xl-12">
 									<div class="submit-field">
 										<h5><b>Important Notice:- (if any)</b></h5>
 										<input type="text" class="with-border" name="notice">
