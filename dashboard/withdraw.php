@@ -447,18 +447,21 @@
 			//document.getElementById('display').innerHTML = "farhan";
 			{
 			document.getElementById('demo').style.display='block';
+			document.getElementById('dmmm').style.display='none';
 			return false;
 			}
 		  if(value=="2")
 		//document.getElementById('display').innerHTML = "alam";
 		{
 		document.getElementById('demo').style.display='block';
+		document.getElementById('dmmm').style.display='none';
 		return false;
 		}
 		if(value=="3")
 		//document.getElementById('display').innerHTML = "alam";
 		{
 		document.getElementById('demo').style.display='block';
+		document.getElementById('dmmm').style.display='none';
 		return false;
 		}
 		if(value=="4")
