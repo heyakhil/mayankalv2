@@ -79,7 +79,7 @@
            
     
 							<select id="mySelect" onchange="myFunction()">
-							<option selected>Withdraw Through</option>
+							<option selected value="0">--Withdraw Through--</option>
 							<option value="1">G Pay</option>
 							<option value="2">Paytm</option>
 							<option value="3">PhonePay</option>
@@ -122,6 +122,14 @@
 		
 				var selector = document.getElementById('mySelect');
 			var value = selector[selector.selectedIndex].value;
+			if(value=="0")
+			//document.getElementById('display').innerHTML = "farhan";
+			{
+			document.getElementById('demo').style.display='none';
+			document.getElementById('dmmm').style.display='none';
+			return false;
+			}	
+
 		  if(value=="1")
 			//document.getElementById('display').innerHTML = "farhan";
 			{
@@ -153,6 +161,7 @@
 		
 				//document.getElementById("myForm").submit();
 			  }
+			  
 			 
 			  </script>
 
