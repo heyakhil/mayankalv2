@@ -394,7 +394,7 @@
 							<h3>Discription:-</h3>
 							<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;">hello everyone! This is Md farhan .<span id="dots">...</span><span id="more">I'm pursuing B.Tech(CSE)  from Dev Bhoomi Institute of Technology</span></p>
 
-							<button onclick="myFunction()" id="myBtn">Read more</button>
+							<button onclick="myFunction();" id="myBtn">Read more</button>
 							</div>
 
 					</div>
@@ -403,7 +403,7 @@
 				</a>
 
 				<!-- Task -->
-				<a href="single-task-page.html" class="task-listing">
+				<a href="#" class="task-listing">
 
 					<!-- Job Listing Details -->
 					<div class="task-listing-details">
@@ -417,7 +417,7 @@
 								<h3>Discription:-</h3>
 								<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;">hello everyone! This is Md farhan .<span id="dots">...</span><span id="more">I'm pursuing B.Tech(CSE)  from Dev Bhoomi Institute of Technology</span></p>
 
-							<button onclick="myFunction()" id="myBtn">Read more</button>
+							<button onclick="myFunction();" id="myBtn">Read more</button>
 						</div>
 
 					</div>
@@ -425,7 +425,7 @@
 				</a>
 
 				<!-- Task -->
-				<a href="single-task-page.html" class="task-listing">
+				<a href="#" class="task-listing">
 
 					<!-- Job Listing Details -->
 					<div class="task-listing-details">
@@ -439,7 +439,7 @@
 								<h3>Discription:-</h3>
 								<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;">hello everyone! This is Md farhan .<span id="dots">...</span><span id="more">I'm pursuing B.Tech(CSE)  from Dev Bhoomi Institute of Technology</span></p>
 
-							<button onclick="myFunction()" id="myBtn">Read more</button>
+							<button onclick="myFunction();" id="myBtn">Read more</button>
 						</div>
 
 					</div>
@@ -462,7 +462,7 @@
 								<h3>Discription:-</h3>
 								<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;">hello everyone! This is Md farhan .<span id="dots">...</span><span id="more">I'm pursuing B.Tech(CSE)  from Dev Bhoomi Institute of Technology</span></p>
 
-							<button onclick="myFunction()" id="myBtn">Read more</button>
+							<button onclick="myFunction();" id="myBtn">Read more</button>
 						</div>
 
 					</div>
@@ -485,7 +485,7 @@
 								<h3>Discription:-</h3>
 								<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;">hello everyone! This is Md farhan .<span id="dots">...</span><span id="more">I'm pursuing B.Tech(CSE)  from Dev Bhoomi Institute of Technology</span></p>
 
-							<button onclick="myFunction()" id="myBtn">Read more</button>
+							<button onclick="myFunction();" id="myBtn">Read more</button>
 						</div>
 
 					</div>
