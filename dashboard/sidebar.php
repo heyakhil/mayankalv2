@@ -26,7 +26,7 @@
 						<ul data-submenu-title="Order Manager">
 							<li><a href="#"><i class="icon-material-outline-business-center"></i>Write Content</a>
 								<ul>
-									<li><a href="allorder.php">All Orders<span class="nav-tag">3</span></a></li><!--new order -->
+									<li><a href="allorders.php">All Orders<span class="nav-tag">3</span></a></li><!--new order -->
 									<li><a href="dashboard-manage-candidates.html">Complete Your Orders</a></li>
 									<li><a href="dashboard-post-a-job.html">Your Customer's</a></li>
 								</ul>	
