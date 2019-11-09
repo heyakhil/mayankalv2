@@ -5,7 +5,7 @@
 	$run=mysqli_query($conn,$sql);
 	$result=mysqli_fetch_assoc($run);
 	$rs=$result['coin_earn']/100;
-	
+	//hello
 		
 	if (isset($_POST['num']) && isset($_GET['mobdata'])) {
 		if($rs >= 20){
