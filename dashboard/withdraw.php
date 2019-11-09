@@ -77,18 +77,13 @@
 							<!--<input type="text">-->
 
 							
-												</div>
+							</div>
 												
-											</div>
-
-						
-							
-											
-											<div class="pricing-plan">
-												
-
-						
 						</div>
+				
+					<div class="pricing-plan">
+
+			</div>
 					</div><br><br>
 
 					<div class="container">
