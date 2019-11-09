@@ -26,12 +26,23 @@
 <header id="header-container" class="fullwidth">
 
 	<!-- Header -->
+	<?php include '../assets/connect.php' ?>
 	<?php include 'dashmenu.php'; ?>
 	<!-- Header / End -->
 
 </header>
+<!-- fetch user's coins from database -->
+<?php 
+	$sql="SELECT * FROM `coins_earn` WHERE `uid`='$uid'";
+	$run=mysqli_query($conn,$sql);
+	$result=mysqli_fetch_assoc($run);
+
+?>
+
+
 <div class="clearfix"></div>
 <!-- Header Container / End -->
+<!-- include check page for user's uid and name -->
 
 <!-- Titlebar
 ================================================== -->
@@ -46,7 +57,7 @@
 						<div class="col-md-6" style="background-color:rgb(189, 168, 211)">
 							<center>
 								<h1>Coins Earn</h1>
-								<h1>120</h1>
+								<h1><?php echo $result['coin_earn']; ?></h1>
 							
 							
 							</center>
@@ -54,7 +65,15 @@
 							<!--<input type="text">-->
 						</div>
 						<div class="col-md-6"style="background-color:rgb(189, 168, 211)">
-							<center><h1>Amount</h1></center>
+							<center><h1>Amount</h1>
+								<h1>
+									<?php 
+										$rs=$result['coin_earn']/100;
+										echo $rs;
+								 	?>
+								 	
+								</h1>
+							</center>
 							<!--<input type="text">-->
 
 							
@@ -76,94 +95,101 @@
 
 					
 							<h2>Withdraw Data</h2>
-           
-    
-							<select id="mySelect" onchange="myFunction()">
+    			<form action="../assets/widthpro.php?mobdata=true" method="post">
+							<select id="mySelect"  name="select1"  onchange="myFunction()">
 							<option selected value="0">--Withdraw Through--</option>
 							<option value="1">G Pay</option>
 							<option value="2">Paytm</option>
 							<option value="3">PhonePay</option>
 							<option value="4">Bank Account</option>
-						  </select>      
+						  </select>      		
+							<br>
+							
+						<div id="demo" style="display:none">
+							<p>
+				
+								Enter your Mobile no:
+								<input type="number" name="mno" id="number" required="required">
+								<input type="submit" name="num">
+							</p>
+						</div>
+					</form>
+
+					<form action="../assets/widthpro.php?bank=true" method="post">	
+
 						
+						<div  id="dmmm" style="display:none">
+						<p>
+				
+							Enter your Name:
+							<input type="text" name="name" required>
+		
+							Enter your Bank Account no:
+							<input type="number" name="acno" required>
+		
+							Enter your IFSC code:
+							<input type="text" name="ifsccode"  required>
+							<input type="submit" name="submit">
+						</p>
+					</div>
+				</form>
+				</div>
 			
-			<br>
-			<div id="demo" style="display:none">
-			<p>
-				
-					Enter your Mobile no:
-					<input type="number">
-					<input type="submit">
-			</p>
-			</div>
-		
-			<div  id="dmmm" style="display:none">
-					<p>
-				
-				Enter your Name:
-				<input type="number">
-		
-				Enter your Bank Account no:
-				<input type="number">
-		
-				Enter your IFSC code:
-				<input type="number">
-				<input type="submit">
-		</p>
-		</div>
 		
 			<!--<div id="display"></div>-->
 			
 			<script>
-			  function myFunction() {
+			
+			  		function myFunction() {
 				// var x = document.getElementById("mySelect").value;
 				//document.getElementById("demo").innerHTML = "You selected: " + x;
 				//document.getElementById('demo').style.display='block';
 		
-				var selector = document.getElementById('mySelect');
-			var value = selector[selector.selectedIndex].value;
-			if(value=="0")
-			//document.getElementById('display').innerHTML = "farhan";
-			{
-			document.getElementById('demo').style.display='none';
-			document.getElementById('dmmm').style.display='none';
-			return false;
-			}	
+							var selector = document.getElementById('mySelect');
+							var value = selector[selector.selectedIndex].value;
+				
+							if(value=="0")
+								//document.getElementById('display').innerHTML = "farhan";
+								{
+									document.getElementById('demo').style.display='none';
+									document.getElementById('dmmm').style.display='none';
+									return false;
+								}	
 
-		  if(value=="1")
-			//document.getElementById('display').innerHTML = "farhan";
-			{
-			document.getElementById('demo').style.display='block';
-			document.getElementById('dmmm').style.display='none';
-			return false;
-			}
-		  if(value=="2")
-		//document.getElementById('display').innerHTML = "alam";
-		{
-		document.getElementById('demo').style.display='block';
-		document.getElementById('dmmm').style.display='none';
-		return false;
-		}
-		if(value=="3")
-		//document.getElementById('display').innerHTML = "alam";
-		{
-		document.getElementById('demo').style.display='block';
-		document.getElementById('dmmm').style.display='none';
-		return false;
-		}
-		if(value=="4")
-		//document.getElementById('display').innerHTML = "alam";
-		{
-		document.getElementById('dmmm').style.display='block';
-		document.getElementById('demo').style.display='none';
-		return false;
-		}
+		  					if(value=="1")
+							//document.getElementById('display').innerHTML = "farhan";
+								{
+									document.getElementById('demo').style.display='block';
+									document.getElementById('dmmm').style.display='none';
+									return false;
+								}
+		  					if(value=="2")
+							//document.getElementById('display').innerHTML = "alam";
+								{
+									document.getElementById('demo').style.display='block';
+									document.getElementById('dmmm').style.display='none';
+									return false;
+								}
+							if(value=="3")
+								//document.getElementById('display').innerHTML = "alam";
+								{
+									document.getElementById('demo').style.display='block';
+									document.getElementById('dmmm').style.display='none';
+									return false;
+								}
+							if(value=="4")
+								//document.getElementById('display').innerHTML = "alam";
+								{
+									document.getElementById('dmmm').style.display='block';
+									document.getElementById('demo').style.display='none';
+									return false;
+								}
 		
-				//document.getElementById("myForm").submit();
-			  }
-			  
-			 
-			  </script>
+								//document.getElementById("myForm").submit();
+			  		}
+				
+				
+			</script>
 
 		</div>
 </div>
