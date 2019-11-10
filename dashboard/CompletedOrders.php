@@ -403,7 +403,7 @@
 
 					
 				</a>
-				<h1 class="page-title">Deleted Orders:-</h1><br>
+				<h1 class="page-title">Order You Deleted:-</h1><br>
 
 				<!-- Task -->
 				<a href="#" class="task-listing">
