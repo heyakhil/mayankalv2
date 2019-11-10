@@ -1,7 +1,7 @@
 <?php 
 $sql = "SELECT * FROM coins_earn WHERE `uid`='$uid'";
 $result = mysqli_query($conn, $sql);
-
+//hello
 if (mysqli_num_rows($result) > 0) {
     // output data of each row
     while($row = mysqli_fetch_assoc($result)) {
