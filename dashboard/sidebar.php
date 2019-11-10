@@ -22,11 +22,17 @@
 							<li id="bookmark"><a href="bookmark.php"><i class="icon-material-outline-star-border"></i> Bookmarks</a></li>
 							<li id="review"><a href="review.php"><i class="icon-material-outline-rate-review"></i> Reviews</a></li>
 						</ul>
-						
+						<?php include '../assets/connect.php' ?>
+				
+							<?php
+									$sql="SELECT * FROM `orders` WHERE `uid`='$uid'";
+									$run=mysqli_query($conn,$sql);
+									$num=mysqli_num_rows($run);
+							?>
 						<ul data-submenu-title="Order Manager">
 							<li><a href="#"><i class="icon-material-outline-business-center"></i>Write Content</a>
 								<ul>
-									<li><a href="allorders.php">All Orders<span class="nav-tag">3</span></a></li><!--new order -->
+									<li><a href="allorders.php">All Orders<span class="nav-tag"><?php echo $num; ?></span></a></li><!--new order -->
 									<li><a href="CompletedOrders.php">Complete Your Orders</a></li>
 									<li><a href="Customer.php">Your Customer's</a></li>
 								</ul>	
