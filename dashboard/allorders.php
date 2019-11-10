@@ -372,7 +372,7 @@
 		</div>
 		<div class="col-xl-12 col-lg-8 content-left-offset">
 
-			<h1 class="page-title">Notification:-</h1>
+			<h1 class="page-title">All Orders:-</h1>
 
 			</div>
 			
