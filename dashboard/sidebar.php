@@ -28,7 +28,7 @@
 								<ul>
 									<li><a href="allorders.php">All Orders<span class="nav-tag">3</span></a></li><!--new order -->
 									<li><a href="CompletedOrders.php">Complete Your Orders</a></li>
-									<li><a href="dashboard-post-a-job.html">Your Customer's</a></li>
+									<li><a href="Customer.php">Your Customer's</a></li>
 								</ul>	
 							</li>
 							<li><a href="#"><i class="icon-material-outline-assignment"></i>Track Your Order</a>
