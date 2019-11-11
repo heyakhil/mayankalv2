@@ -58,13 +58,13 @@
 					$run=mysqli_query($conn,$sql);
 					$num=mysqli_num_rows($run);
 	
-					
+					$i =1;
 				while ($result=mysqli_fetch_assoc($run)) {
 					?>
 							<div class="tasks-list-container margin-top-35">
 				
 								<!-- Task -->
-								<a href="#" class="task-listing">
+								<!-- <a href="#" class="task-listing"> -->
 
 									<!-- Job Listing Details -->
 									<div class="task-listing-details">
@@ -76,42 +76,32 @@
 							
 											<p><b style="color:red; font-size: 22px;" >Note:-</b><?php echo $result['imp_not'];  ?></p><br>
 											<h3>Discription:-</h3>
-											<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;"><?php echo substr($result["descrip"], 0, 183); ?>.<span id="dots">...</span><span id="more"><?php substr($result["descrip"],183,300);?></span></p>
-
-											<button onclick="myFunction()" id="myBtn">Read more</button>
+											<div class="dummy">
+											<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;"><?php echo $result['descrip']; ?></p>
+											</div>
 										</div>
 
 									</div>
-								</a>
-								<script type="text/javascript">
-									function myFunction() {
-  												var dots = document.getElementById("dots");
-  												var moreText = document.getElementById("more");
-  												var btnText = document.getElementById("myBtn");
-
-  												if (dots.style.display === "none") {
-    													dots.style.display = "inline";
-    													btnText.innerHTML = "Read more"; 
-    													moreText.style.display = "none";
-  												} else {
-   												 		dots.style.display = "none";
-   												 		btnText.innerHTML = "Read less"; 
-    													moreText.style.display = "inline";
- 														 }
-											}	
-								</script>
-
-					<?php
-						
-						}
-						?>
-			
-			
+								<!-- </a> -->	
+								<?php
+									$i++;
+									}
+								?>
 			</div>
 		</div>
 	</div>
 </div>
- 
+	<script src="../js/readMoreJS.min.js"></script>
+	<script type="text/javascript">
+	$readMoreJS.init({
+	target: '.dummy p',           // Selector of the element the plugin applies to (any CSS selector, eg: '#', '.'). Default: ''
+	numOfWords: 80,               // Number of words to initially display (any number). Default: 50
+	toggle: true,                 // If true, user can toggle between 'read more' and 'read less'. Default: true
+	moreLink: 'Read More ...',    // The text of 'Read more' link. Default: 'read more ...'
+	lessLink: 'Read Less'         // The text of 'Read less' link. Default: 'read less'
+	});
+		
+	</script>
 
 <!-- Footer
 ================================================== -->
