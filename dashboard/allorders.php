@@ -64,7 +64,7 @@
 							<div class="tasks-list-container margin-top-35">
 				
 								<!-- Task -->
-								<!-- <a href="#" class="task-listing"> -->
+								<div class="task-listing">
 
 									<!-- Job Listing Details -->
 									<div class="task-listing-details">
@@ -82,7 +82,7 @@
 										</div>
 
 									</div>
-								<!-- </a> -->	
+								</div>	
 								<?php
 									$i++;
 									}
