@@ -73,7 +73,7 @@
 										<div class="task-listing-description">
 											<h2 class="task-listing-title">Category:- <?php echo $result['post_cat']; ?></h2><br>
 											<h3 class="task-listing-title">Order Id: <?php echo $result['order_id']; ?></h3>
-							
+											hello
 											<p><b style="color:red; font-size: 22px;" >Note:-</b><?php echo $result['imp_not'];  ?></p><br>
 											<h3>Discription:-</h3>
 											<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;"><?php echo substr($result["descrip"], 0, 183); ?>.<span id="dots">...</span><span id="more"><?php substr($result["descrip"],183,300);?></span></p>
