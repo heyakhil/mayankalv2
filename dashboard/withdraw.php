@@ -103,7 +103,7 @@
 						<div id="demo" style="display:none">
 							<p>
 				
-								Enter your Mobile no:
+								Enter your  Mobile no:
 								<input type="number" name="mno" id="number" required="required">
 								<input type="submit" name="num">
 							</p>

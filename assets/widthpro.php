@@ -26,8 +26,14 @@
 			// update coins 
 			$sql="UPDATE `coins_earn` SET `uid`='$uid',`coin_earn`='0' WHERE `uid`='$uid'";
 			mysqli_query($conn,$sql);
+			?>
+					<script>
+							alert("Your Money Transfer in Maximum 24hours");
+							window.location.replace("../dashboard/withdraw.php");
+					</script>
+			<?php
 	
-			header('location:../dashboard/withdraw.php');
+		
 		}else{
 			?>
 				<script type="text/javascript">
@@ -57,8 +63,13 @@
 		// update the coins
 			$sql="UPDATE `coins_earn` SET `uid`='$uid',`coin_earn`='0' WHERE `uid`='$uid'";
 			mysqli_query($conn,$sql);
-	
-			header('location:../dashboard/withdraw.php');
+			?>
+			<script>
+							alert("Your Money Transfer in Maximum 24hours in Your Bank Account");
+							window.location.replace("../dashboard/withdraw.php");
+					</script>
+			<?php
+			
 		}
 		else{
 			?>
