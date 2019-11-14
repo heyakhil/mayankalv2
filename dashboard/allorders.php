@@ -85,7 +85,8 @@
 								</div>	
 								<?php
 									$i++;
-					            }
+								}
+								//sumit
 					?>
 			</div>
 		</div>
