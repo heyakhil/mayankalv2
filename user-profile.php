@@ -382,47 +382,7 @@ include 'assets/show_result.php';
 					<div class="overview-item"><button type="button" class="btn btn-success btn-block btn-lg" id="<?php echo $prof_uid;?>" onclick="ping(this.id);">Ping</button></div>
 					<div class="overview-item"><button type="button" class="btn btn-danger btn-block btn-lg"  onclick="userid();"><i class="fa fa-bug"></i> &nbsp;Report</button></div>
 				</div>
-				<?php  
-					$uid1=$_GET['uid'];
-					$sql="SELECT * FROM `user` WHERE `unique_id`='$uid'";
-					$run=mysqli_query($conn,$sql);
-					$result=mysqli_fetch_assoc($run);
-					$msg=$result['name']." has pinged you for writting Content";
-					
-					
-					
-					
-				?>
-				<script>
-					function ping(uid){
-						var q =0;
-						<?php 
-						foreach($_COOKIE['idss'] as $e){
-							if($e == $prof_uid){
-								?>
-								q++;
-								<?php
-							}
-						}
-						?>
-						if(q>=1){
-							alert("You have already Pinged");
-						}else{
-							<?php
-							$sql1="INSERT INTO `notification`(`uid`, `notify`, `send_by`) VALUES ('$uid1','$msg','$uid')";
-							mysqli_query($conn,$sql1);	
-							?>
-							alert("You Pinged the user");
-							function set_cookie(cookiename, cookievalue, hours) {
-							var date = new Date();
-							date.setTime(date.getTime() + Number(hours) * 3600 * 1000);
-							document.cookie = cookiename + "=" + cookievalue + "; path=/;expires = " + date.toGMTString();
-							}
-							set_cookie('idss['+uid+']', uid, 24);
-							
-						}
-					}
-				</script>
+
 				
 				<!-- Button -->
 				<a href="assets/new_order.php?psu=<?php echo $prof_uid; ?>" class="apply-now-button margin-bottom-50">Place Order <i class="icon-material-outline-arrow-right-alt"></i></a>
@@ -454,9 +414,7 @@ include 'assets/show_result.php';
 					</div>
 				</div>
 
-
-				
-				<!-- Widget -->
+		
 				<div class="sidebar-widget">
 					<h3>Attachments</h3>
 					<div class="attachments-container">
