@@ -1,10 +1,15 @@
-<?php include 'connect.php' ?>
-<?php  
 
+<?php  
+	
 	function notification($uid,$msg,$send_by)
 		{
+			include 'connect.php';
 			$sql="INSERT INTO `notification`(`uid`, `notify`, `send_by`) VALUES ('$uid','$msg','$send_by')";
-			mysqli_query($conn,$sql);
+			if(mysqli_query($conn,$sql)){
+				echo "ok";
+			}else{	
+				echo "not ok";
+			}
 		}
 
 ?>
