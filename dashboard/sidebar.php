@@ -84,7 +84,7 @@
 		document.getElementById('setting').classList.add("active");
 		console.log("done");
 	}else{
-		window.open("error404.php");
+		//window.open("error404.php");
 	}
 
 
