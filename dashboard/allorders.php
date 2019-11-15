@@ -77,7 +77,7 @@
 									</div>
 									<br>
 									<h3 class="task-listing-title">Order Id: <?php echo $result['order_id']; ?></h3>
-					
+										<?php $orderuid = $result['order_id']; ?>
 									<p><b style="color:red; font-size: 22px;" >Note:- </b><?php echo $result['imp_not'];  ?></p><br>
 									<h3>Discription:-</h3>
 									<div class="dummy">
@@ -270,7 +270,7 @@
 <!-- Wrapper / End -->
 <script type="text/javascript">
 	function WriteContent(){
-		location.href = "WriteContent.php?uid=";
+		location.href = "WriteContent.php?uid=<?php echo $uid ."&". "or_id" ."=".$orderuid;?>";
 	}
 </script>
 <!-- Scripts
