@@ -73,7 +73,7 @@
 								<div class="task-listing-description">
 									<div class="row">
 										<div class="col-md-11"><h2 class="task-listing-title">Category:- <?php echo  strtoupper($result['post_cat']); ?></h2></div>
-										<div class="col-md-1" style="margin-left: 0px;"><button class="button"><i class="fa fa-edit"></i></button></div>
+										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="WriteContent();"><i class="fa fa-edit"></i></button></div>
 									</div>
 									<br>
 									<h3 class="task-listing-title">Order Id: <?php echo $result['order_id']; ?></h3>
@@ -268,7 +268,11 @@
 
 </div>
 <!-- Wrapper / End -->
-
+<script type="text/javascript">
+	function WriteContent(){
+		location.href = "WriteContent.php";
+	}
+</script>
 <!-- Scripts
 ================================================== -->
 <script src="../js/jquery-3.4.1.min.js"></script>
