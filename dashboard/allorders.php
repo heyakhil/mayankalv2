@@ -88,7 +88,7 @@
 							</div>
 						</div>	
 						<?php
-							$i++;
+						$i++;
 						}
 								//sumit
 					?>
@@ -270,7 +270,7 @@
 <!-- Wrapper / End -->
 <script type="text/javascript">
 	function WriteContent(){
-		location.href = "WriteContent.php";
+		location.href = "WriteContent.php?uid=";
 	}
 </script>
 <!-- Scripts
