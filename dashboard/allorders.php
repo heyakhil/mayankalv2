@@ -20,7 +20,7 @@
 ================================================== -->
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/colors/blue.css">
-
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="gray">
 
@@ -48,44 +48,48 @@
 	<div class="row">
 	
 
-		<div class="col-xl-12 col-lg-8 content-left-offset">
+		<div class="col-xl-12 col-lg-8 content-left-offset" id="scrolling">
 
-			<h1 class="page-title">Orders:-</h1>
+			<h1 class="page-title"> Orders:- </h1>
 
 			</div>
 			<?php  
-					$sql="SELECT * FROM `orders` WHERE `uid`='$uid'";
-					$run=mysqli_query($conn,$sql);
-					$num=mysqli_num_rows($run);
-	
-					$i =1;
+				$sql="SELECT * FROM `orders` WHERE `uid`='$uid' ORDER BY id Desc";
+				$run=mysqli_query($conn,$sql);
+				$num=mysqli_num_rows($run);
+
+				$i =1;
 				while ($result=mysqli_fetch_assoc($run)) {
 					?>
-							<div class="tasks-list-container margin-top-35">
-				
-								<!-- Task -->
-								<div class="task-listing">
+					<div class="tasks-list-container margin-top-35">
+		
+						<!-- Task -->
+						<div class="task-listing">
 
-									<!-- Job Listing Details -->
-									<div class="task-listing-details">
+							<!-- Job Listing Details -->
+							<div class="task-listing-details">
 
-										<!-- Details -->
-										<div class="task-listing-description">
-											<h2 class="task-listing-title">Category:- <?php echo $result['post_cat']; ?></h2><br>
-											<h3 class="task-listing-title">Order Id: <?php echo $result['order_id']; ?></h3>
-							
-											<p><b style="color:red; font-size: 22px;" >Note:-</b><?php echo $result['imp_not'];  ?></p><br>
-											<h3>Discription:-</h3>
-											<div class="dummy">
-											<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;"><?php echo $result['descrip']; ?></p>
-											</div>
-										</div>
-
+								<!-- Details -->
+								<div class="task-listing-description">
+									<div class="row">
+										<div class="col-md-11"><h2 class="task-listing-title">Category:- <?php echo  strtoupper($result['post_cat']); ?></h2></div>
+										<div class="col-md-1" style="margin-left: 0px;"><button class="button"><i class="fa fa-edit"></i></button></div>
 									</div>
-								</div>	
-								<?php
-									$i++;
-								}
+									<br>
+									<h3 class="task-listing-title">Order Id: <?php echo $result['order_id']; ?></h3>
+					
+									<p><b style="color:red; font-size: 22px;" >Note:- </b><?php echo $result['imp_not'];  ?></p><br>
+									<h3>Discription:-</h3>
+									<div class="dummy">
+									<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;"><?php echo $result['descrip']; ?></p>
+									</div>
+								</div>
+
+							</div>
+						</div>	
+						<?php
+							$i++;
+						}
 								//sumit
 					?>
 			</div>
@@ -309,15 +313,9 @@ $('#snackbar-user-status label').click(function() {
 		 var autocomplete = new google.maps.places.Autocomplete(input, options);
 
 	}
-
-
 // ---------Read more Read Less tag------------------
-
-
-
-
-
 </script>
+
 
 <!-- Google API & Maps -->
 <!-- Geting an API Key: https://developers.google.com/maps/documentation/javascript/get-api-key -->
