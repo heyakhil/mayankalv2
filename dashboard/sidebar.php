@@ -25,14 +25,14 @@
 						<?php include '../assets/connect.php' ?>
 				
 							<?php
-									$sql="SELECT * FROM `orders` WHERE `uid`='$uid'";
+									$sql="SELECT * FROM `orders` WHERE `uid`='$uid' AND `seen`='0'";
 									$run=mysqli_query($conn,$sql);
 									$num=mysqli_num_rows($run);
 							?>
 						<ul data-submenu-title="Order Manager">
 							<li><a href="#"><i class="icon-material-outline-business-center"></i>Write Content</a>
 								<ul>
-									<li><a href="allorders.php">All Orders<span class="nav-tag"><?php echo $num; ?></span></a></li><!--new order -->
+									<li onclick="orderseen(this.id);" id="<?php echo $uid; ?>"><a href="allorders.php">All Orders<span class="nav-tag"><?php echo $num; ?></span></a></li><!--new order -->
 									<li><a href="CompletedOrders.php">Complete Your Orders</a></li>
 									<li><a href="Customer.php">Your Customer's</a></li>
 								</ul>	
@@ -86,4 +86,20 @@
 	}else{
 		window.open("error404.php");
 	}
+
+
+
+	function orderseen(id){
+ 		$.ajax({
+
+ 			url : '../assets/order_see.php',
+ 			type : 'GET',
+ 			data : {uid : id},
+
+ 			success: function(data){
+ 				console.log('Order Seen');
+ 			}
+
+ 		});
+ 	}
 </script>
