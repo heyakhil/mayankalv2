@@ -17,7 +17,7 @@
 ================================================== -->
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/colors/blue.css">
-
+<link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body class="gray">
 
@@ -37,10 +37,6 @@
 ================================================== -->
 <div class="container">
 	<div class="row">
-		<div class="col-xl-1 col-lg-12">
-			
-		</div>
-		
 
 		<!--<div class="col-xl-12 col-lg-8 content-left-offset">
 
@@ -48,61 +44,99 @@
 			</div>-->
 			
 			<!-- Tasks Container -->
-			<div class="tasks-list-container margin-top-35">
-					<h1 class="page-title">Completed Orders:-</h1><br>
-				
-				<!-- Task -->
-				<a href="#" class="task-listing">
+			<div class="col-xl-12 col-lg-8 content-left-offset" id="scrolling">
 
-					<!-- Job Listing Details -->
-					<div class="task-listing-details">
+				<h1 class="page-title">Completed Orders:-</h1>
 
-						<!-- Details -->
-						<div class="task-listing-description">
-							<h2 class="task-listing-title">Category</h2><br>
-							<h3 class="task-listing-title">Order Id: 1</h3>
-							
-						<p><b style="color:red; font-size: 22px;" >Note:-</b>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster.</p><br>
-							<h3>Discription:-</h3>
-							<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;">hello everyone! This is Md farhan .<span id="dots">...</span><span id="more">I'm pursuing B.Tech(CSE)  from Dev Bhoomi Institute of Technology</span></p>
-
-							<button onclick="myFunction()" id="myBtn">Read more</button>
-							</div>
-
-					</div>
-
-					
-				</a>
-				<h1 class="page-title">Order You Deleted:-</h1><br>
-
-				<!-- Task -->
-				<a href="#" class="task-listing">
-
-					<!-- Job Listing Details -->
-					<div class="task-listing-details">
-					
-
-						<!-- Details -->
-						<div class="task-listing-description">
-								<h2 class="task-listing-title">Category</h2><br>
-								<h3 class="task-listing-title">Order Id: 2</h3>
-							
-								<p><b style="color:red; font-size: 22px;" >Note:-</b>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster.</p><br>
-								<h3>Discription:-</h3>
-								<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;">hello everyone! This is Md farhan .<span id="dots">...</span><span id="more">I'm pursuing B.Tech(CSE)  from Dev Bhoomi Institute of Technology</span></p>
-
-							<button onclick="myFunction()" id="myBtn">Read more</button>
-						</div>
-
-					</div>
-				
-				</a>
-
-				<!-- Task -->
-				
-
-				
 			</div>
+
+				<!-- Task -->
+				<!-- Listing Of Order Completed With Start Here -->
+				<?php 
+					$sql = "SELECT * FROM order_complete WHERE `uid`='$uid' ORDER BY id desc";
+					$result = mysqli_query($conn, $sql);
+					if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				    while($row = mysqli_fetch_assoc($result)) {
+				        ?>	
+				    <div class="tasks-list-container margin-top-35">
+				      <div class="task-listing">
+				        <div class="task-listing-details">
+
+						<!-- Details -->
+						<div class="task-listing-description">
+							<div class="row">
+										<div class="col-md-11"><h2 class="task-listing-title"><?php echo  strtoupper($row['title']); ?></h2></div>
+										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="WriteContent();"><i class="fa fa-file"></i></button></div>
+							</div>
+							<h3 class="task-listing-title">Product Id: <?php echo $row['product_id']; ?></h3>
+							
+						<p><b style="color:red; font-size: 22px;" >Order Of : </b><?php echo $row['orderof_uid']; ?></p><br>
+							</div>
+					</div>
+				</div>
+			</div>
+	        <?php
+		    }
+		} else {
+		    echo "0 results";
+		} 
+	?>
+
+					<!-- Job Listing Details -->
+				<!-- Listing Of Order Completed With End Here -->
+
+			<div class="col-xl-12 col-lg-8 content-left-offset" id="scrolling">
+
+				<h1 class="page-title">Order You Deleted:-</h1>
+
+			</div>
+
+				<!-- Task -->
+				<!-- Listing Of Order Completed With Start Here -->
+				<?php 
+					$sql = "SELECT * FROM deleted_orders WHERE `uid`='$uid' ORDER BY id DESC ";
+					$result = mysqli_query($conn, $sql);
+					if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				    while($row = mysqli_fetch_assoc($result)) {
+				        ?>	
+				    <div class="tasks-list-container margin-top-35">
+				      <div class="task-listing">
+				        <div class="task-listing-details">
+
+						<!-- Details -->
+						<div class="task-listing-description">
+							<div class="row">
+										<div class="col-md-11"><h2 class="task-listing-title">Category:- <?php echo  strtoupper($row['cata']); ?></h2></div>
+										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="WriteContent();"><i class="fa fa-delete"></i></button></div>
+							</div>
+							<h3 class="task-listing-title">Product Id: <?php echo $row['order_id']; ?></h3>
+							
+						<p><b style="color:red; font-size: 22px;" >Order Of : </b><?php echo $row['order_of']; ?></p><br>
+							</div>
+					</div>
+				</div>
+			</div>
+	        <?php
+		    }
+		} else {
+			?>
+		    <div class="tasks-list-container margin-top-35">
+				      <div class="task-listing">
+				        <div class="task-listing-details">
+
+						<!-- Details -->
+						<div class="task-listing-description">
+							<h1 style="width: 100%; color: red;">No Order Deleted By You</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php
+		} 
+	?>
+				<!-- Task -->
 			<!-- Tasks Container / End -->
 
 		</div>

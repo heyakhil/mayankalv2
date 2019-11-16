@@ -87,13 +87,14 @@
 								</div>
 
 							</div>
-						</div>	
-						<?php
-						$i++;
-						}
-								//sumit
-					?>
-			</div>
+						</div>
+					</div>	
+				<?php
+					$i++;
+					}
+							//sumit
+				?>
+			
 		</div>
 	</div>
 </div>
