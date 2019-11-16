@@ -1,18 +1,15 @@
 <!doctype html>
 <html lang="en">
-<?php include '../assets/connect.php' ?>
-<?php include '../assets/check.php' ?>
-
 
 <!-- Mirrored from www.vasterad.com/themes/hireo_082019/tasks-list-layout-2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Sep 2019 13:58:43 GMT -->
 <head>
-<style>
-	#more {display: none;}
-</style>
+		<style>
+				#more {display: none;}
+				</style>
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Hireo</title>
+<title>Mayankal - Completed Orders</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -29,12 +26,7 @@
 
 <!-- Header Container
 ================================================== -->
-<?php include 'dashmenu.php'; ?>
-					<!-- Messages -->
-					
-				<!--  User Notifications / End -->
-
-<div class="clearfix"></div>
+<?php  include 'dashmenu.php' ?>
 <!-- Header Container / End -->
 
 <!-- Spacer -->
@@ -43,82 +35,138 @@
 
 <!-- Page Content
 ================================================== -->
-
 <div class="container">
 	<div class="row">
-	
 
-		<div class="col-xl-12 col-lg-8 content-left-offset" id="scrolling">
+		<!--<div class="col-xl-12 col-lg-8 content-left-offset">
 
-			<h1 class="page-title"> Orders:- </h1>
+			
+			</div>-->
+			
+			<!-- Tasks Container -->
+			<div class="col-xl-12 col-lg-8 content-left-offset" id="scrolling">
+
+				<h1 class="page-title">Completed Orders:-</h1>
 
 			</div>
-			<?php  
-				$sql="SELECT * FROM `orders` WHERE `uid`='$uid' ORDER BY id desc";
-				$run=mysqli_query($conn,$sql);
-				$num=mysqli_num_rows($run);
 
-				$i =1;
-				while ($result=mysqli_fetch_assoc($run)) {
-					?>
-					<div class="tasks-list-container margin-top-35">
-		
-						<!-- Task -->
-						<div class="task-listing">
+				<!-- Task -->
+				<!-- Listing Of Order Completed With Start Here -->
+				<?php 
+					$sql = "SELECT * FROM order_complete WHERE `uid`='$uid' ORDER BY id desc";
+					$result = mysqli_query($conn, $sql);
+					if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				    while($row = mysqli_fetch_assoc($result)) {
+				        ?>	
+				    <div class="tasks-list-container margin-top-35">
+				      <div class="task-listing">
+				        <div class="task-listing-details">
 
-							<!-- Job Listing Details -->
-							<div class="task-listing-details">
-
-								<!-- Details -->
-								<div class="task-listing-description">
-									<div class="row">
-										<div class="col-md-10"><h2 class="task-listing-title">Category:- <?php echo  strtoupper($result['post_cat']); ?></h2></div>
-										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="WriteContent(this.id);" id="<?php echo $result['order_id'] . " " . $result['orderof_uid']; ?>"><i class="fa fa-edit"></i></button></div>
-										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="deltedContent(this.id);" id="<?php echo $result['order_id'] . " " . $result['orderof_uid'];?>"><i class="fa fa-trash"></i></button></div>
-									</div>
-									<br>
-									<h3 class="task-listing-title">Order Id: <?php echo $result['order_id']; ?></h3>
-										<?php //$orderuid = $result['order_id']; 
-											//$customer = $result['orderof_uid']; ?>
-									<p><b style="color:red; font-size: 22px;" >Note:- </b><?php echo $result['imp_not'];  ?></p><br>
-									<h3>Discription:-</h3>
-									<div class="dummy">
-									<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;"><?php echo $result['descrip']; ?></p>
-									</div>
-								</div>
-
+						<!-- Details -->
+						<div class="task-listing-description">
+							<div class="row">
+								<div class="col-md-10"><h2 class="task-listing-title"><?php echo  strtoupper($row['title']); ?></h2></div>
+								<div class="col-md-2" style="margin-left: 0px;"><button class="button" onclick="WriteContent();"><i class="fa fa-file"></i></button></div>
 							</div>
+							<h3 class="task-listing-title">Product Id: <?php echo $row['product_id']; ?></h3>
+							
+						<p><b style="color:red; font-size: 22px;" >Order Of : </b><?php 
+						$idid = $row['orderof_uid'];
+						$sql = "SELECT name FROM user WHERE `unique_id`='$idid'";
+						$result = mysqli_query($conn, $sql);
+						if (mysqli_num_rows($result) > 0) {
+						    // output data of each row
+						    while($row = mysqli_fetch_assoc($result)) {
+						        echo $row['name'];
+						    }
+						} else {
+						    echo "0 results";
+						}
+						?></p><br>
 						</div>
-					</div>	
-				<?php
-					$i++;
-					}
-							//sumit
-				?>
-			
+					</div>
+				</div>
+			</div>
+	        <?php
+		    }
+		} else {
+		    echo "0 results";
+		} 
+	?>
+
+					<!-- Job Listing Details -->
+				<!-- Listing Of Order Completed With End Here -->
+
+			<div class="col-xl-12 col-lg-8 content-left-offset" id="scrolling">
+
+				<h1 class="page-title">Order You Deleted:-</h1>
+
+			</div>
+
+				<!-- Task -->
+				<!-- Listing Of Order Completed With Start Here -->
+				<?php 
+					$sql = "SELECT * FROM deleted_orders WHERE `uid`='$uid' ORDER BY id DESC ";
+					$result = mysqli_query($conn, $sql);
+					if (mysqli_num_rows($result) > 0) {
+				    // output data of each row
+				    while($row = mysqli_fetch_assoc($result)) {
+				        ?>	
+				    <div class="tasks-list-container margin-top-35">
+				      <div class="task-listing">
+				        <div class="task-listing-details">
+
+						<!-- Details -->
+						<div class="task-listing-description">
+							<div class="row">
+								<div class="col-md-10"><h2 class="task-listing-title">Category:- <?php echo  strtoupper($row['cata']); ?></h2></div>
+								<div class="col-md-2" style="margin-left: 0px; color: red;">Deleted</div>
+							</div>
+						<h3 class="task-listing-title">Product Id: <?php echo $row['order_id']; ?></h3>
+							
+						<p><b style="color:red; font-size: 22px;" >Order Of : </b><?php 
+							$idid = $row['order_of'];
+							$sql = "SELECT name FROM user WHERE `unique_id`='$idid'";
+							$result = mysqli_query($conn, $sql);
+							if (mysqli_num_rows($result) > 0) {
+							    // output data of each row
+							    while($row = mysqli_fetch_assoc($result)) {
+							        echo $row['name'];
+							    }
+							} else {
+							    echo "The User name is not Defined";
+							}
+						?></p><br>
+							</div>
+					</div>
+				</div>
+			</div>
+	        <?php
+		    }
+		} else {
+			?>
+		    <div class="tasks-list-container margin-top-35">
+				      <div class="task-listing">
+				        <div class="task-listing-details">
+
+						<!-- Details -->
+						<div class="task-listing-description">
+							<h1 style="width: 100%; color: red;">No Order Deleted By You</h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		<?php
+		} 
+	?>
+				<!-- Task -->
+			<!-- Tasks Container / End -->
+
 		</div>
 	</div>
 </div>
-	<script type="text/javascript">
-		function deltedContent(data){
-			var res = data.split(" ");
-			var val1 = res[0];
-			var val2 = res[1];
-		location.href = "../assets/remove_order.php?or_id="+val1+"";
-		//console.log(res[0]);
-	}
-	</script>
-	<script src="../js/readMoreJS.min.js"></script>
-	<script type="text/javascript">
-	$readMoreJS.init({
-	target: '.dummy p',           // Selector of the element the plugin applies to (any CSS selector, eg: '#', '.'). Default: ''
-	numOfWords: 80,               // Number of words to initially display (any number). Default: 50
-	toggle: true,                 // If true, user can toggle between 'read more' and 'read less'. Default: true
-	moreLink: 'Read More ...',    // The text of 'Read more' link. Default: 'read more ...'
-	lessLink: 'Read Less'         // The text of 'Read less' link. Default: 'read less'
-	});
-		
-	</script>
+
 
 <!-- Footer
 ================================================== -->
@@ -268,7 +316,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
-					© 2019 <strong>Mayankal</strong>. All Rights Reserved.
+					© 2019 <strong>Hireo</strong>. All Rights Reserved.
 				</div>
 			</div>
 		</div>
@@ -280,15 +328,7 @@
 
 </div>
 <!-- Wrapper / End -->
-<script type="text/javascript">
-	function WriteContent(data){
-		var res = data.split(" ");
-			var val1 = res[0];
-			var val2 = res[1];
-		location.href = "WriteContent.php?or_id="+val1+"&customer="+val2+"";
-	}
 
-</script>
 <!-- Scripts
 ================================================== -->
 <script src="../js/jquery-3.4.1.min.js"></script>
@@ -333,9 +373,29 @@ $('#snackbar-user-status label').click(function() {
 		 var autocomplete = new google.maps.places.Autocomplete(input, options);
 
 	}
-// ---------Read more Read Less tag------------------
-</script>
 
+
+// ---------Read more Read Less tag------------------
+function myFunction() {
+  var dots = document.getElementById("dots");
+  var moreText = document.getElementById("more");
+  var btnText = document.getElementById("myBtn");
+
+  if (dots.style.display === "none") {
+    dots.style.display = "inline";
+    btnText.innerHTML = "Read more"; 
+    moreText.style.display = "none";
+  } else {
+    dots.style.display = "none";
+    btnText.innerHTML = "Read less"; 
+    moreText.style.display = "inline";
+  }
+}	
+
+
+
+
+</script>
 
 <!-- Google API & Maps -->
 <!-- Geting an API Key: https://developers.google.com/maps/documentation/javascript/get-api-key -->

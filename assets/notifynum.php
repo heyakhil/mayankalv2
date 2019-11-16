@@ -10,9 +10,7 @@
 	} else {
 	    echo "Error updating record: " . mysqli_error($conn);
 	}
-    //this'll send the new statistics to the jquery code
-
-    //echo json_encode($results);
+	  
 }
 
  ?>

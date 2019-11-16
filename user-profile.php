@@ -102,7 +102,7 @@ include 'assets/show_result.php';
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 </head>
-<body>
+<body onload="traffic();">
 
 <!-- Wrapper -->
 <div id="wrapper">
@@ -183,7 +183,7 @@ include 'assets/show_result.php';
 							    while($row = mysqli_fetch_assoc($result)) {
 							        echo'
 										<li class="notifications-not-read">
-											<a href="dashboard/index.php">
+											<a href="#">
 												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
 												<span class="notification-text">
 													'.$row['notify'].'
@@ -379,8 +379,8 @@ include 'assets/show_result.php';
 				
 				<!-- Profile Overview -->
 				<div class="profile-overview">
-					<div class="overview-item"><a href="#" title="Ping to write guest post for his website"><button type="button" class="btn btn-success btn-block btn-lg">Ping</button></a></div>
-					<div class="overview-item"><a href="#" title="Report the User Profile"><button type="button" class="btn btn-danger btn-block btn-lg"  onclick="userid();"><i class="fa fa-bug"></i> &nbsp;Report</button></a></div>
+					<div class="overview-item"><button type="button" class="btn btn-success btn-block btn-lg" id="<?php echo $prof_uid;?>" onclick="ping(this.id);">Ping</button></div>
+					<div class="overview-item"><button type="button" class="btn btn-danger btn-block btn-lg"  onclick="userid();"><i class="fa fa-bug"></i> &nbsp;Report</button></div>
 				</div>
 						<!--   hello -->
 				<!-- Button -->
@@ -412,43 +412,8 @@ include 'assets/show_result.php';
 						 ?>
 					</div>
 				</div>
-				<!-- reported user -->
 
-				<script type="text/javascript">
-					function userid()
-					{
-
-					
-					<?php
-						
-						$currentDateTime = date('Y-m-d');
-						$sql1="SELECT * FROM `report` WHERE `report_uid`='$prof_uid'";
-						$run=mysqli_query($conn,$sql1);
-						$num=mysqli_num_rows($run);
-						$result=mysqli_fetch_assoc($run);
-						
-						if($num == 0 )
-							{
-							$s="You Have Been Reported By SomeOne";
-							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$id1','$currentDateTime')";
-
-							$s="You are Reported by Someone ";
-							
-							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$prof_uid','$currentDateTime')";
-							mysqli_query($conn,$sql);
-							$sql1="INSERT INTO `notification`(`uid`, `notify`, `send_by`) VALUES ('$prof_uid','$s','$uid')";
-							mysqli_query($conn,$sql1);
-						}
-						else
-						{
-							?>
-							alert("You are Already Reported this User");
-							<?php
-						}
-						?>
-					}
-				</script>
-				<!-- Widget -->
+		
 				<div class="sidebar-widget">
 					<h3>Attachments</h3>
 					<div class="attachments-container">
@@ -816,12 +781,7 @@ $('.copy-url-button').click(function() {
         $.ajax({
             url: "assets/notifynum.php",
             type: "GET",
-            data: {uid: "<?php echo $uid; ?>"}, //this sends the user-id to php as a post variable, in php it can be accessed as $_POST['uid']
-            // success: function(data){
-            //     $('#dataget').html(result);
-            //     //update some fields with the updated data
-            //     //you can access the data like 'data["driver"]'
-            // }
+            data: {uid: "<?php echo $uid; ?>"},
         });
     }
 </script>
@@ -856,6 +816,96 @@ $('.copy-url-button').click(function() {
 
  		});
  	}
+ </script>
+
+ <script type="text/javascript">
+ 	function traffic(){
+        $.ajax({
+            url: "assets/visitor.php",
+            type: "GET",
+            data: {uid: "<?php echo $uid; ?>"},
+
+            success: function(data){
+ 				console.log('Welcome');
+ 			}
+        });
+    }
+
+    function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+	}
+
+	function getCookie(name) {
+	    var nameEQ = name + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0;i < ca.length;i++) {
+	        var c = ca[i];
+	        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+	        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	    }
+	    return null;
+	}
+	
+    	function ping(id){
+
+    	if (document.cookie.indexOf("ping=") >= 0) {
+    		var retrievedData = getCookie("ping");
+			var movies2 = JSON.parse(retrievedData);
+			var check =0;
+			for(var i=0; i<movies2.length; i++){
+				if (movies2[i] == id) {
+					check = check+1;
+				}
+			}
+	     	if (check >= 1) {
+			 	alert("You have already Pinged");
+	   		}else{
+	   			var json_str = getCookie('ping');
+	   			console.log(json_str);
+				var arr = JSON.parse(json_str);
+				console.log(arr);
+	    		arr.push(id);
+	    		console.log(arr);
+	   			var json_str = JSON.stringify(arr);
+	   			console.log(json_str);
+				setCookie('ping', json_str, 5);
+				alert("You Pinged this user");
+				//sending data to the pinging.php to send the notification and email to the user
+				$.ajax({
+		            url: "assets/pinging.php",
+		            type: "GET",
+		            data: {uid: id, to:"<?php echo $prof_uid; ?>"},
+
+		            success: function(data){
+		 				console.log('Welcome');
+		 			}
+		        });
+	   		}
+   				
+   		}else{
+    	var ping = [];
+    	ping.push(id);
+    	var json_str = JSON.stringify(ping);
+		setCookie('ping', json_str, 5);
+		alert("You Pinged this user");
+		//sending data to the pinging.php to send the notification and email to the user
+		$.ajax({
+            url: "assets/pinging.php",
+            type: "GET",
+            data: {uid: id, to:"<?php echo $prof_uid; ?>"},
+
+            success: function(data){
+ 				console.log('Notification send');
+ 			}
+        });
+   	}
+ }
  </script>
 
 </body>

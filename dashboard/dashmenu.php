@@ -28,7 +28,7 @@ include '../assets/show_result.php';
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="index-2.html"><img src="../images/logo.png" alt=""></a>
+					<a href="#"><img src="../images/logo.png" alt=""></a>
 				</div>
 
 				<!-- Main Navigation -->
@@ -65,7 +65,7 @@ include '../assets/show_result.php';
 							$result = mysqli_query($conn, $sql);
 							$num = mysqli_num_rows($result);
 							echo $num;
-								 ?></span></a>
+							?></span></a>
 						</div>
 
 						<!-- Dropdown -->
@@ -97,10 +97,10 @@ include '../assets/show_result.php';
 												</span>
 											</a>
 										</li>';
-							    }
-							} else {
-							    echo "No Any notifications-not-read";
-							} ?>
+									    }
+									} else {
+									    echo "No Any notifications-not-read";
+									} ?>
 									</ul>
 								</div>
 							</div>
@@ -189,3 +189,5 @@ include '../assets/show_result.php';
         });
     }
 </script>
+
+
