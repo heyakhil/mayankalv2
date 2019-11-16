@@ -8,7 +8,7 @@
 	    // output data of each row
 	    while($row = mysqli_fetch_assoc($result)) {
 	        $coins = $row['coin_earn'];
-	        $_SESSION['coins'] = $coinss;
+	        $_SESSION['coins'] = $coins;
 	    }
 	} else {
 	    echo "0 results";

@@ -2,8 +2,8 @@
 	include 'connect.php';
 	include 'check.php';
 
-	if (isset($_GET['uid_v'])) {
-		$user_v = $_GET['uid_v'];
+	if (isset($_GET['uid'])) {
+		$user_v = $_GET['uid'];
 		$mon = date("M Y");
 		$sql = "SELECT * FROM visitor WHERE `visitor_uid`='$user_v'";
 		$result = mysqli_query($conn, $sql);
