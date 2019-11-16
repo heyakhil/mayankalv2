@@ -6,7 +6,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Hireo</title>
+<title>Mayankal</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -363,7 +363,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
-					© 2019 <strong>Hireo</strong>. All Rights Reserved.
+					© 2019 <strong>Mayankal</strong>. All Rights Reserved.
 				</div>
 			</div>
 		</div>
