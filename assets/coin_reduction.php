@@ -1,6 +1,6 @@
 <?php 
 
-function coin_reduce($uid)
+function coin_reduce($uid, $coins=50)
 {   
     include 'connect.php';
     $sql = "SELECT * FROM coins_earn WHERE `uid`='$uid'";
@@ -10,7 +10,7 @@ function coin_reduce($uid)
         // output data of each row
         while($row = mysqli_fetch_assoc($result)) {
             $tot_coins = $row['coin_earn'];
-            $new_val = $tot_coins-50;
+            $new_val = $tot_coins-$coins;
             $sql = "UPDATE coins_earn SET coin_earn='$new_val' WHERE `uid`='$uid'";
             if (mysqli_query($conn, $sql)) {
                return "yes";

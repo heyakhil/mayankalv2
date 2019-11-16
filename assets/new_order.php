@@ -73,6 +73,7 @@
 						<!-- Headline -->
 						<div class="headline">
 							<h3><i class="icon-feather-folder-plus"></i> Guest-Post Order Submission Form</h3>
+							<div style="margin-left: 90%;"><b><span id="coins" style="color: red;"></span></b> Coins</div>
 						</div>
 
 						<div class="content with-padding padding-bottom-10">
@@ -88,13 +89,13 @@
 								<div class="col-xl-6">
 									<div class="submit-field">
 										<h5>Min Words</h5>
-										<input type="number" class="with-border" name="mword">
+										<input type="number" class="with-border" name="mword" id="words">
 									</div>
 								</div>
 
 								<div class="col-xl-12">
 									<div class="submit-field">
-										<h5><b>Important Notice:- (if any)</b></h5>
+										<h5><b>Important Notice:- (If Any)</b></h5>
 										<input type="text" class="with-border" name="notice">
 									</div>
 								</div>
@@ -159,11 +160,9 @@
 
 </div>
 <!-- Wrapper / End -->
-
-
 <!-- Scripts
 ================================================== -->
-<script src="js/jquery-3.3.1.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
 <script src="js/jquery-migrate-3.0.0.min.js"></script>
 <script src="js/mmenu.min.js"></script>
 <script src="js/tippy.all.min.js"></script>
@@ -176,7 +175,20 @@
 <script src="js/magnific-popup.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/custom.js"></script>
+<script type="text/javascript">
+	$(document).ready(function(){
+    $("#words").on("input", function(){
+        // Print entered value in a div box
+       	var value = $(this).val();
+       	var coins = value/15;
+       	$("#coins").text(Math.round(coins));
 
+    });
+
+});
+
+	
+</script>
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>
 // Snackbar for user status switcher

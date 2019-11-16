@@ -17,8 +17,8 @@
 		$imp_n = $_POST['notice'];
 		$describe = mysqli_real_escape_string($conn, $_POST['describe']);
 		$order_id = date("d-m").mt_rand(1000, 99999).date("Y");
-
-		if ($coins<50) {
+		$coins_red = round($min_word/15);
+		if ($coins<$coins_red) {
             ?>
             <script type="text/javascript">
                 window.open("../user-profile.php?uid=<?php echo $uuid; ?>", "_self");
@@ -33,11 +33,11 @@
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
         }
-		 if(coin_reduce($uid) == "yes"){
+		 if(coin_reduce($uid, $coins_red) == "yes"){
 			 ?>
 			<script type="text/javascript">
-			window.open("../user-profile.php?uid=<?php echo $uuid; ?>", "_self");
-             alert("Your Order is send successfully");
+				window.open("../user-profile.php?uid=<?php echo $uuid; ?>", "_self");
+             	alert("Your Order is send successfully");
             </script>
 			<?php
 		 }else{
