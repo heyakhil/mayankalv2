@@ -25,22 +25,27 @@
 						<?php include '../assets/connect.php' ?>
 				
 							<?php
-									$sql="SELECT * FROM `orders` WHERE `uid`='$uid' AND `seen`='0'";
+									$sql="SELECT * FROM `orders` WHERE `uid`='$uid'";
 									$run=mysqli_query($conn,$sql);
 									$num=mysqli_num_rows($run);
+
+								$sql1="SELECT * FROM `order_complete` WHERE `uid`='$uid' AND `seen`='0'";
+								$run1=mysqli_query($conn,$sql1);
+								$all_num=mysqli_num_rows($run1);
+							
 							?>
 						<ul data-submenu-title="Order Manager">
 							<li><a href="#"><i class="icon-material-outline-business-center"></i>Write Content</a>
 								<ul>
-									<li onclick="orderseen(this.id);" id="<?php echo $uid; ?>"><a href="allorders.php">All Orders<span class="nav-tag"><?php echo $num; ?></span></a></li><!--new order -->
+									<li><a href="allorders.php">All Orders<span class="nav-tag"><?php echo $num; ?></span></a></li><!--new order -->
 									<li><a href="CompletedOrders.php">Complete Your Orders</a></li>
 									<li><a href="Customer.php">Your Customer's</a></li>
 								</ul>	
 							</li>
 							<li><a href="#"><i class="icon-material-outline-assignment"></i>Track Your Order</a>
 								<ul>
-									<li><a href="dashboard-manage-tasks.html">Completed Orders <span class="nav-tag">2</span></a></li>
-									<li><a href="dashboard-my-active-bids.html">Deleted Orders <span class="nav-tag">4</span></a></li>
+									<li onclick="orderseen(this.id);" id="<?php echo $uid; ?>"><a href="completed.php">Completed Orders <span class="nav-tag"><?php echo $all_num; ?></span></a></li>
+									<li><a href="dashboard-my-active-bids.html">Deleted Orders</a></li>
 								</ul>	
 							</li>
 						</ul>

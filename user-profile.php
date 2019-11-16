@@ -2,6 +2,7 @@
 include 'assets/check.php';
 include 'assets/connect.php';
 include 'assets/show_result.php';
+include 'assets/notification.php';
 
 	$sql = "SELECT * FROM coins_earn WHERE `uid`='".$_SESSION['uid']."'";
 	$result = mysqli_query($conn, $sql);
@@ -413,12 +414,10 @@ include 'assets/show_result.php';
 					</div>
 				</div>
 
-<<<<<<< HEAD
+
 				<script type="text/javascript">
 					function userid()
 					{
-
-					
 					<?php
 						
 						$currentDateTime = date('Y-m-d');
@@ -435,9 +434,14 @@ include 'assets/show_result.php';
 							$s="You are Reported by Someone ";
 							
 							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$prof_uid','$currentDateTime')";
-							mysqli_query($conn,$sql);
-							$sql1="INSERT INTO `notification`(`uid`, `notify`, `send_by`) VALUES ('$prof_uid','$s','$uid')";
-							mysqli_query($conn,$sql1);
+							if(mysqli_query($conn,$sql)){
+								notification($uid, $s, $prof_uid);
+								?>
+								alert("Report Send To Team");
+								<?php
+							}else{
+								echo "There is Some Error";
+							}
 						}
 						else
 						{
@@ -449,9 +453,6 @@ include 'assets/show_result.php';
 					}//akhil
 				</script>
 				<!-- Widget -->
-=======
-		
->>>>>>> 727fbdb797c84d316fc1ccaf7aa0dc74ace1f027
 				<div class="sidebar-widget">
 					<h3>Attachments</h3>
 					<div class="attachments-container">
