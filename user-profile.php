@@ -446,7 +446,7 @@ include 'assets/show_result.php';
 							<?php
 						}
 						?>
-					}
+					}//akhil
 				</script>
 				<!-- Widget -->
 				<div class="sidebar-widget">
