@@ -875,7 +875,7 @@ $('.copy-url-button').click(function() {
 	    		console.log(arr);
 	   			var json_str = JSON.stringify(arr);
 	   			console.log(json_str);
-				setCookie('ping', json_str);
+				setCookie('ping', json_str, 5);
 				alert("You Pinged this user");
 				//sending data to the pinging.php to send the notification and email to the user
 				$.ajax({
@@ -893,7 +893,7 @@ $('.copy-url-button').click(function() {
     	var ping = [];
     	ping.push(id);
     	var json_str = JSON.stringify(ping);
-		setCookie('ping', json_str);
+		setCookie('ping', json_str, 5);
 		alert("You Pinged this user");
 		//sending data to the pinging.php to send the notification and email to the user
 		$.ajax({

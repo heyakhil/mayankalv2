@@ -54,7 +54,7 @@
 
 			</div>
 			<?php  
-				$sql="SELECT * FROM `orders` WHERE `uid`='$uid' ORDER BY id Desc";
+				$sql="SELECT * FROM `orders` WHERE `uid`='$uid' ORDER BY id desc";
 				$run=mysqli_query($conn,$sql);
 				$num=mysqli_num_rows($run);
 
@@ -72,13 +72,14 @@
 								<!-- Details -->
 								<div class="task-listing-description">
 									<div class="row">
-										<div class="col-md-11"><h2 class="task-listing-title">Category:- <?php echo  strtoupper($result['post_cat']); ?></h2></div>
-										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="WriteContent();"><i class="fa fa-edit"></i></button></div>
+										<div class="col-md-10"><h2 class="task-listing-title">Category:- <?php echo  strtoupper($result['post_cat']); ?></h2></div>
+										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="WriteContent(this.id);" id="<?php echo $result['order_id'] . " " . $result['orderof_uid']; ?>"><i class="fa fa-edit"></i></button></div>
+										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="deltedContent(this.id);" id="<?php echo $result['order_id'] . " " . $result['orderof_uid'];?>"><i class="fa fa-trash"></i></button></div>
 									</div>
 									<br>
 									<h3 class="task-listing-title">Order Id: <?php echo $result['order_id']; ?></h3>
-										<?php $orderuid = $result['order_id']; 
-											$customer = $result['orderof_uid']; ?>
+										<?php //$orderuid = $result['order_id']; 
+											//$customer = $result['orderof_uid']; ?>
 									<p><b style="color:red; font-size: 22px;" >Note:- </b><?php echo $result['imp_not'];  ?></p><br>
 									<h3>Discription:-</h3>
 									<div class="dummy">
@@ -98,6 +99,15 @@
 		</div>
 	</div>
 </div>
+	<script type="text/javascript">
+		function deltedContent(data){
+			var res = data.split(" ");
+			var val1 = res[0];
+			var val2 = res[1];
+		location.href = "../assets/remove_order.php?or_id="+val1+"";
+		//console.log(res[0]);
+	}
+	</script>
 	<script src="../js/readMoreJS.min.js"></script>
 	<script type="text/javascript">
 	$readMoreJS.init({
@@ -258,7 +268,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
-					© 2019 <strong>Hireo</strong>. All Rights Reserved.
+					© 2019 <strong>Mayankal</strong>. All Rights Reserved.
 				</div>
 			</div>
 		</div>
@@ -271,9 +281,13 @@
 </div>
 <!-- Wrapper / End -->
 <script type="text/javascript">
-	function WriteContent(){
-		location.href = "WriteContent.php?or_id=<?php echo $orderuid ."&". "customer" ."=".$customer;?>";
+	function WriteContent(data){
+		var res = data.split(" ");
+			var val1 = res[0];
+			var val2 = res[1];
+		location.href = "WriteContent.php?or_id="+val1+"&customer="+val2+"";
 	}
+
 </script>
 <!-- Scripts
 ================================================== -->

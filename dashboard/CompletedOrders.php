@@ -9,7 +9,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Hireo</title>
+<title>Mayankal - Completed Orders</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -66,13 +66,25 @@
 						<!-- Details -->
 						<div class="task-listing-description">
 							<div class="row">
-										<div class="col-md-11"><h2 class="task-listing-title"><?php echo  strtoupper($row['title']); ?></h2></div>
-										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="WriteContent();"><i class="fa fa-file"></i></button></div>
+								<div class="col-md-10"><h2 class="task-listing-title"><?php echo  strtoupper($row['title']); ?></h2></div>
+								<div class="col-md-2" style="margin-left: 0px;"><button class="button" onclick="WriteContent();"><i class="fa fa-file"></i></button></div>
 							</div>
 							<h3 class="task-listing-title">Product Id: <?php echo $row['product_id']; ?></h3>
 							
-						<p><b style="color:red; font-size: 22px;" >Order Of : </b><?php echo $row['orderof_uid']; ?></p><br>
-							</div>
+						<p><b style="color:red; font-size: 22px;" >Order Of : </b><?php 
+						$idid = $row['orderof_uid'];
+						$sql = "SELECT name FROM user WHERE `unique_id`='$idid'";
+						$result = mysqli_query($conn, $sql);
+						if (mysqli_num_rows($result) > 0) {
+						    // output data of each row
+						    while($row = mysqli_fetch_assoc($result)) {
+						        echo $row['name'];
+						    }
+						} else {
+						    echo "0 results";
+						}
+						?></p><br>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -108,12 +120,24 @@
 						<!-- Details -->
 						<div class="task-listing-description">
 							<div class="row">
-										<div class="col-md-11"><h2 class="task-listing-title">Category:- <?php echo  strtoupper($row['cata']); ?></h2></div>
-										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="WriteContent();"><i class="fa fa-delete"></i></button></div>
+								<div class="col-md-10"><h2 class="task-listing-title">Category:- <?php echo  strtoupper($row['cata']); ?></h2></div>
+								<div class="col-md-2" style="margin-left: 0px; color: red;">Deleted</div>
 							</div>
-							<h3 class="task-listing-title">Product Id: <?php echo $row['order_id']; ?></h3>
+						<h3 class="task-listing-title">Product Id: <?php echo $row['order_id']; ?></h3>
 							
-						<p><b style="color:red; font-size: 22px;" >Order Of : </b><?php echo $row['order_of']; ?></p><br>
+						<p><b style="color:red; font-size: 22px;" >Order Of : </b><?php 
+							$idid = $row['order_of'];
+							$sql = "SELECT name FROM user WHERE `unique_id`='$idid'";
+							$result = mysqli_query($conn, $sql);
+							if (mysqli_num_rows($result) > 0) {
+							    // output data of each row
+							    while($row = mysqli_fetch_assoc($result)) {
+							        echo $row['name'];
+							    }
+							} else {
+							    echo "The User name is not Defined";
+							}
+						?></p><br>
 							</div>
 					</div>
 				</div>
