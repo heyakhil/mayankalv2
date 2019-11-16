@@ -1,3 +1,8 @@
+<?php include '../assets/connect.php';
+	include '../assets/check.php';
+
+ ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -56,9 +61,16 @@
 			<!-- Tasks Container -->
 			<div class="tasks-list-container margin-top-35">
 					<h1 class="page-title">Completed Orders:-</h1><br>
-				
 				<!-- Task -->
 				<!-- <a href="#" class="task-listing"> -->
+					<?php 
+					$sql = "SELECT * FROM order_complete WHERE `orderof_uid`='$uid'";
+					$result = mysqli_query($conn, $sql);
+
+					if (mysqli_num_rows($result) > 0) {
+					    // output data of each row
+					 while($row = mysqli_fetch_assoc($result)) {
+					       ?>
 					<div class="task-listing">
 					<!-- Job Listing Details -->
 					<div class="task-listing-details">
@@ -67,22 +79,23 @@
 						<div class="task-listing-description">
 							<div class="row">
 							<div class="col-md-9">
-							<h2 class="task-listing-title">Category</h2>
+							<h2 class="task-listing-title"><?php echo $row['title']; ?></h2>
 							</div>
 
-							<div class="col-md-3 " style="margin-left: 0px;"><a href="#small-dialog-2" onclick="myclick(this.id);" id="1" class="popup-with-zoom-anim button ripple-effect">Read Your Post</a>	
+							<div class="col-md-3 " style="margin-left: 0px;"><a href="#small-dialog-2" onclick="myclick(this.id);" id="<?php echo $row['product_id']; ?>" class="popup-with-zoom-anim button ripple-effect">Read Your Post</a>	
 							</div>
 							</div>
-							<h3 class="task-listing-title">Order Id: 1</h3>
-							
-						<p><b style="color:red; font-size: 22px;" >Note:-</b>Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster.</p><br>
-							<h3>Discription:-</h3>
-							<p style="font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-size:22px;">hello everyone! This is Md farhan .<span id="dots">...</span><span id="more">I'm pursuing B.Tech(CSE)  from Dev Bhoomi Institute of Technology</span></p>
-
-							<button onclick="myFunction()" id="myBtn">Read more</button>
-							</div>
+							<h3 class="task-listing-title">Order Id: <?php echo $row['product_id']; ?></h3>
+							</div><br>
+							<h3>Article View :- </h3>
+							<p><?php echo substr($row['post'], 0, 600); ?></p>
+						</div>
 					</div>
-				</div>
+					       <?php
+					    }
+					} else {
+					    echo "0 results";
+					} ?>
 				<!-- Tasks Container / End -->
 			</div>
 		</div>
@@ -101,7 +114,6 @@
 			</ul>
 	
 			<div class="popup-tabs-container-fluid">
-	
 				<div class="container" ><br><h1><b>Title:</b>ABCDEFGHIJ ABCDEFGHIJ ABCDEFGHIJ ABCDEFGHIJ</h1><hr><br>
 					<textarea rows="10" cols="30" >agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster.
 						Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster.
@@ -264,7 +276,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
-					© 2019 <strong>Hireo</strong>. All Rights Reserved.
+					© 2019 <strong>Mayankal</strong>. All Rights Reserved.
 				</div>
 			</div>
 		</div>
@@ -309,6 +321,23 @@ function myclick(id){
 	
 	});
 	
+
+</script>
+<script type="text/javascript">
+	//function myclick(prod_id){
+		//console.log(prod_id);
+	//}
+	function myclick(or_id) {
+		$.ajax({
+			url: '../assets/display_article.php',
+			type: 'post',
+			data : {ord_id:or_id},
+
+			success:function(responsedata) {
+				$('#small-dialog-2').html(responsedata);
+			}
+		});
+	}
 
 </script>
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
