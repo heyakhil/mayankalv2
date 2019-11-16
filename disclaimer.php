@@ -12,8 +12,8 @@
 
 <!-- CSS
 ================================================== -->
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/colors/blue.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/colors/blue.css">
 
 </head>
 <body>
@@ -526,7 +526,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
-					© 2019 <strong>Hireo</strong>. All Rights Reserved.
+					© 2019 <strong>Mayankal</strong>. All Rights Reserved.
 				</div>
 			</div>
 		</div>
@@ -551,9 +551,9 @@
 <script src="../js/snackbar.js"></script>
 <script src="../js/clipboard.min.js"></script>
 <script src="../js/counterup.min.js"></script>
-<script src="../../js/magnific-popup.min.js"></script>
-<script src="../../js/slick.min.js"></script>
-<script src="../../js/custom.js"></script>
+<script src="../js/magnific-popup.min.js"></script>
+<script src="../js/slick.min.js"></script>
+<script src="../js/custom.js"></script>
 
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>

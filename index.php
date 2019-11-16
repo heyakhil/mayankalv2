@@ -6,7 +6,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Mayankal - Free Gust Posting platform</title>
+<title>Mayankal - Free Guest Posting Platform</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -47,17 +47,16 @@ s0.parentNode.insertBefore(s1,s0);
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="index-2.html"><img src="images/logo.png" alt=""></a>
+					<a href="index.php"><img src="images/logom.png" alt=""></a>
 				</div>
 
 				<!-- Main Navigation -->
 				<nav id="navigation">
 					<ul id="responsive">
-						<li><a href="home.php" id="home">Home</a></li>
+						<li><a href="index.php" id="home">Home</a></li>
 						<li><a href="user.php" id="user">Top User's</a></li>
 						<li><a href="expert.php" id="expert">Experts</a></li>
 						<li><a href="blog.php" id="blog">Blog</a></li>
-						<li><a href="ping.php" id="ping">Pinging</a></li>
 						<li><a href="top_web.php"id="tweb">Top Websites</a></li>
 					</ul>
 				</nav>
@@ -111,9 +110,9 @@ s0.parentNode.insertBefore(s1,s0);
 			<div class="col-md-12">
 				<div class="banner-headline">
 					<h3>
-						<strong>Hire experts freelancers for any job, any time.</strong>
+						<strong>Get Free Guest Post For your Website</strong>
 						<br>
-						<span>Huge community of designers, developers and creatives ready for your project.</span>
+						<span>Huge community of bloggers, developers and creatives writter for your website.</span>
 					</h3>
 				</div>
 			</div>
@@ -126,15 +125,15 @@ s0.parentNode.insertBefore(s1,s0);
 				<ul class="intro-stats margin-top-45 hide-under-992px">
 					<li>
 						<strong class="counter">1,586</strong>
-						<span>Jobs Posted</span>
+						<span>Active User</span>
 					</li>
 					<li>
 						<strong class="counter">3,543</strong>
-						<span>Tasks Posted</span>
+						<span>BackLink Exchange</span>
 					</li>
 					<li>
 						<strong class="counter">1,232</strong>
-						<span>Freelancers</span>
+						<span>Website Register</span>
 					</li>
 				</ul>
 			</div>
@@ -265,7 +264,7 @@ s0.parentNode.insertBefore(s1,s0);
 							<div class="icon-box-check"><i class="icon-material-outline-check"></i></div>
 						</div>
 					</div>
-					<h3>Post a Task</h3>
+					<h3>Order For Post</h3>
 					<p>Efficiently unleash cross-media information without. Quickly maximize return on investment.</p>
 				</div>
 			</div>
@@ -280,7 +279,7 @@ s0.parentNode.insertBefore(s1,s0);
 							<div class="icon-box-check"><i class="icon-material-outline-check"></i></div>
 						</div>
 					</div>
-					<h3>Choose an Expert</h3>
+					<h3>Get Free Articles</h3>
 					<p>Nanotechnology immersion along the information highway will close the loop on focusing solely.</p>
 				</div>
 			</div>
@@ -655,7 +654,7 @@ s0.parentNode.insertBefore(s1,s0);
 						<div class="footer-rows-left">
 							<div class="footer-row">
 								<div class="footer-row-inner footer-logo">
-									<img src="images/logo2.png" alt="">
+									<img src="images/logon.png" alt="">
 								</div>
 							</div>
 						</div>
@@ -721,12 +720,12 @@ s0.parentNode.insertBefore(s1,s0);
 				<!-- Links -->
 				<div class="col-xl-2 col-lg-2 col-md-3">
 					<div class="footer-links">
-						<h3>For Candidates</h3>
+						<h3>For Users</h3>
 						<ul>
-							<li><a href="#"><span>Browse Jobs</span></a></li>
-							<li><a href="#"><span>Add Resume</span></a></li>
-							<li><a href="#"><span>Job Alerts</span></a></li>
-							<li><a href="#"><span>My Bookmarks</span></a></li>
+							<li><a href="user.php"><span>Top Users</span></a></li>
+							<li><a href="expert.php"><span>Top Experts</span></a></li>
+							<li><a href="blog.php"><span>Blogs</span></a></li>
+							<li><a href="top_web.php"><span>Top Website</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -734,12 +733,10 @@ s0.parentNode.insertBefore(s1,s0);
 				<!-- Links -->
 				<div class="col-xl-2 col-lg-2 col-md-3">
 					<div class="footer-links">
-						<h3>For Employers</h3>
+						<h3>For Experts</h3>
 						<ul>
-							<li><a href="#"><span>Browse Candidates</span></a></li>
-							<li><a href="#"><span>Post a Job</span></a></li>
-							<li><a href="#"><span>Post a Task</span></a></li>
-							<li><a href="#"><span>Plans & Pricing</span></a></li>
+							<li><a href="#"><span>Auther Panel</span></a></li>
+							<li><a href="#"><span>Other Blogs</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -749,9 +746,10 @@ s0.parentNode.insertBefore(s1,s0);
 					<div class="footer-links">
 						<h3>Helpful Links</h3>
 						<ul>
-							<li><a href="#"><span>Contact</span></a></li>
-							<li><a href="#"><span>Privacy Policy</span></a></li>
-							<li><a href="#"><span>Terms of Use</span></a></li>
+							<li><a href="contactUs.php"><span>Contact</span></a></li>
+							<li><a href="privacy_policy.php"><span>Privacy Policy</span></a></li>
+							<li><a href="disclaimer.php"><span>Disclaimer</span></a></li>
+							<li><a href="aboutus.php"><span>About Us</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -786,7 +784,7 @@ s0.parentNode.insertBefore(s1,s0);
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
-					© 2019 <strong>Hireo</strong>. All Rights Reserved.
+					© 2019 <strong>Mayankal</strong>. All Rights Reserved.
 				</div>
 			</div>
 		</div>
@@ -798,7 +796,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 </div>
 <!-- Wrapper / End -->
-================================================== -->
+
 
 
 <!-- Scripts

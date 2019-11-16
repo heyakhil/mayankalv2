@@ -42,7 +42,7 @@ $sql = "SELECT * FROM coins_earn WHERE `uid`='".$_SESSION['uid']."'";
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="index-2.html"><img src="images/logo2.png" data-sticky-logo="images/logo.png" data-transparent-logo="images/logo2.png" alt=""></a>
+					<a href="home.php"><img src="images/logom.png" data-sticky-logo="images/logom.png" data-transparent-logo="images/logom.png" alt=""></a>
 				</div>
 
 				<!-- Main Navigation -->
@@ -204,17 +204,16 @@ $sql = "SELECT * FROM coins_earn WHERE `uid`='".$_SESSION['uid']."'";
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="index-2.html"><img src="images/logo.png" alt=""></a>
+					<a href="index.php"><img src="images/logom.png" alt=""></a>
 				</div>
 
 				<!-- Main Navigation -->
 				<nav id="navigation">
 					<ul id="responsive">
-						<li><a href="home.php" id="home">Home</a></li>
+						<li><a href="index.php" id="home">Home</a></li>
 						<li><a href="user.php" id="user">Top Users</a></li>
 						<li><a href="expert.php" id="expert">Experts</a></li>
 						<li><a href="blog.php" id="blog">Blog</a></li>
-						<li><a href="ping.php" id="ping">Pinging</a></li>
 						<li><a href="top_web.php"id="tweb">Top Websites</a></li>
 					</ul>
 				</nav>
