@@ -382,8 +382,7 @@ include 'assets/show_result.php';
 					<div class="overview-item"><button type="button" class="btn btn-success btn-block btn-lg" id="<?php echo $prof_uid;?>" onclick="ping(this.id);">Ping</button></div>
 					<div class="overview-item"><button type="button" class="btn btn-danger btn-block btn-lg"  onclick="userid();"><i class="fa fa-bug"></i> &nbsp;Report</button></div>
 				</div>
-
-				
+						<!--   hello -->
 				<!-- Button -->
 				<a href="assets/new_order.php?psu=<?php echo $prof_uid; ?>" class="apply-now-button margin-bottom-50">Place Order <i class="icon-material-outline-arrow-right-alt"></i></a>
 
