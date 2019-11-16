@@ -28,7 +28,7 @@ include '../assets/show_result.php';
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="#"><img src="../images/logo.png" alt=""></a>
+					<a href="#"><img src="../images/logom.png" alt=""></a>
 				</div>
 
 				<!-- Main Navigation -->
