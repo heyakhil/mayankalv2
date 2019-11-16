@@ -117,13 +117,13 @@ s0.parentNode.insertBefore(s1,s0);
 					<div class="dashboard-box main-box-in-row">
 						<div class="headline">
 							<h3><i class="icon-feather-bar-chart-2"></i> Your Profile Views</h3>
-							<div class="sort-by">
+<!-- 							<div class="sort-by">
 								<select class="selectpicker hide-tick">
 									<option>Last 6 Months</option>
 									<option>This Year</option>
 									<option>This Month</option>
 								</select>
-							</div>
+							</div> -->
 						</div>
 						<div class="content">
 							<!-- Chart -->
@@ -195,7 +195,7 @@ s0.parentNode.insertBefore(s1,s0);
 						<div class="content">
 							<ul class="dashboard-box-list">
 					<?php 
-						$sql = "SELECT * FROM orders, orders_complete WHERE `uid`='$uid' OR `uid`='$uid'";
+						$sql = "SELECT * FROM order_complete WHERE `uid`='$uid' ORDER BY id desc limit 3";
 						$result = mysqli_query($conn, $sql);
 
 						if (mysqli_num_rows($result) > 0) {
@@ -204,21 +204,48 @@ s0.parentNode.insertBefore(s1,s0);
 						        ?>
 						        <li>
 									<div class="invoice-list-item">
-									<strong>Professional Plan</strong>
+									<strong><?php echo $row['title']; ?></strong>
 										<ul>
-											<li><span class="unpaid">Unpaid</span></li>
-											<li>Order: #326</li>
-											<li>Date: 12/08/2019</li>
+											<li><span class="paid">Completed</span></li>
+											<li>Order: #<?php echo $row['product_id']; ?></li>
+											<li>Date: <?php echo $row['date']; ?></li>
 										</ul>
-									</div>
+									</div>  
 									<!-- Buttons -->
 								</li>
 						        <?php
 						    }
 						} else {
-						    echo "0 results";
+						    echo "No Orders Data";
 						}
 					?>
+					<?php 
+						$sql = "SELECT * FROM orders WHERE `uid`='$uid' ORDER BY id desc limit 2";
+						$result = mysqli_query($conn, $sql);
+
+						if (mysqli_num_rows($result) > 0) {
+						    // output data of each row
+						    while($row = mysqli_fetch_assoc($result)) {
+						        ?>
+						        <li>
+									<div class="invoice-list-item">
+									<strong><?php echo $row['post_cat']; ?></strong>
+										<ul>
+											<li><span class="unpaid">Uncomplete</span></li>
+											<li>Order: #<?php echo $row['order_id']; ?></li>
+											</li>
+										</ul>
+									</div>  
+									<!-- Buttons -->
+								</li>
+						        <?php
+						    }
+						} else {
+						    echo "No Orders Data";
+						}
+					?>
+
+
 							</ul>
 						</div>
 					</div>
