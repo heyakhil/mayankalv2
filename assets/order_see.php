@@ -5,7 +5,7 @@
 	if ($_GET['uid'] != "") {
 		
 		$uid = $_GET['uid'];
-		$sql = "UPDATE orders SET seen='1' WHERE `uid`='$uid'";
+		$sql = "UPDATE order_complete SET seen='1' WHERE `uid`='$uid'";
 
 		if (mysqli_query($conn, $sql)) {
 		    header("location:../dashboard/sidebar.php");
