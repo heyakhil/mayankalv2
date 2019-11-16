@@ -1,3 +1,11 @@
+<?php 
+error_reporting(0);
+	include '../assets/dash.php';
+	include '../assets/connect.php';
+	include '../assets/check.php';
+
+ ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -55,7 +63,7 @@ s0.parentNode.insertBefore(s1,s0);
 			
 			<!-- Dashboard Headline -->
 			<div class="dashboard-headline">
-				<h3>Hollo!  <?php echo "Akhil" ?></h3>
+				<h3>Hello!  <?php echo "Akhil" ?></h3>
 				<span>We are happy to see you again!</span>
 
 				<!-- Breadcrumbs -->
@@ -72,21 +80,21 @@ s0.parentNode.insertBefore(s1,s0);
 				<div class="fun-fact" data-fun-fact-color="#36bd78">
 					<div class="fun-fact-text">
 						<span>Total Coins</span>
-						<h4>22</h4>
+						<h4><?php echo $coins; ?></h4>
 					</div>
 					<div class="fun-fact-icon"><i class="fa fa-hand-holding-usd"></i></div>
 				</div>
 				<div class="fun-fact" data-fun-fact-color="#b81b7f">
 					<div class="fun-fact-text">
 						<span>Total Orders</span>
-						<h4>4</h4>
+						<h4><?php echo $orders; ?></h4>
 					</div>
 					<div class="fun-fact-icon"><i class="icon-material-outline-business-center"></i></div>
 				</div>
 				<div class="fun-fact" data-fun-fact-color="#efa80f">
 					<div class="fun-fact-text">
 						<span>Reviews</span>
-						<h4>28</h4>
+						<h4><?php echo $tot_reviews; ?></h4>
 					</div>
 					<div class="fun-fact-icon"><i class="icon-material-outline-rate-review"></i></div>
 				</div>
@@ -145,62 +153,34 @@ s0.parentNode.insertBefore(s1,s0);
 					<div class="dashboard-box">
 						<div class="headline">
 							<h3><i class="icon-material-baseline-notifications-none"></i> Notifications</h3>
-							<button class="mark-as-read ripple-effect-dark" data-tippy-placement="left" title="Mark all as read">
-									<i class="icon-feather-check-square"></i>
+							<button class="mark-as-read ripple-effect-dark" data-tippy-placement="left"  title="Mark all as read" onclick="myfun();">
+							<i class="icon-feather-check-square"></i>
 							</button>
 						</div>
 						<div class="content">
 							<ul class="dashboard-box-list">
-								<li>
-									<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-									<span class="notification-text">
-										<strong>Michael Shannah</strong> applied for a job <a href="#">Full Stack Software Engineer</a>
-									</span>
-									<!-- Buttons -->
-									<div class="buttons-to-right">
-										<a href="#" class="button ripple-effect ico" title="Mark as read" data-tippy-placement="left"><i class="icon-feather-check-square"></i></a>
-									</div>
-								</li>
-								<li>
-									<span class="notification-icon"><i class=" icon-material-outline-gavel"></i></span>
-									<span class="notification-text">
-										<strong>Gilber Allanis</strong> placed a bid on your <a href="#">iOS App Development</a> project
-									</span>
-									<!-- Buttons -->
-									<div class="buttons-to-right">
-										<a href="#" class="button ripple-effect ico" title="Mark as read" data-tippy-placement="left"><i class="icon-feather-check-square"></i></a>
-									</div>
-								</li>
-								<li>
-									<span class="notification-icon"><i class="icon-material-outline-autorenew"></i></span>
-									<span class="notification-text">
-										Your job listing <a href="#">Full Stack Software Engineer</a> is expiring
-									</span>
-									<!-- Buttons -->
-									<div class="buttons-to-right">
-										<a href="#" class="button ripple-effect ico" title="Mark as read" data-tippy-placement="left"><i class="icon-feather-check-square"></i></a>
-									</div>
-								</li>
-								<li>
-									<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-									<span class="notification-text">
-										<strong>Sindy Forrest</strong> applied for a job <a href="#">Full Stack Software Engineer</a>
-									</span>
-									<!-- Buttons -->
-									<div class="buttons-to-right">
-										<a href="#" class="button ripple-effect ico" title="Mark as read" data-tippy-placement="left"><i class="icon-feather-check-square"></i></a>
-									</div>
-								</li>
-								<li>
-									<span class="notification-icon"><i class="icon-material-outline-rate-review"></i></span>
-									<span class="notification-text">
-										<strong>David Peterson</strong> left you a <span class="star-rating no-stars" data-rating="5.0"></span> rating after finishing <a href="#">Logo Design</a> task
-									</span>
-									<!-- Buttons -->
-									<div class="buttons-to-right">
-										<a href="#" class="button ripple-effect ico" title="Mark as read" data-tippy-placement="left"><i class="icon-feather-check-square"></i></a>
-									</div>
-								</li>
+						<?php 
+						$sql = "SELECT * FROM notification WHERE `uid`='$uid' ORDER BY id DESC LIMIT 5";
+						$result = mysqli_query($conn, $sql);
+
+						if (mysqli_num_rows($result) > 0) {
+						    // output data of each row
+						    while($row = mysqli_fetch_assoc($result)) {
+						     ?>
+						     <li>
+								<span class="notification-icon" ><i class="icon-material-outline-group"></i></span>
+								<span class="notification-text">
+									<strong><a href="../user-profile.php?uid=<?php echo $row['send_by']; ?>" target="_blank">[<?php echo $row['send_by']; ?>]</a></strong> <?php echo $row['notify']; ?>	
+								</span>
+								<!-- Buttons -->
+							</li>
+						     <?php
+						    }
+						} else {
+						    echo "<center> No Notifications </center>";
+						}
+
+						?>
 							</ul>
 						</div>
 					</div>
@@ -214,7 +194,15 @@ s0.parentNode.insertBefore(s1,s0);
 						</div>
 						<div class="content">
 							<ul class="dashboard-box-list">
-								<li>
+					<?php 
+						$sql = "SELECT * FROM orders, orders_complete WHERE `uid`='$uid' OR `uid`='$uid'";
+						$result = mysqli_query($conn, $sql);
+
+						if (mysqli_num_rows($result) > 0) {
+						    // output data of each row
+						    while($row = mysqli_fetch_assoc($result)) {
+						        ?>
+						        <li>
 									<div class="invoice-list-item">
 									<strong>Professional Plan</strong>
 										<ul>
@@ -224,52 +212,13 @@ s0.parentNode.insertBefore(s1,s0);
 										</ul>
 									</div>
 									<!-- Buttons -->
-									<div class="buttons-to-right">
-										<a href="pages-checkout-page.html" class="button">Finish Payment</a>
-									</div>
 								</li>
-								<li>
-									<div class="invoice-list-item">
-									<strong>Professional Plan</strong>
-										<ul>
-											<li><span class="paid">Paid</span></li>
-											<li>Order: #264</li>
-											<li>Date: 10/07/2019</li>
-										</ul>
-									</div>
-									<!-- Buttons -->
-									<div class="buttons-to-right">
-										<a href="pages-invoice-template.html" class="button gray">View Invoice</a>
-									</div>
-								</li>
-								<li>
-									<div class="invoice-list-item">
-									<strong>Professional Plan</strong>
-										<ul>
-											<li><span class="paid">Paid</span></li>
-											<li>Order: #211</li>
-											<li>Date: 12/06/2019</li>
-										</ul>
-									</div>
-									<!-- Buttons -->
-									<div class="buttons-to-right">
-										<a href="pages-invoice-template.html" class="button gray">View Invoice</a>
-									</div>
-								</li>
-								<li>
-									<div class="invoice-list-item">
-									<strong>Professional Plan</strong>
-										<ul>
-											<li><span class="paid">Paid</span></li>
-											<li>Order: #179</li>
-											<li>Date: 06/05/2019</li>
-										</ul>
-									</div>
-									<!-- Buttons -->
-									<div class="buttons-to-right">
-										<a href="pages-invoice-template.html" class="button gray">View Invoice</a>
-									</div>
-								</li>
+						        <?php
+						    }
+						} else {
+						    echo "0 results";
+						}
+					?>
 							</ul>
 						</div>
 					</div>
@@ -381,7 +330,15 @@ s0.parentNode.insertBefore(s1,s0);
 <script src="../js/magnific-popup.min.js"></script>
 <script src="../js/slick.min.js"></script>
 <script src="../js/custom.js"></script>
-
+<script type="text/javascript">
+	function myfun(){
+        $.ajax({
+            url: "../assets/notifynum.php",
+            type: "GET",
+            data: {uid: "<?php echo $uid; ?>"}, 
+        });
+    }
+</script>
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>
 // Snackbar for user status switcher
