@@ -413,7 +413,45 @@ include 'assets/show_result.php';
 					</div>
 				</div>
 
+<<<<<<< HEAD
+				<script type="text/javascript">
+					function userid()
+					{
+
+					
+					<?php
+						
+						$currentDateTime = date('Y-m-d');
+						$sql1="SELECT * FROM `report` WHERE `report_uid`='$prof_uid'";
+						$run=mysqli_query($conn,$sql1);
+						$num=mysqli_num_rows($run);
+						$result=mysqli_fetch_assoc($run);
+						
+						if($num == 0 )
+							{
+							$s="You Have Been Reported By SomeOne";
+							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$id1','$currentDateTime')";
+
+							$s="You are Reported by Someone ";
+							
+							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$prof_uid','$currentDateTime')";
+							mysqli_query($conn,$sql);
+							$sql1="INSERT INTO `notification`(`uid`, `notify`, `send_by`) VALUES ('$prof_uid','$s','$uid')";
+							mysqli_query($conn,$sql1);
+						}
+						else
+						{
+							?>
+							alert("You are Already Reported this User");
+							<?php
+						}
+						?>
+					}//akhil
+				</script>
+				<!-- Widget -->
+=======
 		
+>>>>>>> 727fbdb797c84d316fc1ccaf7aa0dc74ace1f027
 				<div class="sidebar-widget">
 					<h3>Attachments</h3>
 					<div class="attachments-container">
