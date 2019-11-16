@@ -104,29 +104,12 @@
 <!--2-->
 <!--3-->
 
-
 <div id="small-dialog-2" class="zoom-anim-dialog mfp-hide dialog-with-tabs" >
-
-		<!--Tabs -->
-		<div class="sign-in-form">
-	
-			<ul class="popup-tabs-nav">
-			</ul>
-	
-			<div class="popup-tabs-container-fluid">
-				<div class="container" ><br><h1><b>Title:</b>ABCDEFGHIJ ABCDEFGHIJ ABCDEFGHIJ ABCDEFGHIJ</h1><hr><br>
-					<textarea rows="10" cols="30" >agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster.
-						Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster.
-						Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster.
-						Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster.
-					</textarea>
-				</div>
-					<button class="button full-width button-sliding-icon ripple-effect" >Copy To Clipboard</button>
-				</div>
-	
-			</div>
-		</div>
+	<div class="sign-in-form">
+		
 	</div>
+</div>
+</div>
 
 <!-- Footer
 ================================================== -->
