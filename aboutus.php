@@ -16,10 +16,18 @@
 <link rel="stylesheet" href="css/colors/blue.css">
 
 
+
 <link href="https://fonts.googleapis.com/css?family=Cinzel|Inconsolata|Quattrocento|Roboto&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" href="about-us.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/aboutus.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -372,7 +380,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax" id="parallax-cta" style="background-image:url('images/hero.jpg');"></div>
+    <div class="parallax" id="parallax-cta" style="background-image:url(https://www.solodev.com/assets/hero/hero.jpg);"></div>
   </section>
   <section class="story-section company-sections ct-u-paddingBoth100 paddingBothHalf noTopMobilePadding" id="section">
     <div class="container text-center">
@@ -397,18 +405,18 @@
 
 		<div class="container">  
 		<div class="col-xs-3 col-md-4">    
-  <img src="images\user-avatar-small-01.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236"> 
+  <img src="E:\earn coin\images\user-avatar-small-01.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236"> 
   <h1>Akhil Kumar Srivastava</h1>
   <h3 style="margin-left: 20%;">Founder & CEO</h3>
   </div>
   <div class="col-xs-4 col-md-4">   
-   <img src="images\user-avatar-small-01.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 20%;"> 
+   <img src="E:\earn coin\images\user-avatar-small-01.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 20%;"> 
    <h1 style="margin-left: 30%;">Md Farhan Alam</h1>
    <h3 style="margin-left: 36%;">Co-Founder & CFO</h3>
 
    </div>
 <div class="col-xs-4 col-md-4"> 
-   <img src="images\user-avatar-small-01.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 40%;">
+   <img src="E:\earn coin\images\user-avatar-small-01.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 40%;">
    <h1 style="margin-left: 54%;">Sumit Kumar</h1> 
    <h3 style="margin-left: 53%;">Co-Founder & CTO</h3>
     </div>
@@ -574,7 +582,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
-					© 2019 <strong>Mayankal</strong>. All Rights Reserved.
+					© 2019 <strong>Hireo</strong>. All Rights Reserved.
 				</div>
 			</div>
 		</div>

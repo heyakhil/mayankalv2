@@ -146,9 +146,9 @@ include '../assets/show_result.php';
 						</div>
 						
 						<ul class="user-menu-small-nav">
-							<li><a href="dashboard/index.php"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
+							<li><a href="index.php"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
 							<li><a href="dashboard/dashboard-settings.php"><i class="icon-material-outline-settings"></i> Settings</a></li>
-							<li><a href="assets/logout.php?logoutl"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
+							<li><a href="../assets/logout.php?logout"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
 						</ul>
 
 						</div>

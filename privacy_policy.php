@@ -6,7 +6,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Hireo</title>
+<title>Mayankal</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -34,7 +34,7 @@
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="index-2.html"><img src="images/logo.png" alt=""></a>
+					<a href="index-2.html"><img src="images/logom.png" alt=""></a>
 				</div>
 
 				<!-- Main Navigation -->
@@ -430,7 +430,7 @@
 						<div class="footer-rows-left">
 							<div class="footer-row">
 								<div class="footer-row-inner footer-logo">
-									<img src="images/logo2.png" alt="">
+									<img src="images/logon.png" alt="">
 								</div>
 							</div>
 						</div>
@@ -496,12 +496,12 @@
 				<!-- Links -->
 				<div class="col-xl-2 col-lg-2 col-md-3">
 					<div class="footer-links">
-						<h3>For Candidates</h3>
+						<h3>For Users</h3>
 						<ul>
-							<li><a href="#"><span>Browse Jobs</span></a></li>
-							<li><a href="#"><span>Add Resume</span></a></li>
-							<li><a href="#"><span>Job Alerts</span></a></li>
-							<li><a href="#"><span>My Bookmarks</span></a></li>
+							<li><a href="user.php"><span>Top Users</span></a></li>
+							<li><a href="expert.php"><span>Top Experts</span></a></li>
+							<li><a href="blog.php"><span>Blogs</span></a></li>
+							<li><a href="top_web.php"><span>Top Website</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -509,12 +509,10 @@
 				<!-- Links -->
 				<div class="col-xl-2 col-lg-2 col-md-3">
 					<div class="footer-links">
-						<h3>For Employers</h3>
+						<h3>For Experts</h3>
 						<ul>
-							<li><a href="#"><span>Browse Candidates</span></a></li>
-							<li><a href="#"><span>Post a Job</span></a></li>
-							<li><a href="#"><span>Post a Task</span></a></li>
-							<li><a href="#"><span>Plans & Pricing</span></a></li>
+							<li><a href="#"><span>Auther Panel</span></a></li>
+							<li><a href="#"><span>Other Blogs</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -524,9 +522,10 @@
 					<div class="footer-links">
 						<h3>Helpful Links</h3>
 						<ul>
-							<li><a href="#"><span>Contact</span></a></li>
-							<li><a href="#"><span>Privacy Policy</span></a></li>
-							<li><a href="#"><span>Terms of Use</span></a></li>
+							<li><a href="contactUs.php"><span>Contact</span></a></li>
+							<li><a href="privacy_policy.php"><span>Privacy Policy</span></a></li>
+							<li><a href="disclaimer.php"><span>Disclaimer</span></a></li>
+							<li><a href="aboutus.php"><span>About Us</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -609,4 +608,4 @@ $('#snackbar-user-status label').click(function() {
 </body>
 
 <!-- Mirrored from www.vasterad.com/themes/hireo_082019/pages-pricing-plans.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Sep 2019 13:59:34 GMT -->
-</html>../
+</html>
