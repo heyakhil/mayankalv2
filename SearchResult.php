@@ -78,7 +78,7 @@
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="index-2.html"><img src="images/logo.png" alt=""></a>
+					<a href="index-2.html"><img src="images/logom.png" alt=""></a>
 				</div>
 
 				<!-- Main Navigation -->
@@ -584,7 +584,7 @@
 						<div class="footer-rows-left">
 							<div class="footer-row">
 								<div class="footer-row-inner footer-logo">
-									<img src="images/logo2.png" alt="">
+									<img src="images/logon.png" alt="">
 								</div>
 							</div>
 						</div>
