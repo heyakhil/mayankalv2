@@ -6,7 +6,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>mayankal</title>
+<title>Hireo</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -16,10 +16,18 @@
 <link rel="stylesheet" href="css/colors/blue.css">
 
 
+
 <link href="https://fonts.googleapis.com/css?family=Cinzel|Inconsolata|Quattrocento|Roboto&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 <link rel="stylesheet" href="about-us.css">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+<link rel="stylesheet" href="css/aboutus.css">
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -44,7 +52,7 @@
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="index-2.html"><img src="images/logom.png" alt=""></a>
+					<a href="index-2.html"><img src="images/logo.png" alt=""></a>
 				</div>
 
 				<!-- Main Navigation -->
@@ -372,7 +380,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax" id="parallax-cta" style="background-image:url('images/hero.jpg');"></div>
+    <div class="parallax" id="parallax-cta" style="background-image:url(https://www.solodev.com/assets/hero/hero.jpg);"></div>
   </section>
   <section class="story-section company-sections ct-u-paddingBoth100 paddingBothHalf noTopMobilePadding" id="section">
     <div class="container text-center">
@@ -397,18 +405,18 @@
 
 		<div class="container">  
 		<div class="col-xs-3 col-md-4">    
-  <img src="images\user-avatar-small-01.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236"> 
+  <img src="E:\earn coin\images\user-avatar-small-01.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236"> 
   <h1>Akhil Kumar Srivastava</h1>
   <h3 style="margin-left: 20%;">Founder & CEO</h3>
   </div>
   <div class="col-xs-4 col-md-4">   
-   <img src="images\user-avatar-small-01.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 20%;"> 
+   <img src="E:\earn coin\images\user-avatar-small-01.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 20%;"> 
    <h1 style="margin-left: 30%;">Md Farhan Alam</h1>
    <h3 style="margin-left: 36%;">Co-Founder & CFO</h3>
 
    </div>
 <div class="col-xs-4 col-md-4"> 
-   <img src="images\user-avatar-small-01.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 40%;">
+   <img src="E:\earn coin\images\user-avatar-small-01.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 40%;">
    <h1 style="margin-left: 54%;">Sumit Kumar</h1> 
    <h3 style="margin-left: 53%;">Co-Founder & CTO</h3>
     </div>
@@ -443,7 +451,7 @@
 						<div class="footer-rows-left">
 							<div class="footer-row">
 								<div class="footer-row-inner footer-logo">
-									<img src="images/logon.png" alt="">
+									<img src="images/logo2.png" alt="">
 								</div>
 							</div>
 						</div>
@@ -509,12 +517,12 @@
 				<!-- Links -->
 				<div class="col-xl-2 col-lg-2 col-md-3">
 					<div class="footer-links">
-							<h3>For Users</h3>
+						<h3>For Candidates</h3>
 						<ul>
-							<li><a href="user.php"><span>Top Users</span></a></li>
-							<li><a href="expert.php"><span>Top Experts</span></a></li>
-							<li><a href="blog.php"><span>Blogs</span></a></li>
-							<li><a href="top_web.php"><span>Top Website</span></a></li>
+							<li><a href="#"><span>Browse Jobs</span></a></li>
+							<li><a href="#"><span>Add Resume</span></a></li>
+							<li><a href="#"><span>Job Alerts</span></a></li>
+							<li><a href="#"><span>My Bookmarks</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -522,10 +530,12 @@
 				<!-- Links -->
 				<div class="col-xl-2 col-lg-2 col-md-3">
 					<div class="footer-links">
-						<h3>For Experts</h3>
+						<h3>For Employers</h3>
 						<ul>
-							<li><a href="#"><span>Auther Panel</span></a></li>
-							<li><a href="#"><span>Other Blogs</span></a></li>
+							<li><a href="#"><span>Browse Candidates</span></a></li>
+							<li><a href="#"><span>Post a Job</span></a></li>
+							<li><a href="#"><span>Post a Task</span></a></li>
+							<li><a href="#"><span>Plans & Pricing</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -535,10 +545,9 @@
 					<div class="footer-links">
 						<h3>Helpful Links</h3>
 						<ul>
-							<li><a href="contactUs.php"><span>Contact</span></a></li>
-							<li><a href="privacy_policy.php"><span>Privacy Policy</span></a></li>
-							<li><a href="disclaimer.php"><span>Disclaimer</span></a></li>
-							<li><a href="aboutus.php"><span>About Us</span></a></li>
+							<li><a href="#"><span>Contact</span></a></li>
+							<li><a href="#"><span>Privacy Policy</span></a></li>
+							<li><a href="#"><span>Terms of Use</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -573,7 +582,7 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
-					© 2019 <strong>Mayankal</strong>. All Rights Reserved.
+					© 2019 <strong>Hireo</strong>. All Rights Reserved.
 				</div>
 			</div>
 		</div>
