@@ -57,7 +57,7 @@
 				$sql="SELECT * FROM `orders` WHERE `uid`='$uid' ORDER BY id desc";
 				$run=mysqli_query($conn,$sql);
 				$num=mysqli_num_rows($run);
-
+				if($num>0){
 				$i =1;
 				while ($result=mysqli_fetch_assoc($run)) {
 					?>
@@ -72,12 +72,12 @@
 								<!-- Details -->
 								<div class="task-listing-description">
 									<div class="row">
-										<div class="col-md-10"><h2 class="task-listing-title">Category:- <?php echo  strtoupper($result['post_cat']); ?></h2></div>
+										<div class="col-md-10"><h2 class="task-listing-title"><b><u>Category</u>:-</b><?php echo  strtoupper($result['post_cat']); ?></h2></div>
 										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="WriteContent(this.id);" id="<?php echo $result['order_id'] . " " . $result['orderof_uid']; ?>"><i class="fa fa-edit"></i></button></div>
 										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="deltedContent(this.id);" id="<?php echo $result['order_id'] . " " . $result['orderof_uid'];?>"><i class="fa fa-trash"></i></button></div>
 									</div>
 									<br>
-									<h3 class="task-listing-title">Order Id: <?php echo $result['order_id']; ?></h3>
+									<h3 class="task-listing-title">Order Id: <?php echo $result['order_id']; ?><span style="margin-left: 40px;">Coins: &nbsp;<?php echo $result['coins']; ?></span></h3>
 										<?php //$orderuid = $result['order_id']; 
 											//$customer = $result['orderof_uid']; ?>
 									<p><b style="color:red; font-size: 22px;" >Note:- </b><?php echo $result['imp_not'];  ?></p><br>
@@ -93,6 +93,9 @@
 				<?php
 					$i++;
 					}
+				}else{
+					echo "<center><h1>No Orders is there</h1></center>";
+				}
 							//sumit
 				?>
 			
@@ -203,12 +206,12 @@
 				<!-- Links -->
 				<div class="col-xl-2 col-lg-2 col-md-3">
 					<div class="footer-links">
-						<h3>For Candidates</h3>
+						<h3>For Users</h3>
 						<ul>
-							<li><a href="#"><span>Browse Jobs</span></a></li>
-							<li><a href="#"><span>Add Resume</span></a></li>
-							<li><a href="#"><span>Job Alerts</span></a></li>
-							<li><a href="#"><span>My Bookmarks</span></a></li>
+							<li><a href="user.php"><span>Top Users</span></a></li>
+							<li><a href="expert.php"><span>Top Experts</span></a></li>
+							<li><a href="blog.php"><span>Blogs</span></a></li>
+							<li><a href="top_web.php"><span>Top Website</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -216,12 +219,10 @@
 				<!-- Links -->
 				<div class="col-xl-2 col-lg-2 col-md-3">
 					<div class="footer-links">
-						<h3>For Employers</h3>
+						<h3>For Experts</h3>
 						<ul>
-							<li><a href="#"><span>Browse Candidates</span></a></li>
-							<li><a href="#"><span>Post a Job</span></a></li>
-							<li><a href="#"><span>Post a Task</span></a></li>
-							<li><a href="#"><span>Plans & Pricing</span></a></li>
+							<li><a href="#"><span>Auther Panel</span></a></li>
+							<li><a href="#"><span>Other Blogs</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -231,9 +232,10 @@
 					<div class="footer-links">
 						<h3>Helpful Links</h3>
 						<ul>
-							<li><a href="#"><span>Contact</span></a></li>
-							<li><a href="#"><span>Privacy Policy</span></a></li>
-							<li><a href="#"><span>Terms of Use</span></a></li>
+							<li><a href="contactUs.php"><span>Contact</span></a></li>
+							<li><a href="privacy_policy.php"><span>Privacy Policy</span></a></li>
+							<li><a href="disclaimer.php"><span>Disclaimer</span></a></li>
+							<li><a href="aboutus.php"><span>About Us</span></a></li>
 						</ul>
 					</div>
 				</div>

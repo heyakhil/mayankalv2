@@ -12,7 +12,7 @@ include 'assets/check.php';
 		    //print_r($val[1]);
 		}
 	} else {
-	echo "0 results";
+	echo "";
 	}
 
 

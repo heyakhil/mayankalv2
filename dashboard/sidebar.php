@@ -45,7 +45,7 @@
 							<li><a href="#"><i class="icon-material-outline-assignment"></i>Track Your Order</a>
 								<ul>
 									<li onclick="orderseen(this.id);" id="<?php echo $uid; ?>"><a href="completed.php">Completed Orders <span class="nav-tag"><?php echo $all_num; ?></span></a></li>
-									<li><a href="dashboard-my-active-bids.html">Deleted Orders</a></li>
+									<li><a href="deleted.php">Deleted Orders</a></li>
 								</ul>	
 							</li>
 						</ul>

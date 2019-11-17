@@ -72,7 +72,7 @@ $sql = "SELECT * FROM coins_earn WHERE `uid`='".$_SESSION['uid']."'";
 					<div class="header-notifications">
 
 						<!-- Trigger -->
-						<div class="header-notifications-trigger" id="noti" onclick="myfun()">
+						<div class="header-notifications-trigger" id="noti" onclick="myfun();">
 							<a href="#"><i class="icon-feather-bell"></i><span>
 							';
 
@@ -161,12 +161,12 @@ $sql = "SELECT * FROM coins_earn WHERE `uid`='".$_SESSION['uid']."'";
 								</div>
 								
 								<!-- User Status Switcher -->
-								<div class="status-switch" id="snackbar-user-status">
-									<label class="user-online current-status">Online</label>
-									<label class="user-invisible">Invisible</label>
+								 <!--<div class="status-switch" id="snackbar-user-status">-->
+									<!--<label class="user-online current-status">Online</label>
+									<label class="user-invisible">Invisible</label>-->
 									<!-- Status Indicator -->
-									<span class="status-indicator" aria-hidden="true"></span>
-								</div>	
+									<!--<span class="status-indicator" aria-hidden="true"></span>
+								</div>-->	
 						</div>
 						
 						<ul class="user-menu-small-nav">
