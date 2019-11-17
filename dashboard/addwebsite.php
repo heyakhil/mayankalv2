@@ -1,3 +1,7 @@
+<?php 
+	$pass = substr(md5(uniqid(mt_rand(), true)) , 0, 26);
+
+ ?>
 <!doctype html>
 <html>
 <head>
@@ -61,6 +65,10 @@
 				<div class="form-group">
 					<label for="niche">Niche:</label>
 					<input type="text"  name="niche" class="form-control">
+				</div>
+				<div class="form-group">
+					<label for="niche">Verify your website : <b>(Paste this to your Homepage of your Website)</b></label>
+					<textarea rows="2" cols="150" name="ver_code" value="<?php echo $pass; ?>"><meta name="name" content="<?php echo $pass; ?>"></textarea>
 				</div>
 				
 				<div class="container btn">
