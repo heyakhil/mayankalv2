@@ -6,7 +6,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Mayankal - About Us</title>
+<title>Mayankal</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -20,11 +20,13 @@
 <link href="https://fonts.googleapis.com/css?family=Cinzel|Inconsolata|Quattrocento|Roboto&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-<link rel="stylesheet" href="about-us.css">
+<!-- <link rel="stylesheet" href="about-us.css"> -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="aboutus.css">
+<link rel="stylesheet" href="css/aboutus.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
+
+ 
+
 </head>
 <body>
 
@@ -34,9 +36,8 @@
 <!-- Header Container
 ================================================== -->
 <header id="header-container" class="fullwidth">
-
-	<!-- Header -->
-	<?php include 'menu.php'; ?>
+<?php include 'menu.php';?>
+	
 	<!-- Header / End -->
 
 </header>
@@ -51,7 +52,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax" id="parallax-cta" style="background-image:url('images/hero.jpg');"></div>
+    <div class="parallax" id="parallax-cta" style="background-image:url(https://www.solodev.com/assets/hero/hero.jpg);"></div>
   </section>
   <section class="story-section company-sections ct-u-paddingBoth100 paddingBothHalf noTopMobilePadding" id="section">
     <div class="container text-center">
@@ -71,9 +72,6 @@
 <div class="container">
 	<div class="col-xs-6 col-md-12">
 		<h1 style="font-size:30px"><b>Our Team</b></h1><br><hr><br><br><br>
-	
-		
-
 		<div class="container">  
 		<div class="col-xs-3 col-md-4">    
   <img src="images/download.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236"> 
@@ -84,7 +82,6 @@
    <img src="images/download.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 20%;"> 
    <h1 style="margin-left: 30%;">Md Farhan Alam</h1>
    <h3 style="margin-left: 36%;">Co-Founder & CFO</h3>
-
    </div>
 <div class="col-xs-4 col-md-4"> 
    <img src="images/download.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 40%;">
@@ -101,7 +98,6 @@
    
 </div>
 </div>
-
 
 <div class="margin-top-80"></div>
 
@@ -227,13 +223,8 @@
 					<div class="footer-links">
 						<h3>Account</h3>
 						<ul>
-					<?php if (isset($_SESSION['uid'])) {
-						echo '<li><a href="#"><span>Log In</span></a></li>
-							<li><a href="#"><span>My Account</span></a></li>';
-					}else{
-						echo '<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>Log In</span></a></li>
-					<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>My Account</span></a></li>';
-					} ?>
+							<li><a href="#"><span>Log In</span></a></li>
+							<li><a href="#"><span>My Account</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -272,7 +263,7 @@
 
 <!-- Scripts
 ================================================== -->
-<!-- <script src="js/jquery-3.4.1.min.js"></script> -->
+<script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/jquery-migrate-3.1.0.min.html"></script>
 <script src="js/mmenu.min.js"></script>
 <script src="js/tippy.all.min.js"></script>
