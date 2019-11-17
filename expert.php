@@ -66,7 +66,7 @@
 							<!-- Avatar -->
 							<div class="freelancer-avatar">
 								<div class="verified-badge"></div>
-								<a href="author/expertprofile.php?authid=<?php echo $result['auth_id']; ?>"><img src="images/<?php echo $pp; ?>" alt=""></a>
+								<a href="expertprofile.php?authid=<?php echo $result['auth_id']; ?>"><img src="images/<?php echo $pp; ?>" alt=""></a>
 							</div>
 
 							<!-- Name -->
@@ -90,7 +90,7 @@
 								<li>Words <strong>400-500/word</strong></li>
 							</ul>
 						</div>
-						<a href="author/expertprofile.php?authid=<?php echo $result['auth_id']; ?>" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
+						<a href="expertprofile.php?authid=<?php echo $result['auth_id']; ?>" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
 					</div>
 				</div>
 				

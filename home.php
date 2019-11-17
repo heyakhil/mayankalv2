@@ -330,7 +330,7 @@
 								
 								<!-- Avatar -->
 								<div class="freelancer-avatar">
-									<a href="single-freelancer-profile.html"><img src="images/<?php  echo $pp; ?>" alt=""></a>
+									<a href="expertprofile.php?"><img src="images/<?php  echo $pp; ?>" alt=""></a>
 								</div>
 
 								<!-- Name -->
@@ -355,7 +355,7 @@
 									<li>Job Status <strong>Author</strong></li>
 								</ul>
 							</div>
-							<a href="author/expertprofile.php?authid=<?php echo $result['auth_id']; ?>" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
+							<a href="expertprofile.php?authid=<?php echo $result['auth_id']; ?>" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
 						</div>
 					</div>
 					<!-- Freelancer / End -->

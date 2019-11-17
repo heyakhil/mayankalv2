@@ -1,10 +1,10 @@
 <!doctype html>
 <html lang="en">
 <?php  
-	include '../assets/check.php';
-	include '../assets/connect.php';
-	include 'show_result_auth.php';
-	include '../assets/notification.php';
+	include 'assets/check.php';
+	include 'assets/connect.php';
+	include 'author/show_result_auth.php';
+	include 'assets/notification.php';
 
 
 	// for authors pic and other details
@@ -18,10 +18,10 @@
 			$expert=$row['experties'];
 			$pic_name = $row['profile_pic'];
 			if ($pic_name == "") {
-				$pp = "../images/download.jpg";
+				$pp = "images/download.jpg";
 		
 			}else{
-					$pp = "../images/$pic_name";
+				$pp = "images/".$pic_name;
 		
 			}
 			$skill = explode(",", $row['skills']);	
@@ -44,8 +44,8 @@
 
 <!-- CSS
 ================================================== -->
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/colors/blue.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/colors/blue.css">
 
 </head>
 <body>
@@ -56,13 +56,13 @@
 <!-- Header Container
 ================================================== -->
 <header id="header-container" class="fullwidth">
-	<?php include '../menu.php'; ?>
-	</header>
+	<?php include 'menu.php'; ?>
+</header>
 <div class="clearfix"></div>
 <!-- Header Container / End -->
 <!-- Titlebar
 ================================================== -->
-<div class="single-page-header freelancer-header" data-background-image="../images/single-freelancer.jpg">
+<div class="single-page-header freelancer-header" data-background-image="images/single-freelancer.jpg">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-12">
@@ -157,7 +157,7 @@
 				
 
 				<!-- Button -->
-				<a href="new_order_auth.php?psu=<?php echo $uid1; ?>" class="apply-now-button margin-bottom-50">Place Order <i class="icon-material-outline-arrow-right-alt"></i></a>
+				<a href="author/new_order_auth.php?psu=<?php echo $uid1; ?>" class="apply-now-button margin-bottom-50">Place Order <i class="icon-material-outline-arrow-right-alt"></i></a>
 
 				<!-- Freelancer Indicators -->
 				<div class="sidebar-widget">
@@ -326,10 +326,10 @@
 					<div class="footer-links">
 							<h3>For Users</h3>
 							<ul>
-								<li><a href="../user.php"><span>Top Users</span></a></li>
-								<li><a href="../expert.php"><span>Top Experts</span></a></li>
-								<li><a href="../blog.php"><span>Blogs</span></a></li>
-								<li><a href="../top_web.php"><span>Top Website</span></a></li>
+								<li><a href="user.php"><span>Top Users</span></a></li>
+								<li><a href="expert.php"><span>Top Experts</span></a></li>
+								<li><a href="blog.php"><span>Blogs</span></a></li>
+								<li><a href="top_web.php"><span>Top Website</span></a></li>
 							</ul>
 					</div>
 				</div>
@@ -425,7 +425,7 @@
 					<h3>What is it like to work at Acodia?</h3>
 					
 				<!-- Form -->
-				<form method="post" id="leave-company-review-form" action="add_review_auth.php?send=<?php echo $uid ?> &receive=<?php echo $uid1; ?>">
+				<form method="post" id="leave-company-review-form" action="author/add_review_auth.php?send=<?php echo $uid ?> &receive=<?php echo $uid1; ?>">
 
 					<!-- Leave Rating -->
 					<div class="clearfix"></div>
@@ -484,19 +484,19 @@
 
 <!-- Scripts
 ================================================== -->
-<script src="../js/jquery-3.4.1.min.js"></script>
-<script src="../js/jquery-migrate-3.1.0.min.html"></script>
-<script src="../js/mmenu.min.js"></script>
-<script src="../js/tippy.all.min.js"></script>
-<script src="../js/simplebar.min.js"></script>
-<script src="../js/bootstrap-slider.min.js"></script>
-<script src="../js/bootstrap-select.min.js"></script>
-<script src="../js/snackbar.js"></script>
-<script src="../js/clipboard.min.js"></script>
-<script src="../js/counterup.min.js"></script>
-<script src="../js/magnific-popup.min.js"></script>
-<script src="../js/slick.min.js"></script>
-<script src="../js/custom.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery-migrate-3.1.0.min.html"></script>
+<script src="js/mmenu.min.js"></script>
+<script src="js/tippy.all.min.js"></script>
+<script src="js/simplebar.min.js"></script>
+<script src="js/bootstrap-slider.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/snackbar.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script src="js/counterup.min.js"></script>
+<script src="js/magnific-popup.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/custom.js"></script>
 
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>
@@ -531,7 +531,7 @@ $('.copy-url-button').click(function() {
 <script type="text/javascript">
 	function myfun(){
         $.ajax({
-            url: "../assets/notifynum.php",
+            url: "assets/notifynum.php",
             type: "GET",
             data: {uid: "<?php echo $uid; ?>"},
         });
@@ -544,7 +544,7 @@ $('.copy-url-button').click(function() {
 		 console.log(name);
  		$.ajax({
 
- 			url : 'delbook.php',
+ 			url : 'author/delbook.php',
  			type : 'GET',
  			data : {cid : name},
 
@@ -560,7 +560,7 @@ $('.copy-url-button').click(function() {
 		 console.log(name);
  		$.ajax({
 
- 			url : 'booking.php',
+ 			url : 'author/booking.php',
  			type : 'GET',
  			data : {addcid : name},
 
@@ -572,43 +572,7 @@ $('.copy-url-button').click(function() {
  	}
  </script>
 
- <script type="text/javascript">
- 	function traffic(){
-        $.ajax({
-            url: "../assets/visitor.php",
-            type: "GET",
-            data: {uid: "<?php echo $uid; ?>"},
 
-            success: function(data){
- 				console.log('Welcome');
- 			}
-        });
-    }
-
-    function setCookie(name,value,days) {
-    var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-	}
-
-	function getCookie(name) {
-	    var nameEQ = name + "=";
-	    var ca = document.cookie.split(';');
-	    for(var i=0;i < ca.length;i++) {
-	        var c = ca[i];
-	        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-	        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-	    }
-	    return null;
-	}
-	
-    
-			
- </script>
 </body>
 
 <!-- Mirrored from www.vasterad.com/themes/hireo_082019/single-freelancer-profile.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Sep 2019 13:59:11 GMT -->
