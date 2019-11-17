@@ -359,7 +359,7 @@ $sql = "SELECT * FROM coins_earn WHERE `uid`='".$_SESSION['uid']."'";
 		document.getElementById('tweb').classList.add("current");
 		console.log("done");
 	}else{
-		window.open("error404.php");
+		//window.open("error404.php");
 	}
 
 
