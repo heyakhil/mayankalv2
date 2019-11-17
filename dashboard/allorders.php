@@ -72,12 +72,12 @@
 								<!-- Details -->
 								<div class="task-listing-description">
 									<div class="row">
-										<div class="col-md-10"><h2 class="task-listing-title">Category:- <?php echo  strtoupper($result['post_cat']); ?></h2></div>
+										<div class="col-md-10"><h2 class="task-listing-title"><b><u>Category</u>:-</b><?php echo  strtoupper($result['post_cat']); ?></h2></div>
 										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="WriteContent(this.id);" id="<?php echo $result['order_id'] . " " . $result['orderof_uid']; ?>"><i class="fa fa-edit"></i></button></div>
 										<div class="col-md-1" style="margin-left: 0px;"><button class="button" onclick="deltedContent(this.id);" id="<?php echo $result['order_id'] . " " . $result['orderof_uid'];?>"><i class="fa fa-trash"></i></button></div>
 									</div>
 									<br>
-									<h3 class="task-listing-title">Order Id: <?php echo $result['order_id']; ?></h3>
+									<h3 class="task-listing-title">Order Id: <?php echo $result['order_id']; ?><span style="margin-left: 40px;">Coins: &nbsp;<?php echo $result['coins']; ?></span></h3>
 										<?php //$orderuid = $result['order_id']; 
 											//$customer = $result['orderof_uid']; ?>
 									<p><b style="color:red; font-size: 22px;" >Note:- </b><?php echo $result['imp_not'];  ?></p><br>

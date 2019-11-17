@@ -32,18 +32,31 @@
   </form>
 </div>
   </div>
-  <div class="col-sm-1 col-md-1" style="border-left: 2px solid black; height: 700px;">
+  <div class="col-sm-4 col-md-4" style="border-left: 2px solid black; height: 700px;">
 
-    <h2><b>Category:</b>Entertainment</h2>
-    <h2><b>OrderId:</b>12345<h2>
-    <h2><b>Notes:</b>==============</h2>
-    <h2><b>No of Words:</b>500</h2>
-    <h2><b>Discription:</b>==============</h2>
+  <?php 
+
+  $sql = "SELECT * FROM orders WHERE `order_id`='$or_id'";
+  $result = mysqli_query($conn, $sql);
+
+  if (mysqli_num_rows($result) > 0) {
+      // output data of each row
+      while($row = mysqli_fetch_assoc($result)) {
+          ?>
+          <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>Catagory</u></b> :</span> <?php echo strtoupper($row['post_cat']); ?></p>
+          <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>Order Id</u></b> :</span> <?php echo $row['order_id']; ?></p>
+          <p style="font-size: 20px;"><span style="font-size: 25px; color: red;"><b><u>Notes</u></b> :</span> <?php echo $row['imp_not']; ?></p>
+          <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>No. of Words</u></b> :</span> <?php echo $row['min_word']; ?></p>
+          <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>Description</u></b> :</span> <?php echo $row['descrip']; ?></p>
+          <?php
+      }
+  } else {
+      echo "0 results";
+  }
+
+
+   ?>
     
-   
-
-
-
   </div>
  
 

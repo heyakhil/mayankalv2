@@ -1,6 +1,8 @@
 <?php 
-	include_once 'connect.php';
-	include_once 'check.php';
+	//error_reporting(0);
+	include 'connect.php';
+	include 'check.php';
+
 	$sql = "SELECT * FROM coins_earn WHERE `uid`='$uid'";
 	$result = mysqli_query($conn, $sql);
 
