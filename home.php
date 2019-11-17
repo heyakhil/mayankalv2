@@ -330,7 +330,7 @@
 								
 								<!-- Avatar -->
 								<div class="freelancer-avatar">
-									<a href="expertprofile.php?"><img src="images/<?php  echo $pp; ?>" alt=""></a>
+									<a href="expertprofile.php?authid=<?php echo $result['auth_id']; ?>"><img src="images/<?php  echo $pp; ?>" alt=""></a>
 								</div>
 
 								<!-- Name -->
