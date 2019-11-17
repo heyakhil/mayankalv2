@@ -20,6 +20,7 @@ error_reporting(0);
 		$order_id = date("d-m").mt_rand(1000, 99999).date("Y");
 		$coins_red = round($min_word/15);
 		$put_coins = round(($coins_red*40)/100);
+		$dates = date("Y-m-d");
 		if ($coins_red>=30) {
 		if ($coins<$coins_red) {
             ?>
@@ -29,7 +30,7 @@ error_reporting(0);
             </script>
             <?php
         }else{
-        $sql = "INSERT INTO `orders`(`uid`, `orderof_uid`, `post_cat`, `min_word`, `imp_not`, `descrip`, `order_id`, `coins`) VALUES ('$uuid','$uid','$cata','$min_word','$imp_n','$describe','$order_id', '$put_coins')";
+        $sql = "INSERT INTO `orders`(`uid`, `orderof_uid`, `post_cat`, `min_word`, `imp_not`, `descrip`, `order_id`, `coins`, `dates`) VALUES ('$uuid','$uid','$cata','$min_word','$imp_n','$describe','$order_id', '$put_coins', '$dates')";
 		$msg = "You have a new order of ".$cata." catagory please check it out";
         if (mysqli_query($conn, $sql)) {
             notification($uuid, $msg, $uid);

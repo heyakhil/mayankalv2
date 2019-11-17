@@ -57,7 +57,7 @@
 				$sql="SELECT * FROM `orders` WHERE `uid`='$uid' ORDER BY id desc";
 				$run=mysqli_query($conn,$sql);
 				$num=mysqli_num_rows($run);
-
+				if($num>0){
 				$i =1;
 				while ($result=mysqli_fetch_assoc($run)) {
 					?>
@@ -93,6 +93,9 @@
 				<?php
 					$i++;
 					}
+				}else{
+					echo "<center><h1>No Orders is there</h1></center>";
+				}
 							//sumit
 				?>
 			
