@@ -47,7 +47,7 @@
 				<!-- Breadcrumbs -->
 				<nav id="breadcrumbs" class="dark">
 					<ul>
-						<li><a href="#">Home</a></li>
+						<li><a href="../home.php">Home</a></li>
 						<li><a href="#">Earn Coins</a></li>
 						
 					</ul>

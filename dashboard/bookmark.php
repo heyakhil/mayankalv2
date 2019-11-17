@@ -12,7 +12,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Hireo</title>
+<title>Mayankla</title>
 <meta charset="utf-8">../
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -61,8 +61,8 @@
 				<!-- Breadcrumbs -->
 				<nav id="breadcrumbs" class="dark">
 					<ul>
-						<li><a href="#">Home</a></li>
-						<li><a href="#">Dashboard</a></li>
+						<li><a href="../home.php">Home</a></li>
+						<li><a href="index.php">Dashboard</a></li>
 						<li>Bookmarks</li>
 					</ul>
 				</nav>
