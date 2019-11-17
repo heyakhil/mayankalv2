@@ -97,7 +97,7 @@
 						<div class="footer-rows-left">
 							<div class="footer-row">
 								<div class="footer-row-inner footer-logo">
-									<img src="images/logo2.png" alt="">
+									<img src="images/logon.png" alt="">
 								</div>
 							</div>
 						</div>
