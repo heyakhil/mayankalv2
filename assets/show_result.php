@@ -8,10 +8,11 @@
 	if (mysqli_num_rows($result) > 0) {
 	    // output data of each row
 	    while($row = mysqli_fetch_assoc($result)) {
-	        $pic_name = $row['profile_pic'];
+			$pic_name = $row['profile_pic'];
+			echo $pic_name."hello";
 	    }
 	} else {
-	    echo "0 results";
+	    echo "";
 	}
 	if ($pic_name == "") {
 		$pp = "../images/download.jpg";

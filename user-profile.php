@@ -479,19 +479,19 @@ include 'assets/notification.php';
 						    //print_r($val[1]);
 						}
 					} else {
-					echo "0 results";
+					echo "";
 					}
 					 ?>
 					<!-- Bookmark Button -->
 					
 					<?php if (in_array($prof_uid, $val)) {
-						echo '<button class="bookmark-button margin-bottom-25 bookmarked" id="'.$prof_uid.'" onclick="del(this.id)">
+						echo '<button class="bookmark-button margin-bottom-25 bookmarked" id="'.$prof_uid.'" onclick="del(this.id);">
 						<span class="bookmark-icon"></span>
 						<span class="bookmark-text">Bookmark</span>
 						<span class="bookmarked-text">Bookmarked</span>
 					</button>';
 					}else{
-						echo '<button class="bookmark-button margin-bottom-25" id="'.$prof_uid.'" onclick="add(this.id)">
+						echo '<button class="bookmark-button margin-bottom-25" id="'.$prof_uid.'" onclick="add(this.id);">
 						<span class="bookmark-icon"></span>
 						<span class="bookmark-text">Bookmark</span>
 						<span class="bookmarked-text">Bookmarked</span>
