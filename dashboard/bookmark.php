@@ -10,10 +10,10 @@
 <!-- Mirrored from www.vasterad.com/themes/hireo_082019/dashboard-bookmarks.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Sep 2019 13:59:14 GMT -->
 <head>
 
-<!-- Basic Page Needs
-================================================== -->
+<!-- Basic Page Needs-->
 <title>Mayankla</title>
-<meta charset="utf-8">../
+<meta charset="utf-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- CSS

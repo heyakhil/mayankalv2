@@ -10,6 +10,7 @@
 	$pa=$_POST['PA'];
 	$catag=$_POST['catagory'];
 	$niche=$_POST['niche'];
+	$verify_code = $_POST['ver_code'];
 
 	if ($traf >= 1000000) {
 		$ntraffic = 10;
@@ -78,7 +79,7 @@
 	}
 
 
-	$sql="INSERT INTO `web_info`(`web_uid`, `web_name`, `web_link`, `web_traffic`, `web_post`, `da`, `pa`, `catagory`, `niche`) VALUES ('$uid', '$webname','$link','$ntraffic','$no_post','$nda','$npa','$catag','$niche')";
+	$sql="INSERT INTO `web_info`(`web_uid`, `web_name`, `web_link`, `web_traffic`, `web_post`, `da`, `pa`, `catagory`, `niche`, `code`) VALUES ('$uid', '$webname','$link','$ntraffic','$no_post','$nda','$npa','$catag','$niche', '$verify_code')";
 	$run=mysqli_query($conn,$sql);
 	if ($run) {
 		$sql = "SELECT no_web FROM user_info WHERE `uid`='$uid'";

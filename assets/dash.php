@@ -6,7 +6,6 @@
 	$result = mysqli_query($conn, $sql);
 	$orders =mysqli_num_rows($result);
 
-	echo $orders;
 
 	$sql = "SELECT * FROM review WHERE `reciver_uid`='$uid'";
 	$result = mysqli_query($conn, $sql);

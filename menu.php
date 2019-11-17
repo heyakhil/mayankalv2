@@ -72,7 +72,7 @@ $sql = "SELECT * FROM coins_earn WHERE `uid`='".$_SESSION['uid']."'";
 					<div class="header-notifications">
 
 						<!-- Trigger -->
-						<div class="header-notifications-trigger" id="noti" onclick="myfun()">
+						<div class="header-notifications-trigger" id="noti" onclick="myfun();">
 							<a href="#"><i class="icon-feather-bell"></i><span>
 							';
 
