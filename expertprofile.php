@@ -3,7 +3,7 @@
 <?php  
 	include 'assets/check.php';
 	include 'assets/connect.php';
-	include 'author/show_result_auth.php';
+
 	include 'assets/notification.php';
 
 

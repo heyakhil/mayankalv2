@@ -48,7 +48,7 @@
 		$tags = $tgl;
 	}
 	if ($tgl == "") {
-		$tags = "--Tagline--";
+		$tags = " hello";
 	}else{
 		$tags = $tgl;
 	}

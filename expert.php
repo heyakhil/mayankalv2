@@ -75,7 +75,7 @@
 								<span><?php echo $result['experties'];   ?></span>
 								<!-- Rating -->
 								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="4.9"></div>
+									<div class="star-rating" data-rating="<?php echo $result['rating']; ?>"></div>
 								</div>
 							</div>
 						</div>
@@ -142,7 +142,7 @@
 								<div class="footer-row-inner">
 									<ul class="footer-social-links">
 										<li>
-											<a href="#" title="Facebook" data-tippy-placement="bottom" data-tippy-theme="light">
+											<a href="https://m.facebook.com/Mayankal-Inc-101756954634208/?fref=none&ref=opera_speed_dial" title="Facebook" data-tippy-placement="bottom" data-tippy-theme="light">
 												<i class="icon-brand-facebook-f"></i>
 											</a>
 										</li>
@@ -210,8 +210,8 @@
 					<div class="footer-links">
 						<h3>For Experts</h3>
 						<ul>
-							<li><a href="#"><span>Auther Panel</span></a></li>
-							<li><a href="#"><span>Other Blogs</span></a></li>
+							<li><a href="../mayankal_admin/index.php"><span>Auther Panel</span></a></li>
+							<li><a href="https://filmyzilla-hollywood-movies-in-hindi.blogspot.com"><span>Other Blogs</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -231,13 +231,13 @@
 
 				<!-- Links -->
 				<div class="col-xl-2 col-lg-2 col-md-3">
-					<div class="footer-links">
+					<!-- <div class="footer-links">
 						<h3>Account</h3>
 						<ul>
 							<li><a href="#"><span>Log In</span></a></li>
 							<li><a href="#"><span>My Account</span></a></li>
 						</ul>
-					</div>
+					</div> -->
 				</div>
 
 				<!-- Newsletter -->

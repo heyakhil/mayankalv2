@@ -393,13 +393,14 @@ s0.parentNode.insertBefore(s1,s0);
 				<!-- Section Headline -->
 				<div class="section-headline margin-top-0 margin-bottom-45">
 					<h3>From The Blog</h3>
-					<a href="pages-blog.html" class="headline-link">View Blog</a>
+					<a href="blog.php" class="headline-link">View Blog</a>
 				</div>
 
 				<div class="row">
 					<!-- Blog Post Item -->
 					<div class="col-xl-4">
-						<a href="pages-blog-post.html" class="blog-compact-item-container">
+						<a href="blog.php
+						" class="blog-compact-item-container">
 							<div class="blog-compact-item">
 								<img src="images/blog-01a.jpg" alt="">
 								<span class="blog-item-tag">Tips</span>
@@ -417,7 +418,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 					<!-- Blog Post Item -->
 					<div class="col-xl-4">
-						<a href="pages-blog-post.html" class="blog-compact-item-container">
+						<a href="blog.php" class="blog-compact-item-container">
 							<div class="blog-compact-item">
 								<img src="images/blog-02a.jpg" alt="">
 								<span class="blog-item-tag">Recruiting</span>
@@ -435,7 +436,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 					<!-- Blog Post Item -->
 					<div class="col-xl-4">
-						<a href="pages-blog-post.html" class="blog-compact-item-container">
+						<a href="blog.php" class="blog-compact-item-container">
 							<div class="blog-compact-item">
 								<img src="images/blog-03a.jpg" alt="">
 								<span class="blog-item-tag">Marketing</span>
@@ -582,7 +583,7 @@ s0.parentNode.insertBefore(s1,s0);
 						<i class="icon-material-outline-lock"></i>
 						<input type="password" class="input-text with-border" name="password" id="password" placeholder="Password" required/>
 					</div>
-					<a href="#" class="forgot-password">Forgot Password?</a>				
+					<a href="forgot_password.php" class="forgot-password">Forgot Password?</a>				
 				<!-- Button -->
 				<input type="submit" name="login" class="button full-width button-sliding-icon ripple-effect"form="login-form" value="Login" name="login">
 				</form>
@@ -667,7 +668,7 @@ s0.parentNode.insertBefore(s1,s0);
 								<div class="footer-row-inner">
 									<ul class="footer-social-links">
 										<li>
-											<a href="#" title="Facebook" data-tippy-placement="bottom" data-tippy-theme="light">
+											<a href="https://m.facebook.com/Mayankal-Inc-101756954634208/?fref=none&ref=opera_speed_dial" title="Facebook" data-tippy-placement="bottom" data-tippy-theme="light">
 												<i class="icon-brand-facebook-f"></i>
 											</a>
 										</li>
@@ -735,8 +736,8 @@ s0.parentNode.insertBefore(s1,s0);
 					<div class="footer-links">
 						<h3>For Experts</h3>
 						<ul>
-							<li><a href="#"><span>Auther Panel</span></a></li>
-							<li><a href="#"><span>Other Blogs</span></a></li>
+							<li><a href="../mayankal_admin/index.php"><span>Auther Panel</span></a></li>
+							<li><a href="https://filmyzilla-hollywood-movies-in-hindi.blogspot.com"><span>Other Blogs</span></a></li>
 						</ul>
 					</div>
 				</div>

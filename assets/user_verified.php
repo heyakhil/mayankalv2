@@ -12,7 +12,7 @@
 			    while($row = mysqli_fetch_assoc($result)) {
 			    	$ver_c = $row['verification_code']
 			        if ($row['verification_code']==$verify_c) {
-			        	$sql = "UPDATE user SET verify='1' WHERE verification_code=$ver_c";
+			        	$sql = "UPDATE user SET `verify`='1' WHERE verification_code=$ver_c";
 						if (mysqli_query($conn, $sql)) {
 						    ?>
 							<script type="text/javascript">

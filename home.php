@@ -55,6 +55,7 @@
 		</div>
 		
 		<!-- Search Bar -->
+	<form action="SearchResult.php" method="post">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="intro-banner-search-form margin-top-95">
@@ -62,17 +63,17 @@
 					<!-- Search Field -->
 					<div class="intro-search-field">
 						<label for ="intro-keywords" class="field-title ripple-effect">On What Topic You Want A Guest Post</label>
-						<input id="intro-keywords" type="text" placeholder="Post Topic, Catagory...">
+						<input id="intro-keywords" type="text" name="search" placeholder="Post Topic, Catagory,User Name...">
 					</div>
 
 					<!-- Button -->
 					<div class="intro-search-button">
-						<button class="button ripple-effect" onclick="window.location.href='jobs-list-layout-1.html'">Search</button>
+						<button type="submit" class="button ripple-effect" onclick="window.location.href='SearchResult.php'">Search</button>
 					</div>
 				</div>
 			</div>
 		</div>
-
+	</form>
 		<!-- Stats -->
 		<div class="row">
 			<div class="col-md-12">
@@ -196,7 +197,7 @@
 				<div class="col-lg-6 col-md-8 col-sm-12">
 					<h2>Hire experts or be hired. <br> For any job, any time.</h2>
 					<p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation is on the runway towards.</p>
-					<a href="#" class="button button-sliding-icon ripple-effect big margin-top-20">Get Started <i class="icon-material-outline-arrow-right-alt"></i></a>
+					<a href="expert.php" class="button button-sliding-icon ripple-effect big margin-top-20">Get Started <i class="icon-material-outline-arrow-right-alt"></i></a>
 				</div>
 			</div>
 
@@ -306,7 +307,7 @@
 			<div class="col-xl-12">
 				<div class="default-slick-carousel freelancers-container freelancers-grid-layout">
 						 <?php  
-								 $sql="SELECT * FROM `author`";
+								 $sql="SELECT * FROM `author` order by `rating` desc";
 								 $run=mysqli_query($conn,$sql);
 								 while($result=mysqli_fetch_assoc($run)){
 									 $pp=$result['profile_pic'];
@@ -314,11 +315,12 @@
 									 if($pp==""){
 										 $pp="user-avatar-placeholder.png";
 									 }
+
 						 ?>
 				
 
 
-								
+									
 					<!--Freelancer -->
 					<div class="freelancer">
 
@@ -370,6 +372,7 @@
 	</div>
 </div>
 
+
 <!-- Footer
 ================================================== -->
 <div id="footer">
@@ -400,7 +403,7 @@
 								<div class="footer-row-inner">
 									<ul class="footer-social-links">
 										<li>
-											<a href="#" title="Facebook" data-tippy-placement="bottom" data-tippy-theme="light">
+											<a href="https://m.facebook.com/Mayankal-Inc-101756954634208/?fref=none&ref=opera_speed_dial" title="Facebook" data-tippy-placement="bottom" data-tippy-theme="light">
 												<i class="icon-brand-facebook-f"></i>
 											</a>
 										</li>
@@ -468,8 +471,8 @@
 					<div class="footer-links">
 						<h3>For Experts</h3>
 						<ul>
-							<li><a href="#"><span>Auther Panel</span></a></li>
-							<li><a href="#"><span>Other Blogs</span></a></li>
+							<li><a href="../mayankal_admin/index.php"><span>Auther Panel</span></a></li>
+							<li><a href="https://filmyzilla-hollywood-movies-in-hindi.blogspot.com"><span>Other Blogs</span></a></li>
 						</ul>
 					</div>
 				</div>

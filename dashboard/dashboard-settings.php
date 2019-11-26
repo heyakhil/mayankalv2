@@ -239,7 +239,7 @@
 									<div class="col-xl-6">
 										<div class="submit-field">
 											<h5>Tagline</h5>
-											<input type="text" class="with-border" value="<?php echo $tags; ?>" name="tagline">
+											<input type="text" class="with-border" value="<?php echo $tags; ?>" name="tagline" placeholder="Enter your Tagline">
 										</div>
 									</div>
 

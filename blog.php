@@ -222,10 +222,10 @@
 
 				<!-- Pagination -->
 				<div class="clearfix"></div>
-				<div class="row">
-					<div class="col-md-12">
+				<!-- <div class="row">
+					<div class="col-md-12"> -->
 						<!-- Pagination -->
-						<div class="pagination-container margin-top-10 margin-bottom-20">
+						<!-- <div class="pagination-container margin-top-10 margin-bottom-20">
 							<nav class="pagination">
 								<ul>
 									<li><a href="#" class="current-page ripple-effect">1</a></li>
@@ -236,7 +236,7 @@
 							</nav>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<!-- Pagination / End -->
 
 			</div>
