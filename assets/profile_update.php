@@ -18,7 +18,7 @@
 		$insta = $_POST['insta'];
 		$twitter = $_POST['twit'];
 		$yt = $_POST['yt'];
-		$about = $_POST['intro'];
+		$about =mysqli_real_escape_string($conn,$_POST['intro']);
 	$work = 0;
  if($_FILES["profile-pic"]["name"]!=''){
  		$target_dir = "../dashboard/img/";

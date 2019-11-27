@@ -129,7 +129,6 @@ include '../assets/show_result.php';
 						<div class="header-notifications-trigger">
 							<a href="#"><div class="user-avatar status-online"><img src="<?php echo $pp; ?>" alt="<?php echo $name; ?>"></div></a>
 						</div>
-
 						<!-- Dropdown -->
 						<div class="header-notifications-dropdown">
 
