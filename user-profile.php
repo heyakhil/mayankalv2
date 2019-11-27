@@ -2,7 +2,6 @@
 include 'assets/check.php';
 include 'assets/connect.php';
 include 'assets/show_result.php';
-include 'assets/notification.php';
 
 	$sql = "SELECT * FROM coins_earn WHERE `uid`='".$_SESSION['uid']."'";
 	$result = mysqli_query($conn, $sql);
@@ -87,7 +86,7 @@ include 'assets/notification.php';
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Mayankal</title>
+<title>Hireo</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -103,7 +102,7 @@ include 'assets/notification.php';
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 
 </head>
-<body onload="traffic();">
+<body>
 
 <!-- Wrapper -->
 <div id="wrapper">
@@ -122,7 +121,7 @@ include 'assets/notification.php';
 				
 				<!-- Logo -->
 				<div id="logo">
-					<a href="index-2.html"><img src="images/logom.png" alt=""></a>
+					<a href="index-2.html"><img src="images/logo.png" alt=""></a>
 				</div>
 
 				<!-- Main Navigation -->
@@ -184,7 +183,7 @@ include 'assets/notification.php';
 							    while($row = mysqli_fetch_assoc($result)) {
 							        echo'
 										<li class="notifications-not-read">
-											<a href="#">
+											<a href="dashboard/index.php">
 												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
 												<span class="notification-text">
 													'.$row['notify'].'
@@ -383,7 +382,11 @@ include 'assets/notification.php';
 					<div class="overview-item"><button type="button" class="btn btn-success btn-block btn-lg" id="<?php echo $prof_uid;?>" onclick="ping(this.id);">Ping</button></div>
 					<div class="overview-item"><button type="button" class="btn btn-danger btn-block btn-lg"  onclick="userid();"><i class="fa fa-bug"></i> &nbsp;Report</button></div>
 				</div>
-						<!--   hello -->
+
+				<!-- <script>
+					function ping
+				</script>
+				 -->
 				<!-- Button -->
 				<a href="assets/new_order.php?psu=<?php echo $prof_uid; ?>" class="apply-now-button margin-bottom-50">Place Order <i class="icon-material-outline-arrow-right-alt"></i></a>
 
@@ -414,45 +417,7 @@ include 'assets/notification.php';
 					</div>
 				</div>
 
-
-				<script type="text/javascript">
-					function userid()
-					{
-					<?php
-						
-						$currentDateTime = date('Y-m-d');
-						$sql1="SELECT * FROM `report` WHERE `report_uid`='$prof_uid'";
-						$run=mysqli_query($conn,$sql1);
-						$num=mysqli_num_rows($run);
-						$result=mysqli_fetch_assoc($run);
-						
-						if($num == 0 )
-							{
-							$s="You Have Been Reported By SomeOne";
-							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$id1','$currentDateTime')";
-
-							$s="You are Reported by Someone ";
-							
-							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$prof_uid','$currentDateTime')";
-							if(mysqli_query($conn,$sql)){
-								notification($uid, $s, $prof_uid);
-								?>
-								alert("Report Send To Team");
-								<?php
-							}else{
-								echo "There is Some Error";
-							}
-						}
-						else
-						{
-							?>
-							alert("You are Already Reported this User");
-							<?php
-						}
-						?>
-					}//akhil
-				</script>
-				<!-- Widget -->
+		
 				<div class="sidebar-widget">
 					<h3>Attachments</h3>
 					<div class="attachments-container">
@@ -479,19 +444,19 @@ include 'assets/notification.php';
 						    //print_r($val[1]);
 						}
 					} else {
-					echo "";
+					echo "0 results";
 					}
 					 ?>
 					<!-- Bookmark Button -->
 					
 					<?php if (in_array($prof_uid, $val)) {
-						echo '<button class="bookmark-button margin-bottom-25 bookmarked" id="'.$prof_uid.'" onclick="del(this.id);">
+						echo '<button class="bookmark-button margin-bottom-25 bookmarked" id="'.$prof_uid.'" onclick="del(this.id)">
 						<span class="bookmark-icon"></span>
 						<span class="bookmark-text">Bookmark</span>
 						<span class="bookmarked-text">Bookmarked</span>
 					</button>';
 					}else{
-						echo '<button class="bookmark-button margin-bottom-25" id="'.$prof_uid.'" onclick="add(this.id);">
+						echo '<button class="bookmark-button margin-bottom-25" id="'.$prof_uid.'" onclick="add(this.id)">
 						<span class="bookmark-icon"></span>
 						<span class="bookmark-text">Bookmark</span>
 						<span class="bookmarked-text">Bookmarked</span>
@@ -547,7 +512,7 @@ include 'assets/notification.php';
 						<div class="footer-rows-left">
 							<div class="footer-row">
 								<div class="footer-row-inner footer-logo">
-									<img src="images/logon.png" alt="">
+									<img src="images/logo2.png" alt="">
 								</div>
 							</div>
 						</div>
@@ -613,23 +578,25 @@ include 'assets/notification.php';
 				<!-- Links -->
 				<div class="col-xl-2 col-lg-2 col-md-3">
 					<div class="footer-links">
-						<h3>For Users</h3>
+						<h3>For Candidates</h3>
 						<ul>
-							<li><a href="user.php"><span>Top Users</span></a></li>
-							<li><a href="expert.php"><span>Top Experts</span></a></li>
-							<li><a href="blog.php"><span>Blogs</span></a></li>
-							<li><a href="top_web.php"><span>Top Website</span></a></li>
-						</ul>s
+							<li><a href="#"><span>Browse Jobs</span></a></li>
+							<li><a href="#"><span>Add Resume</span></a></li>
+							<li><a href="#"><span>Job Alerts</span></a></li>
+							<li><a href="#"><span>My Bookmarks</span></a></li>
+						</ul>
 					</div>
 				</div>
 
 				<!-- Links -->
 				<div class="col-xl-2 col-lg-2 col-md-3">
 					<div class="footer-links">
-						<h3>For Experts</h3>
+						<h3>For Employers</h3>
 						<ul>
-							<li><a href="#"><span>Auther Panel</span></a></li>
-							<li><a href="#"><span>Other Blogs</span></a></li>
+							<li><a href="#"><span>Browse Candidates</span></a></li>
+							<li><a href="#"><span>Post a Job</span></a></li>
+							<li><a href="#"><span>Post a Task</span></a></li>
+							<li><a href="#"><span>Plans & Pricing</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -639,10 +606,9 @@ include 'assets/notification.php';
 					<div class="footer-links">
 						<h3>Helpful Links</h3>
 						<ul>
-							<li><a href="contactUs.php"><span>Contact</span></a></li>
-							<li><a href="privacy_policy.php"><span>Privacy Policy</span></a></li>
-							<li><a href="disclaimer.php"><span>Disclaimer</span></a></li>
-							<li><a href="aboutus.php"><span>About Us</span></a></li>
+							<li><a href="#"><span>Contact</span></a></li>
+							<li><a href="#"><span>Privacy Policy</span></a></li>
+							<li><a href="#"><span>Terms of Use</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -652,13 +618,8 @@ include 'assets/notification.php';
 					<div class="footer-links">
 						<h3>Account</h3>
 						<ul>
-					<?php if (isset($_SESSION['uid'])) {
-						echo '<li><a href="#"><span>Log In</span></a></li>
-							<li><a href="#"><span>My Account</span></a></li>';
-					}else{
-						echo '<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>Log In</span></a></li>
-					<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>My Account</span></a></li>';
-					} ?>
+							<li><a href="#"><span>Log In</span></a></li>
+							<li><a href="#"><span>My Account</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -824,7 +785,12 @@ $('.copy-url-button').click(function() {
         $.ajax({
             url: "assets/notifynum.php",
             type: "GET",
-            data: {uid: "<?php echo $uid; ?>"},
+            data: {uid: "<?php echo $uid; ?>"}, //this sends the user-id to php as a post variable, in php it can be accessed as $_POST['uid']
+            // success: function(data){
+            //     $('#dataget').html(result);
+            //     //update some fields with the updated data
+            //     //you can access the data like 'data["driver"]'
+            // }
         });
     }
 </script>
@@ -859,96 +825,6 @@ $('.copy-url-button').click(function() {
 
  		});
  	}
- </script>
-
- <script type="text/javascript">
- 	function traffic(){
-        $.ajax({
-            url: "assets/visitor.php",
-            type: "GET",
-            data: {uid: "<?php echo $uid; ?>"},
-
-            success: function(data){
- 				console.log('Welcome');
- 			}
-        });
-    }
-
-    function setCookie(name,value,days) {
-    var expires = "";
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days*24*60*60*1000));
-        expires = "; expires=" + date.toUTCString();
-    }
-    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
-	}
-
-	function getCookie(name) {
-	    var nameEQ = name + "=";
-	    var ca = document.cookie.split(';');
-	    for(var i=0;i < ca.length;i++) {
-	        var c = ca[i];
-	        while (c.charAt(0)==' ') c = c.substring(1,c.length);
-	        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
-	    }
-	    return null;
-	}
-	
-    	function ping(id){
-
-    	if (document.cookie.indexOf("ping=") >= 0) {
-    		var retrievedData = getCookie("ping");
-			var movies2 = JSON.parse(retrievedData);
-			var check =0;
-			for(var i=0; i<movies2.length; i++){
-				if (movies2[i] == id) {
-					check = check+1;
-				}
-			}
-	     	if (check >= 1) {
-			 	alert("You have already Pinged");
-	   		}else{
-	   			var json_str = getCookie('ping');
-	   			console.log(json_str);
-				var arr = JSON.parse(json_str);
-				console.log(arr);
-	    		arr.push(id);
-	    		console.log(arr);
-	   			var json_str = JSON.stringify(arr);
-	   			console.log(json_str);
-				setCookie('ping', json_str, 5);
-				alert("You Pinged this user");
-				//sending data to the pinging.php to send the notification and email to the user
-				$.ajax({
-		            url: "assets/pinging.php",
-		            type: "GET",
-		            data: {uid: id, to:"<?php echo $prof_uid; ?>"},
-
-		            success: function(data){
-		 				console.log('Welcome');
-		 			}
-		        });
-	   		}
-   				
-   		}else{
-    	var ping = [];
-    	ping.push(id);
-    	var json_str = JSON.stringify(ping);
-		setCookie('ping', json_str, 5);
-		alert("You Pinged this user");
-		//sending data to the pinging.php to send the notification and email to the user
-		$.ajax({
-            url: "assets/pinging.php",
-            type: "GET",
-            data: {uid: id, to:"<?php echo $prof_uid; ?>"},
-
-            success: function(data){
- 				console.log('Notification send');
- 			}
-        });
-   	}
- }
  </script>
 
 </body>
