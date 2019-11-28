@@ -2,7 +2,7 @@
 include 'assets/check.php';
 include 'assets/connect.php';
 include 'assets/show_result.php';
-include 'assets/notification.php';
+
 
 	$sql = "SELECT * FROM coins_earn WHERE `uid`='".$_SESSION['uid']."'";
 	$result = mysqli_query($conn, $sql);
@@ -381,7 +381,9 @@ include 'assets/notification.php';
 				<!-- Profile Overview -->
 				<div class="profile-overview">
 					<div class="overview-item"><button type="button" class="btn btn-success btn-block btn-lg" id="<?php echo $prof_uid;?>" onclick="ping(this.id);">Ping</button></div>
-					<div class="overview-item"><button type="button" class="btn btn-danger btn-block btn-lg"  onclick="userid();"><i class="fa fa-bug"></i> &nbsp;Report</button></div>
+					<div class="overview-item">
+						<a href="action.php?prof_uid=<?php echo $prof_uid; ?>&uid=<?php echo $uid; ?>" class="btn btn-danger btn-block btn-lg"><i class="fa fa-bug"></i>&nbsp;&nbsp;&nbsp;&nbsp;Report</a>
+					</div>
 				</div>
 						<!--   hello -->
 				<!-- Button -->
@@ -415,43 +417,7 @@ include 'assets/notification.php';
 				</div>
 
 
-				<script type="text/javascript">
-					function userid()
-					{
-					<?php
-						
-						$currentDateTime = date('Y-m-d');
-						$sql1="SELECT * FROM `report` WHERE `report_uid`='$prof_uid'";
-						$run=mysqli_query($conn,$sql1);
-						$num=mysqli_num_rows($run);
-						$result=mysqli_fetch_assoc($run);
-						
-						if($num == 0 )
-							{
-							$s="You Have Been Reported By SomeOne";
-							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$id1','$currentDateTime')";
-
-							$s="You are Reported by Someone ";
-							
-							$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$prof_uid','$currentDateTime')";
-							if(mysqli_query($conn,$sql)){
-								notification($uid, $s, $prof_uid);
-								?>
-								alert("Report Send To Team");
-								<?php
-							}else{
-								echo "There is Some Error";
-							}
-						}
-						else
-						{
-							?>
-							alert("You are Already Reported this User");
-							<?php
-						}
-						?>
-					}//akhil
-				</script>
+				
 				<!-- Widget -->
 				<div class="sidebar-widget">
 					<h3>Attachments</h3>
