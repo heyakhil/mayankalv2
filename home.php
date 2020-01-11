@@ -1,4 +1,5 @@
 <?php 
+
 	error_reporting(0);
 	include 'assets/check.php';
 	include 'assets/connect.php';
@@ -361,9 +362,9 @@
 						</div>
 					</div>
 					<!-- Freelancer / End -->
-								<?php
-								 }
-								?>
+					<?php
+					 }
+					?>
 
 				</div>
 			</div>
@@ -540,6 +541,7 @@
 
 <!-- Scripts
 ================================================== -->
+<script src="js/bootstrap-msg.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/jquery-migrate-3.1.0.min.html"></script>
 <script src="js/mmenu.min.js"></script>
@@ -591,7 +593,13 @@ $('#snackbar-user-status label').click(function() {
 	}
 
 </script>
+<?php 
 
+		if ($_GET['emterr'])) {
+		echo "Msg.success('success message', timeout);";
+		}
+
+ ?>
 <!-- Google API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaoOT9ioUE4SA8h-anaFyU4K63a7H-7bc&amp;libraries=places&amp;callback=initAutocomplete"></script>
 
