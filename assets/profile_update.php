@@ -11,9 +11,11 @@
 		$attach = $_FILES['attach']['name'];
 		$tg = $_POST['tagline'];
 		$country = $_POST['nation'];
-		$cpass = md5($_POST['cur_pass']);
-		$npass = md5($_POST['npass']);
-		$repass = md5($_POST['rnpass']);
+		if($_POST['cur_pass'] != ""){
+			$cpass = md5($_POST['cur_pass']);
+			$npass = md5($_POST['npass']);
+			$repass = md5($_POST['rnpass']);
+		}
 		$fb = $_POST['fblink'];
 		$insta = $_POST['insta'];
 		$twitter = $_POST['twit'];
@@ -81,12 +83,12 @@ if ($name !="" || $mobi != "" || $email !="") {
  }
 
  	if ($cpass != "" && $npass != "" && $repass != "") {
-	    	$sql = "SELECT pass FROM user WHERE `pass`='$cpass'";
+	    	$sql = "SELECT * FROM user WHERE `unique_id` ='$uid'";
  			$result = $conn->query($sql);
  			if ($result->num_rows > 0) {
  			    // output data of each row
  			    while($row = $result->fetch_assoc()) {
- 			       if ($npass === $repass) {
+ 			       if ($row['pass'] === $cpass && $npass == $repass) {
  				       	 $sql = "UPDATE user SET pass='$npass' WHERE `unique_id`='$uid'";
 
  						if (mysqli_query($conn, $sql)) {
