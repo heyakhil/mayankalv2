@@ -1,7 +1,7 @@
 <?php 
 	include_once 'connect.php';
 	include_once 'check.php';
-	//echo $uid;
+
 if (isset($_GET['uid'])) {
 	$verify_code = substr(md5(uniqid(rand(), true)), 16, 16);
 	$sql = "SELECT * FROM user WHERE `unique_id`='$uid'";
@@ -13,10 +13,10 @@ if (isset($_GET['uid'])) {
 	    	if ($row['verification_code']=='') {
 	    		$verify_code = $row['verification_code'];
 	    		$to = $email;
-				$subject = "Mayankal Account Verification (Resend)";
+				$subject = "Mayankal Account Verification";
 				$message = "<html>
 							<body>
-							Hello User Thanks for making account on Mayankal <br> Here you can easily get verify your email and become a verified member of Mayankal So that you can easily work with Us without any problem So finally the link is below <br> Verification Link : <a href='user_verified.php?verify=".$verify_code."&status=ok'>Click Here</a>
+								Hello User Thanks for making account on Mayankal <br> Here you can easily get verify your email and become a verified member of Mayankal So that you can easily work with Us without any problem So finally the link is below <br> Verification Link : <a href='user_verified.php?verify=".$verify_code."&status=ok'>Click Here</a>
 							</body>
 							</html>" ;
 				$from = "akhilsri28121999@gmail.com";
@@ -28,7 +28,7 @@ if (isset($_GET['uid'])) {
 				if (mysqli_query($conn, $sql)) {
 				    ?>
 					<script type="text/javascript">
-						window.open("../dashboard/index.php", "_self");
+						window.open("https://mayankal.ml/dashboard/index.php", "_self");
 						alert("The Verification link is Send. Please Check your email")
 					</script>
 					<?php
@@ -38,7 +38,7 @@ if (isset($_GET['uid'])) {
 				}else{
 					?>
 					<script type="text/javascript">
-						window.open("../dashboard/index.php", "_self");
+						window.open("https://mayankal.ml/dashboard/index.php", "_self");
 						alert("Email is unable to send please. Try again Later");
 					</script>
 					<?php
@@ -51,40 +51,40 @@ if (isset($_GET['uid'])) {
 				    // output data of each row
 				    while($row = mysqli_fetch_assoc($result)) {
 				        $verify_code = $row['verification_code'];
-				        		        	$to = $email;
-						$subject = "Mayankal Account Verification";
-						$message = "Hello User Thanks for making account on Mayankal <br> Here you can easily get verify your email and become a verified member of Mayankal So that you can easily work with Us without any problem So finally the link is below <br>" . "Verification Link : <a href='".."'>Click Here</a>";
+				      	$to = $email;
+						$subject = "Mayankal Account Verification(Resend)";
+						$message = "Hello User Thanks for making account on Mayankal <br> Here you can easily get verify your email and become a verified member of Mayankal So that you can easily work with Us without any problem So finally the link is below <br> Verification Link : <a href='".$row['verification_code']."'>Click Here</a>";
 						$from = "akhilsri28121999@gmail.com";
 						$headers = "From:" . $from;
 
 						if(mail($to,$subject,$message,$headers)){
 								?>
 								<script type="text/javascript">
-									window.open("../dashboard/index.php", "_self");
+									window.open("http://mayankal.ml/dashboard/index.php", "_self");
 									alert("The Verification link is re-Send. Please Check your email")
 								</script>
 								<?php
 							}else{
 								?>
 								<script type="text/javascript">
-									window.open("../dashboard/index.php", "_self");
+									window.open("http://mayankal.ml/dashboard/index.php", "_self");
 									alert("Email is unable to re-send please. Try again Later");
 								</script>
 								<?php
 							}
 				    }
 				} else {
-				    echo "0 results";
+				    echo "";
 				}
 	    	}
 			if (mysqli_query($conn, $sql)) {
-			    echo "New record created successfully";
+			    echo "";
 			} else {
 			    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 			}
 	    }
 	} else {
-	    echo "0 results";
+	    echo "";
 	}
 }else{
 	header("location:index.php");

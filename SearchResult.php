@@ -8,7 +8,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Mayankal</title>
+<title>Mayankal - Search Result</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -88,7 +88,11 @@
 	<div class="row">
 		<div class="col-xl-3 col-lg-4">
 			
-				<?php $search=$_POST['search']; ?>
+				<?php $search=$_POST['search']; 
+				if ($search == "") {
+					header("location:home.php?emterr");
+				}
+				?>
 
 			</div>
 		</div>
@@ -200,23 +204,16 @@
 
 					<!-- Overview -->
 					<div class="freelancer-overview">
-						<div class="freelancer-overview-inner">
-							
+						<div class="freelancer-overview-inner">							
 							<!-- Bookmark Icon -->
 							<span class="bookmark-icon"></span>
-							
 							<!-- Avatar -->
-							
-
 							<!-- Name -->
 							<div class="freelancer-name">
 								<h3><?php echo $name; ?></h3>
 								<span>Niche:<?php echo $niche; ?></span><br><br>
 								<h4>Category:<span><?php echo $catagory; ?></span></h4><br>
 								<h4>MPoint:<?php echo $mpoint; ?></h4>
-								
-								
-								
 							</div>
 						</div>
 					</div>
