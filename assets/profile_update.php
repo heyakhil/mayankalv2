@@ -79,21 +79,21 @@ if ($name !="" || $mobi != "" || $email !="") {
  	   	<?php
  	}
  }
-
  	if ($cpass != "" && $npass != "" && $repass != "") {
-	    	$sql = "SELECT pass FROM user WHERE `pass`='$cpass'";
+	    	$sql = "SELECT `pass` FROM `user` WHERE `pass`='$cpass'";
  			$result = $conn->query($sql);
  			if ($result->num_rows > 0) {
  			    // output data of each row
  			    while($row = $result->fetch_assoc()) {
  			       if ($npass === $repass) {
- 				       	 $sql = "UPDATE user SET pass='$npass' WHERE `unique_id`='$uid'";
+ 				       	 $sql = "UPDATE `user` SET `pass`='$npass' WHERE `unique_id`='$uid'";
 
  						if (mysqli_query($conn, $sql)) {
  						    ?>
  						    <script type="text/javascript">
+							 	alert("Your Password is updated");
  						    	window.open("../dashboard/dashboard-settings.php", "_self");
- 						    	alert("Your Password is updated");
+ 						    
  						    </script>
  						    <?php
 						} else {
