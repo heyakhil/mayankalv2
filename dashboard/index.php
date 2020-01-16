@@ -160,17 +160,22 @@ s0.parentNode.insertBefore(s1,s0);
 						<div class="content">
 							<ul class="dashboard-box-list">
 						<?php 
-						$sql = "SELECT * FROM notification WHERE `uid`='$uid' ORDER BY id DESC LIMIT 5";
+						$sql = "SELECT * FROM notification WHERE `send_by`='$uid' ORDER BY id DESC LIMIT 5";
 						$result = mysqli_query($conn, $sql);
 
 						if (mysqli_num_rows($result) > 0) {
 						    // output data of each row
 						    while($row = mysqli_fetch_assoc($result)) {
+						    	 $sid=$row['uid'];
+						    	 $sql4="select name from user where unique_id='$sid' ";
+						    	 $run4=mysqli_query($conn,$sql4);
+						    	 $row1=mysqli_fetch_assoc($run4);
+						    	 $name=$row1['name'];
 						     ?>
 						     <li>
 								<span class="notification-icon" ><i class="icon-material-outline-group"></i></span>
 								<span class="notification-text">
-									<strong><a href="../user-profile.php?uid=<?php echo $row['send_by']; ?>" target="_blank">[<?php echo $row['send_by']; ?>]</a></strong> <?php echo $row['notify']; ?>	
+									 <?php echo $row['notify']; ?> <strong><a href="../user-profile.php?uid=<?php echo $sid; ?>" target="_blank">[<?php echo $name; ?>]</a></strong>	
 								</span>
 								<!-- Buttons -->
 							</li>

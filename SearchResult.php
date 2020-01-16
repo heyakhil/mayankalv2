@@ -233,8 +233,6 @@
 				</div>
 				<?php
 							}
-						}else{
-							echo "0 Results";
 						}
 					}
 				?>
@@ -250,7 +248,7 @@
 						$skills=$result['skills'];
 						$experties=$result['experties'];
 						$pp1=$result['profile_pic'];
-						if($pp==""){
+						if($pp1==""){
 							$pp1="download.jpg";
 						}
 						$id=$result['auth_id'];
