@@ -595,7 +595,7 @@ $('#snackbar-user-status label').click(function() {
 </script>
 <?php 
 
-		if ($_GET['emterr'])) {
+		if ($_GET['emterr']) {
 		echo "Msg.success('success message', timeout);";
 		}
 
