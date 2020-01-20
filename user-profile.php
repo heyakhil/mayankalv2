@@ -2,6 +2,10 @@
 include 'assets/check.php';
 include 'assets/connect.php';
 include 'assets/show_result.php';
+<<<<<<< HEAD
+
+=======
+>>>>>>> 124d4be809c1fccc49d15e54a67752a7b5ff4b6c
 
 	$sql = "SELECT * FROM coins_earn WHERE `uid`='".$_SESSION['uid']."'";
 	$result = mysqli_query($conn, $sql);
@@ -380,7 +384,9 @@ include 'assets/show_result.php';
 				<!-- Profile Overview -->
 				<div class="profile-overview">
 					<div class="overview-item"><button type="button" class="btn btn-success btn-block btn-lg" id="<?php echo $prof_uid;?>" onclick="ping(this.id);">Ping</button></div>
-					<div class="overview-item"><button type="button" class="btn btn-danger btn-block btn-lg"  onclick="userid();"><i class="fa fa-bug"></i> &nbsp;Report</button></div>
+					<div class="overview-item">
+						<a href="action.php?prof_uid=<?php echo $prof_uid; ?>&uid=<?php echo $uid; ?>" class="btn btn-danger btn-block btn-lg"><i class="fa fa-bug"></i>&nbsp;&nbsp;&nbsp;&nbsp;Report</a>
+					</div>
 				</div>
 
 				<!-- <script>
@@ -417,7 +423,13 @@ include 'assets/show_result.php';
 					</div>
 				</div>
 
+<<<<<<< HEAD
+
+				
+				<!-- Widget -->
+=======
 		
+>>>>>>> 124d4be809c1fccc49d15e54a67752a7b5ff4b6c
 				<div class="sidebar-widget">
 					<h3>Attachments</h3>
 					<div class="attachments-container">

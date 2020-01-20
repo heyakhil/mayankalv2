@@ -64,12 +64,12 @@
 					<!-- Search Field -->
 					<div class="intro-search-field">
 						<label for ="intro-keywords" class="field-title ripple-effect">On What Topic You Want A Guest Post</label>
-						<input id="intro-keywords" type="text" name="search" placeholder="Post Topic, Catagory,User Name...">
+						<input id="intro-keywords" type="text" name="search"  placeholder="Post Topic, Catagory,User Name..." required >
 					</div>
 
 					<!-- Button -->
 					<div class="intro-search-button">
-						<button type="submit" class="button ripple-effect" onclick="window.location.href='SearchResult.php'">Search</button>
+						<button type="submit" class="button ripple-effect">Search</button>
 					</div>
 				</div>
 			</div>
