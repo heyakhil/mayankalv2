@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,24 +24,15 @@
                 <div class="panel panel-default">
                   <div class="panel-body">
                     <div class="text-center"><br>
-                      <h3><i class="fa fa-lock fa-4x"></i></h3>
-                      <h2 class="text-center">Forgot Password?</h2>
-                      <p>No Problem! Enter your email or username below and we will send you an email with instruction to reset your password.</p>
+                      <i class="fa fa-check fa-3x"></i>
+                      <h2 class="text-center">Forgot Password</h2>
+                      <p>An email has been sent to your register email id with further instructions how to reset your password. Please check your email</p>
                       <div class="panel-body">
         
-                        <form id="register-form" role="form" autocomplete="off" class="form" action="forgotprocess.php" method="post">
-        
+                        <form id="register-form" role="form" autocomplete="off" class="form" method="post">
                           <div class="form-group">
-                            <div class="input-group">
-                              <input id="email" name="email" placeholder="Email or Username" class="form-control"  type="email">
-                            </div>
-                          </div>
-                          <div class="form-group">
-                            <input name="recover-submit" class="btn btn-lg btn-primary btn-block" name="submit" value="Send Reset Link" type="submit">
-                          </div>
-                          
-                          <!-- <input type="text" class="hide" name="token" id="token" value="">  -->
-                          <p>Back to <a href="index.php">Log In</a></p>
+                            <input name="recover-submit" class="btn btn-lg btn-primary btn-block" value="Log In" type="submit" onclick="redirect();">
+                          </div><br>
                         </form>
         
                       </div>
@@ -53,7 +43,14 @@
         </div>
     </div>
 </center>
+        <script>
+                    function redirect(){
+                        window.open("index.php","__self");
+                    }
+
+
+        </script>
+
+
 </body>
 </html>
-
-
