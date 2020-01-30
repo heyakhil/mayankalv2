@@ -10,7 +10,7 @@
 				$subject = "Mayankal Account Verification";
 				$message = "<html>
 							<body>
-								Hello User! Your Reset Password link:<br><a href='http://localhost/project/mayankalv2/confirmpassword.php?email=".<?php $email; ?>.">Click Here</a> <br> Here you can easily Reset Your password.....
+								Hello User! Your Reset Password link:<br> <a href='http://localhost/project/mayankalv2/confirmpassword.php?email=".$email."'>Click Here</a> <br> Here you can easily Reset Your password.....
 							</body>
 							</html>" ;
 				$from = "sumitkumar993618@gmail.com";
