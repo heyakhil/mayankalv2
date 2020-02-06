@@ -19,7 +19,7 @@
 
 								$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$prof_uid','$currentDateTime')";
 							if(mysqli_query($conn,$sql)){
-								$s="You are Reported by ";
+								$s="You are Reported by someone";
 								notification($uid, $s, $prof_uid);
 								?>
 								<script>

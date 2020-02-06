@@ -583,7 +583,7 @@ s0.parentNode.insertBefore(s1,s0);
 						<i class="icon-material-outline-lock"></i>
 						<input type="password" class="input-text with-border" name="password" id="password" placeholder="Password" required/>
 					</div>
-					<a href="forgot_password.php" class="forgot-password">Forgot Password?</a>				
+					<b><a href="forgot_password.php" class="forgot-password">Forgot Password?</a></b>				
 				<!-- Button -->
 				<input type="submit" name="login" class="button full-width button-sliding-icon ripple-effect"form="login-form" value="Login" name="login">
 				</form>

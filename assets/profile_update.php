@@ -116,7 +116,7 @@ if ($name !="" || $mobi != "" || $email !="") {
  			       	<?php
  			       }
  			    }
- 			} else {
+ 			} }else {
  			    ?>	
  		       		<script type="text/javascript">
  		       			window.open("../dashboard/dashboard-settings.php", "_self");
@@ -266,4 +266,4 @@ if ($_FILES['attach']['tmp_name'] != '') {
 		header("location:../index.php");
 }
 	
- ?>
+?>

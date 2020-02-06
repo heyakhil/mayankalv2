@@ -2,10 +2,6 @@
 include 'assets/check.php';
 include 'assets/connect.php';
 include 'assets/show_result.php';
-<<<<<<< HEAD
-
-=======
->>>>>>> 124d4be809c1fccc49d15e54a67752a7b5ff4b6c
 
 	$sql = "SELECT * FROM coins_earn WHERE `uid`='".$_SESSION['uid']."'";
 	$result = mysqli_query($conn, $sql);
@@ -423,13 +419,6 @@ include 'assets/show_result.php';
 					</div>
 				</div>
 
-<<<<<<< HEAD
-
-				
-				<!-- Widget -->
-=======
-		
->>>>>>> 124d4be809c1fccc49d15e54a67752a7b5ff4b6c
 				<div class="sidebar-widget">
 					<h3>Attachments</h3>
 					<div class="attachments-container">
