@@ -18,7 +18,6 @@
 				if(mail($to,$subject,$message,$headers)){
                 ?>
                     <script>
-                            alert("Your Reset Password link will be send to the your given E-mail.Please check your E-mail..");
                             window.open("forgotpassword2.php", "_self");
                     </script>
                 <?php 

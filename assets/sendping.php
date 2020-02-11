@@ -32,7 +32,7 @@
 		}
 		$sub = "Someone Pinged to write Content on your website";
 		$msg = "Hello ".$user_name."
-				".$name." has Pinged your website to write a beautyfull content on you website please visit to his profile ".." to order him some article
+				".$name." has Pinged your website to write a beautyfull content on you website please visit to his profile  to order him some article
 				Thankyou";
 		if(mail($user_email, $sub, $msg)){
 			echo ""

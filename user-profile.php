@@ -379,7 +379,7 @@ include 'assets/show_result.php';
 				
 				<!-- Profile Overview -->
 				<div class="profile-overview">
-					<div class="overview-item"><button type="button" class="btn btn-success btn-block btn-lg" id="<?php echo $prof_uid;?>" onclick="ping(this.id);">Ping</button></div>
+					<div class="overview-item"><a href="assets/pinging.php?uid=<?php echo $uid; ?>&to=<?php  echo $prof_uid; ?>" type="button" class="btn btn-success btn-block btn-lg">Ping</a></div>
 					<div class="overview-item">
 						<a href="action.php?prof_uid=<?php echo $prof_uid; ?>&uid=<?php echo $uid; ?>" class="btn btn-danger btn-block btn-lg"><i class="fa fa-bug"></i>&nbsp;&nbsp;&nbsp;&nbsp;Report</a>
 					</div>
