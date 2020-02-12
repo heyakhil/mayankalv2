@@ -15,18 +15,16 @@
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="css/colors/blue.css">
 
-
-
 <link href="https://fonts.googleapis.com/css?family=Cinzel|Inconsolata|Quattrocento|Roboto&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
-<link rel="stylesheet" href="about-us.css">
+<!-- <link rel="stylesheet" href="about-us.css"> -->
 <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-<link rel="stylesheet" href="aboutus.css">
+<link rel="stylesheet" href="css/aboutus.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-<script src="https://code.jquery.com/jquery-2.2.0.min.js" type="text/javascript"></script>
 
-
+<link rel="icon" href="https://mayankal.ml/images/mayankal.png" type="image/png" sizes="16x16">
+ 
 
 </head>
 <body>
@@ -37,9 +35,8 @@
 <!-- Header Container
 ================================================== -->
 <header id="header-container" class="fullwidth">
-
-	<!-- Header -->
-	<?php include 'menu.php'; ?>
+<?php include 'menu.php';?>
+	
 	<!-- Header / End -->
 
 </header>
@@ -54,7 +51,7 @@
         </div>
       </div>
     </div>
-    <div class="parallax" id="parallax-cta" style="background-image:url('images/hero.jpg');"></div>
+    <div class="parallax" id="parallax-cta" style="background-image:url(https://www.solodev.com/assets/hero/hero.jpg);"></div>
   </section>
   <section class="story-section company-sections ct-u-paddingBoth100 paddingBothHalf noTopMobilePadding" id="section">
     <div class="container text-center">
@@ -70,7 +67,6 @@
 <!-- End About Company-->
   
 <!-- our introduction-->
-
 <div class="container">
 	<div class="col-xs-6 col-md-12">
 		<h1 style="font-size:30px"><b>Our Team</b></h1><br><hr><br><br><br>
@@ -84,7 +80,7 @@
   <h1>Akhil Kumar Srivastava</h1>
   <h3 style="margin-left: 20%;">Founder & CEO</h3>
   </div> -->
-  <div class="col-md-4">   
+ <div class="col-md-4">   
    <img src="images/download.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 20%;"> 
    <h1 style="margin-left:17%;">Akhil Kumar Srivastava</h1>
    <h3 style="margin-left: 36%;">Founder & CEO</h3>
@@ -112,20 +108,16 @@
   </div><hr><br><br><br>
   </div>
   </div>
-
-
 <!--==============================-->
-
-
 <div class="container"> 
       <h1 style="font-size:30px"><b>Our Business Contacts</b></h1><br>
       <h2 style="font-size: 20px; margin-left:3%;"><b>E-Mail Id: </b>team@mayankal.ml</h2>
       <h2 style="font-size: 20px; margin-left:3%;"><b>Mobile No: </b>+91-0123456789</h2>
    
 </div>
-
-
 <div class="margin-top-80"></div>
+<!-- End Our Introduction -->
+
 
 <!-- Footer
 ================================================== -->
@@ -289,19 +281,25 @@
 
 <!-- Scripts
 ================================================== -->
-<!-- <script src="js/jquery-3.4.1.min.js"></script> -->
-<script src="js/jquery-migrate-3.1.0.min.html"></script>
-<script src="js/mmenu.min.js"></script>
-<script src="js/tippy.all.min.js"></script>
-<script src="js/simplebar.min.js"></script>
-<script src="js/bootstrap-slider.min.js"></script>
-<script src="js/bootstrap-select.min.js"></script>
-<script src="js/snackbar.js"></script>
-<script src="js/clipboard.min.js"></script>
-<script src="js/counterup.min.js"></script>
-<script src="js/magnific-popup.min.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/custom.js"></script>
+<script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-3.4.1.min.js"></script>
+<script src="../../../js/jquery-migrate-3.1.0.min.html"></script>
+<script src="../../../js/mmenu.min.js"></script>
+<script src="../../../js/tippy.all.min.js"></script>
+<script src="../../../js/simplebar.min.js"></script>
+<script src="../../../js/bootstrap-slider.min.js"></script>
+<script src="../../../js/bootstrap-select.min.js"></script>
+<script src="../../../js/snackbar.js"></script>
+<script src="../../../js/clipboard.min.js"></script>
+<script src="../../../js/counterup.min.js"></script>
+<script src="../../../js/magnific-popup.min.js"></script>
+<script src="../../../js/slick.min.js"></script>
+<script src="../../../js/custom.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script>$(document).ready(function(){
+	$("button").click(function(){
+	  $("button").replaceWith("team@mayankal.ml");
+	});
+  });</script>
 
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>
@@ -319,7 +317,19 @@ $('#snackbar-user-status label').click(function() {
 }); 
 </script>
 
+<!-- Leaflet // Docs: https://leafletjs.com/ -->
+<script src="js/leaflet.min.js"></script>
+
+<!-- Leaflet Maps Scripts (locations are stored in leaflet-hireo.js) -->
+<script src="../../js/leaflet-markercluster.min.js"></script>
+<script src="../../js/leaflet-gesture-handling.min.js"></script>
+<script src="../../js/leaflet-hireo.js"></script>
+
+<!-- Leaflet Geocoder + Search Autocomplete // Docs: https://github.com/perliedman/leaflet-control-geocoder -->
+<script src="../../js/leaflet-autocomplete.js"></script>
+<script src="../../js/leaflet-control-geocoder.js"></script>
+
 </body>
 
-<!-- Mirrored from www.vasterad.com/themes/hireo_082019/pages-pricing-plans.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Sep 2019 13:59:34 GMT -->
+<!-- Mirrored from www.vasterad.com/themes/hireo_082019/pages-contact-OpenStreetMap.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 14 Sep 2019 13:59:23 GMT -->
 </html>
