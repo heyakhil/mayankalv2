@@ -74,35 +74,54 @@
 <div class="container">
 	<div class="col-xs-6 col-md-12">
 		<h1 style="font-size:30px"><b>Our Team</b></h1><br><hr><br><br><br>
-	
+	</div>
+</div>
 		
-
-		<div class="container">  
-		<div class="col-xs-3 col-md-4">    
+<!-- ============== -->
+	<div class="container">  
+	<!-- <div class="col-xs-3 col-md-4">    
   <img src="images/download.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236"> 
   <h1>Akhil Kumar Srivastava</h1>
   <h3 style="margin-left: 20%;">Founder & CEO</h3>
-  </div>
-  <div class="col-xs-4 col-md-4">   
+  </div> -->
+  <div class="col-md-4">   
    <img src="images/download.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 20%;"> 
-   <h1 style="margin-left: 30%;">Md Farhan Alam</h1>
-   <h3 style="margin-left: 36%;">Co-Founder & CFO</h3>
+   <h1 style="margin-left:17%;">Akhil Kumar Srivastava</h1>
+   <h3 style="margin-left: 36%;">Founder & CEO</h3>
 
    </div>
-<div class="col-xs-4 col-md-4"> 
+
+   <div class="col-md-4">   
+   <img src="images/download.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 20%;"> 
+   <h1 style="margin-left: 29%;">Md Farhan Alam</h1>
+   <h3 style="margin-left: 34%;">Co-Founder & CFO</h3>
+
+   </div>
+
+   <div class="col-md-4">   
+   <img src="images/download.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 20%;"> 
+   <h1 style="margin-left: 34%;">Sumit Kumar</h1>
+   <h3 style="margin-left: 34%;">Co-Founder & CTO</h3>
+
+   </div>
+<!-- <div class="col-xs-4 col-md-4"> 
    <img src="images/download.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 40%;">
    <h1 style="margin-left: 54%;">Sumit Kumar</h1> 
    <h3 style="margin-left: 53%;">Co-Founder & CTO</h3>
-    </div>
+    </div> -->
   </div><hr><br><br><br>
-  
-  
-    
+  </div>
+  </div>
+
+
+<!--==============================-->
+
+
+<div class="container"> 
       <h1 style="font-size:30px"><b>Our Business Contacts</b></h1><br>
       <h2 style="font-size: 20px; margin-left:3%;"><b>E-Mail Id: </b>team@mayankal.ml</h2>
       <h2 style="font-size: 20px; margin-left:3%;"><b>Mobile No: </b>+91-0123456789</h2>
    
-</div>
 </div>
 
 
