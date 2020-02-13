@@ -4,6 +4,7 @@
     if(empty($email)){
         header('location:index.php');
     }
+    $varif=$_GET['verify'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,7 +37,7 @@
                         Please enter your new password twice. So we can verify you typed it correctly.
                     </p>
                       <div class="panel-body">
-                        <form id="register-form" role="form" autocomplete="off" class="form" action="confirmprocess.php?email=<?php echo $email; ?>" method="post"> 
+                        <form id="register-form" role="form" autocomplete="off" class="form" action="confirmprocess.php?email=<?php echo $email; ?>&verify=<?php echo $varif; ?>" method="post"> 
                           <div class="form-group">
                             <div class="input-group">  
                               <input id="New Password" name="NewPassword" placeholder="New Password " class="form-control"  type="Password" required>

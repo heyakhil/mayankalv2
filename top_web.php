@@ -151,7 +151,7 @@
 								<strong>Games & Movies</strong>
 								<span><strong>Mpoints: 45</strong></span>
 							</div>
-							<span class="button button-sliding-icon ripple-effect">Ping <i class="icon-material-outline-arrow-right-alt"></i></span>
+							<span class="button button-sliding-icon ripple-effect"><button onclick="func()">Ping</button> <i class="icon-material-outline-arrow-right-alt"></i></span>
 						</div>
 					</div>
 				</a> -->
