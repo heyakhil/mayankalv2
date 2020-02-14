@@ -9,7 +9,7 @@
 						
 						$prof_uid=$_GET['prof_uid'];
 						$currentDateTime = date('Y-m-d');
-						$sql1="SELECT * FROM `report` WHERE `report_uid`='$prof_uid'";
+						$sql1="SELECT * FROM `report` WHERE `report_uid`='$prof_uid' and `uid`='$uid'";
 						$run=mysqli_query($conn,$sql1);
 						$num=mysqli_num_rows($run);
 
@@ -20,7 +20,7 @@
 								$sql="INSERT INTO `report`(`uid`, `report_uid`, `date`) VALUES ('$uid','$prof_uid','$currentDateTime')";
 							if(mysqli_query($conn,$sql)){
 								$s="You are Reported by someone";
-								notification($uid, $s, $prof_uid);
+								notification($prof_uid, $s, $uid);
 								?>
 								<script>
 										alert("Report Send To Team");
