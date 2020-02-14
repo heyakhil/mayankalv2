@@ -160,7 +160,7 @@ s0.parentNode.insertBefore(s1,s0);
 						<div class="content">
 							<ul class="dashboard-box-list">
 						<?php 
-						$sql = "SELECT * FROM notification WHERE `send_by`='$uid' ORDER BY id DESC LIMIT 5";
+						$sql = "SELECT * FROM notification WHERE `uid`='$uid' ORDER BY id DESC LIMIT 5";
 						$result = mysqli_query($conn, $sql);
 
 						if (mysqli_num_rows($result) > 0) {
