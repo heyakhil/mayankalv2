@@ -26,7 +26,7 @@
       <h3>Title</h3>
       <input type="text" class="form-control" id="usr" placeholder="Enter the title" name="title">
       <hr>
-    <textarea class="ckeditor" name="editor" style="height:200px;"></textarea><br> 
+    <textarea class="ckeditor" name="editor"></textarea><br> 
     <input type="hidden" name="order_id" value="<?php echo $or_id; ?>">
     <input type="hidden" name="customer" value="<?php echo $customer; ?>">
     <input type="submit" class="btn btn-primary" value="Submit" name="submit" style="width:100px;">
