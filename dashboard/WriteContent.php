@@ -22,53 +22,98 @@
 </head>
 <body style="background-color:#F3ECEC;">
   
-<div class="fluid-container">
-  <div style="margin-right:500px; margin-left:200px;">
-    <div class="form-group" class="col-xm-10">
-    <form action="../assets/write_post.php" method="POST">
-      <h3>Title</h3>
-      <input type="text" class="form-control" id="usr" placeholder="Enter the title" name="title">
-      <hr>
-    <textarea class="ckeditor" name="editor"></textarea><br> 
-    <input type="hidden" name="order_id" value="<?php echo $or_id; ?>">
-    <input type="hidden" name="customer" value="<?php echo $customer; ?>">
-    <input type="submit" class="btn btn-primary" value="Submit" name="submit" style="width:100px;">
-
-  </form>
-<!-- </div> -->
-  <!-- <div class="col-sm-4 col-md-4" style="height: 700px;"> -->
-
-<!-- right-side -->
-
- <div class="container" style="width:300px;">
-  <div class="panel-group" id="accordion">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Collapsible Group 2</a>
-        </h4>
+<div class="container">
+  <!-- <div style="margin-right:500px; margin-left:200px;"> -->
+    <div class="row">
+      <div class="col-lg-9">
+        <div class="form-group">
+          <form action="../assets/write_post.php" method="POST">
+          <h3>Title</h3>
+          <input type="text" class="form-control" id="usr" placeholder="Enter the title" name="title">
+          <hr>
+            <textarea class="ckeditor" name="editor"></textarea><br> 
+            <input type="hidden" name="order_id" value="<?php echo $or_id; ?>">
+          <input type="hidden" name="customer" value="<?php echo $customer; ?>">
+          <input type="submit" class="btn btn-primary" value="Submit" name="submit" style="width:100px;">
+          </form>
+        </div>
       </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </div>
-      </div>
-    </div>
+      <!--  Right Side-->
+    <div class="col-lg-3" style="margin-top: 55px;">
+      <div class="panel-group" id="accordion">
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Category</a>
+            </h4>
+          </div>
+          <div id="collapse1" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Order Id</a>
+            </h4>
+          </div>
+          <div id="collapse2" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">No. of Words</a>
+            </h4>
+          </div>
+          <div id="collapse3" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Description</a>
+            </h4>
+          </div>
+          <div id="collapse4" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Notes</a>
+            </h4>
+          </div>
+          <div id="collapse5" class="panel-collapse collapse">
+            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            </div>
+          </div>
+        </div>
+        
+        
+        
   </div> 
 </div>
- <!-- End Right-side -->
+ 
  </div>
+</div>
+<!-- End Right-side -->
   <!-- <?php 
 
   $sql = "SELECT * FROM orders WHERE `order_id`='$or_id'";
