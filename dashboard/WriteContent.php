@@ -33,6 +33,7 @@
     <input type="hidden" name="order_id" value="<?php echo $or_id; ?>">
     <input type="hidden" name="customer" value="<?php echo $customer; ?>">
     <input type="submit" class="btn btn-primary" value="Submit" name="submit" style="width:100px;">
+
   </form>
 <!-- </div> -->
   <!-- <div class="col-sm-4 col-md-4" style="height: 700px;"> -->
