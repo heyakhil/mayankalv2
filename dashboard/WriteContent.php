@@ -22,7 +22,7 @@
 </head>
 <body style="background-color:#F3ECEC;">
   
-<div class="container">
+<div class="fluid-container" style="margin-right: 100px; margin-left: 80px">
   <!-- <div style="margin-right:500px; margin-left:200px;"> -->
     <div class="row">
       <div class="col-lg-9">
