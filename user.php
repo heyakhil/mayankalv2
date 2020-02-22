@@ -96,7 +96,7 @@
 				<!-- <div class="row">
 					<div class="col-md-12"> -->
 						<!-- Pagination -->
-						<!-- <div class="pagination-container margin-top-30 margin-bottom-60">
+						<div class="pagination-container margin-top-30 margin-bottom-60">
 							<nav class="pagination">
 								<ul>
 									<li class="pagination-arrow"><a href="#"><i class="icon-material-outline-keyboard-arrow-left"></i></a></li>
@@ -108,7 +108,7 @@
 								</ul>
 							</nav>
 						</div>
-					</div>
+					<!-- </div>
 				</div> -->
 				<!-- Pagination / End -->
 

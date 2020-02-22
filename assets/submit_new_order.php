@@ -52,7 +52,7 @@ error_reporting(0);
 	    	 ?>
 			<script type="text/javascript">
 				window.open("../user-profile.php?uid=<?php echo $uuid; ?>", "_self");
-             	alert("Order Coins amount is very Low");
+             	alert("You should give order min 500 words");
             </script>
 			<?php
 	    }

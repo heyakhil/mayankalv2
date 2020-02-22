@@ -4,6 +4,8 @@
 		$name = $_SESSION['naam'];
 		$uid = $_SESSION['uid'];
 	}else{
-		header("location:http://localhost/Akhil/Mayankalv2/index.php");
+		
+			header('location:http://localhost/project/Mayankalv2/index.php');
+
 	}
  ?>

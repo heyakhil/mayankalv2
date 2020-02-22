@@ -11,6 +11,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/jBox.all.min.css">
+<link rel="stylesheet" href="css/demo.css">
+<link rel="stylesheet" href="css/swc.css">
 
 <!-- CSS
 ================================================== -->
@@ -155,9 +158,31 @@
 						</div>
 					</div>
 				</a> -->
-
+				
 				<!-- Task -->
-				<?php include 'assets/searchweb.php'; ?>
+				<?php include 'assets/searchweb.php'; 
+
+					if($_GET['estatus'] == 'done'){
+						
+							echo '
+							<div id="boxes">
+							<div style="top: 50%; left: 50%; display: none; background-color: darkgray;" id="dialog" class="window"> 
+							<div id="san">
+							<a class="close agree" onclick="Close()"><img src="images/close.png" width="25" /></a>
+								<div>
+									<center><h3 style="color: darkgreen;">Success!</h3></center>
+									<p>Your request has been sent to respected owner. </p>
+									<p>He/She will contact you later</p>
+								</div>
+							</div>
+							</div>
+							<div style="width: 2478px; font-size: 32pt; color:white; height: 1202px; display: none; opacity: 0.4;" id="mask"></div>
+							</div>
+							';
+							
+					}
+				?>
+				
 			</div>
 			<!-- Tasks Container / End -->
 
@@ -213,12 +238,18 @@
 	</div>
 	<!-- Full Page Content / End -->
 
-</div>
-
-
+ </div>
 </div>
 <!-- Wrapper / End -->
-
+<script>
+	function Close(){
+		//location.replace("http://localhost/project/mayankalv2/top_web.php")
+		// let stateObj = { id: "100" }; 
+		//redirect without reloading the page
+		window.history.replaceState(null, 
+                        "Top_web", "top_web.php"); 
+	}
+</script>
 <!-- Scripts
 ================================================== -->
 <script src="js/jquery-3.4.1.min.js"></script>
@@ -234,7 +265,9 @@
 <script src="js/magnific-popup.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/custom.js"></script>
-
+<script src="js/jBox.all.min.js"></script>
+<script src="js/demo.js"></script>
+<script src="js/swc.js"></script>
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>
 // Snackbar for user status switcher
@@ -267,6 +300,8 @@ $('#snackbar-user-status label').click(function() {
 <!-- Google API & Maps -->
 <!-- Geting an API Key: https://developers.google.com/maps/documentation/javascript/get-api-key -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaoOT9ioUE4SA8h-anaFyU4K63a7H-7bc&amp;libraries=places"></script>
+
+
 
 </body>
 
