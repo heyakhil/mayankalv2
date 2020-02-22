@@ -32,6 +32,7 @@ error_reporting(0);
         }else{
         $sql = "INSERT INTO `orders`(`uid`, `orderof_uid`, `post_cat`, `min_word`, `imp_not`, `descrip`, `order_id`, `coins`, `dates`) VALUES ('$uuid','$uid','$cata','$min_word','$imp_n','$describe','$order_id', '$put_coins', '$dates')";
 		$msg = "You have a new order of ".$cata." catagory please check it out";
+	
         if (mysqli_query($conn, $sql)) {
             notification($uuid, $msg, $uid);
         } else {

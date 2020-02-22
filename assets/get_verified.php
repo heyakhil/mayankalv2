@@ -11,16 +11,34 @@ if (isset($_GET['uid'])) {
 	    while($row = mysqli_fetch_assoc($result)) {
 	    	$email_reg = $row['email_reg'];
 	    	if ($row['verification_code']=='') {
+				$name=$row['name'];
 	    		$verify_code = $row['verification_code'];
-	    		$to = $email;
-				$subject = "Mayankal Account Verification";
-				$message = "<html>
-							<body>
-								Hello User Thanks for making account on Mayankal <br> Here you can easily get verify your email and become a verified member of Mayankal So that you can easily work with Us without any problem So finally the link is below <br> Verification Link : <a href='user_verified.php?verify=".$verify_code."&status=ok'>Click Here</a>
-							</body>
-							</html>" ;
-				$from = "akhilsri28121999@gmail.com";
-				$headers = "From:" . $from;
+				$to = $email;
+				$subject = 'Verify Mayankal Account';
+				$from="team@mayankal.ml";
+				$headers = "From: ".$from."\r\n";
+				$headers .= "MIME-Version: 1.0\r\n";
+				$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+				$message='<!doctype html>
+								<html>
+									<head>
+										<title>E-mail template</title>
+										
+										<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+									</head>
+									<body>
+										<center><h1 style="margin-top: 30px;"><i>Mayankal</i></h1></center>
+										<div class="container" style="background-color:#F3ECEC; font-size:20px;" >
+										<p style="margin-top: 10px;"><i>Hello <b>'.$name.'</b></i></p>
+										<p><i>Thanks to create an account of <b style="color: rgb(238, 36, 10);">Mayankal.</b></i></p>
+										<p><i>Please verify your account by click on the button below.</i></p>
+										<a href= "http://localhost/project/mayankalv2/assets/user_verified.php?verify='.$verify_code.'&status=ok" type="button" class="btn btn-success" style="width:90px;">Verify</a><br><br>
+										<h5><i>Thankyou</i></h5>
+										<h5><i><b>Mayankal team</b></i></h5><br>
+										</div>
+									</body>
+								</html>';
+
 				if(mail($to,$subject,$message,$headers)){
 					$sql = "INSERT INTO user (verification_code)
 				VALUES ('$verify_code')";
@@ -50,13 +68,34 @@ if (isset($_GET['uid'])) {
 				if (mysqli_num_rows($result) > 0) {
 				    // output data of each row
 				    while($row = mysqli_fetch_assoc($result)) {
-				        $verify_code = $row['verification_code'];
-				      	$to = $email;
-						$subject = "Mayankal Account Verification(Resend)";
-						$message = "Hello User Thanks for making account on Mayankal <br> Here you can easily get verify your email and become a verified member of Mayankal So that you can easily work with Us without any problem So finally the link is below <br> Verification Link : <a href='".$row['verification_code']."'>Click Here</a>";
-						$from = "akhilsri28121999@gmail.com";
-						$headers = "From:" . $from;
-
+						$verify_code = $row['verification_code'];
+						$name=$row['name'];
+						$to = $email;
+						$subject = 'Verify Mayankal Account';
+						$from="team@mayankal.ml";
+						$headers = "From: ".$from."\r\n";
+						$headers .= "MIME-Version: 1.0\r\n";
+						$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+						$message='<!doctype html>
+										<html>
+											<head>
+												<title>E-mail template</title>
+												
+												<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+											</head>
+											<body>
+												<center><h1 style="margin-top: 30px;"><i>Mayankal</i></h1></center>
+												<div class="container" style="background-color:#F3ECEC; font-size:20px;" >
+												<p style="margin-top: 10px;"><i>Hello <b>'.$name.'</b></i></p>
+												<p><i>Thanks to create an account of <b style="color: rgb(238, 36, 10);">Mayankal.</b></i></p>
+												<p><i>Please verify your account by click on the button below.</i></p>
+												<a href= "http://localhost/project/mayankalv2/assets/user_verified.php?verify='.$verify_code.'&status=ok" type="button" class="btn btn-success" style="width:90px;">Verify</a><br><br>
+												<h5><i>Thankyou</i></h5>
+												<h5><i><b>Mayankal team</b></i></h5><br>
+												</div>
+											</body>
+										</html>';
+		
 						if(mail($to,$subject,$message,$headers)){
 								?>
 								<script type="text/javascript">
