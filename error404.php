@@ -203,8 +203,13 @@
 					<div class="footer-links">
 						<h3>Account</h3>
 						<ul>
-							<li><a href="#"><span>Log In</span></a></li>
-							<li><a href="#"><span>My Account</span></a></li>
+					<?php if (isset($_SESSION['uid'])) {
+						echo '<li><a href="#"><span>Log In</span></a></li>
+							<li><a href="#"><span>My Account</span></a></li>';
+					}else{
+						echo '<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>Log In</span></a></li>
+					<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>My Account</span></a></li>';
+					} ?>
 						</ul>
 					</div>
 				</div>

@@ -32,6 +32,7 @@
 								$sql1="SELECT * FROM `order_complete` WHERE `uid`='$uid' AND `seen`='0'";
 								$run1=mysqli_query($conn,$sql1);
 								$all_num=mysqli_num_rows($run1);
+								
 							
 							?>
 						<ul data-submenu-title="Order Manager">

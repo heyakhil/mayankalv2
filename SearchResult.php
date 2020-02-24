@@ -1,3 +1,5 @@
+<?php include 'assets/connect.php' ?>
+<?php include 'assets/check.php' ?>
 <!doctype html>
 <html lang="en">
 
@@ -6,14 +8,14 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Mayankal</title>
+<title>Mayankal - Search Result</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
 <!-- CSS
 ================================================== -->
-<link rel="stylesheet" href="../css/style.css">
-<link rel="stylesheet" href="../css/colors/blue.css">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/colors/blue.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
@@ -70,329 +72,7 @@
 <header id="header-container" class="fullwidth">
 
 	<!-- Header -->
-	<div id="header">
-		<div class="container">
-			
-			<!-- Left Side Content -->
-			<div class="left-side">
-				
-				<!-- Logo -->
-				<div id="logo">
-					<a href="index-2.html"><img src="images/logom.png" alt=""></a>
-				</div>
-
-				<!-- Main Navigation -->
-				<nav id="navigation">
-					<ul id="responsive">
-
-						<li><a href="#">Home</a>
-							<ul class="dropdown-nav">
-								<li><a href="index-2.html">Home 1</a></li>
-								<li><a href="index-3.html">Home 2</a></li>
-								<li><a href="index-4.html">Home 3</a></li>
-							</ul>
-						</li>
-
-						<li><a href="#">Find Work</a>
-							<ul class="dropdown-nav">
-								<li><a href="#">Browse Jobs</a>
-									<ul class="dropdown-nav">
-										<li><a href="jobs-list-layout-full-page-map.html">Full Page List + Map</a></li>
-										<li><a href="jobs-grid-layout-full-page-map.html">Full Page Grid + Map</a></li>
-										<li><a href="jobs-grid-layout-full-page.html">Full Page Grid</a></li>
-										<li><a href="jobs-list-layout-1.html">List Layout 1</a></li>
-										<li><a href="jobs-list-layout-2.html">List Layout 2</a></li>
-										<li><a href="jobs-grid-layout.html">Grid Layout</a></li>
-									</ul>
-								</li>
-								<li><a href="#">Browse Tasks</a>
-									<ul class="dropdown-nav">
-										<li><a href="tasks-list-layout-1.html">List Layout 1</a></li>
-										<li><a href="tasks-list-layout-2.html">List Layout 2</a></li>
-										<li><a href="tasks-grid-layout.html">Grid Layout</a></li>
-										<li><a href="tasks-grid-layout-full-page.html">Full Page Grid</a></li>
-									</ul>
-								</li>
-								<li><a href="browse-companies.html">Browse Companies</a></li>
-								<li><a href="single-job-page.html">Job Page</a></li>
-								<li><a href="single-task-page.html">Task Page</a></li>
-								<li><a href="single-company-profile.html">Company Profile</a></li>
-							</ul>
-						</li>
-
-						<li><a href="#" class="current">For Employers</a>
-							<ul class="dropdown-nav">
-								<li><a href="#">Find a Freelancer</a>
-									<ul class="dropdown-nav">
-										<li><a href="freelancers-grid-layout-full-page.html">Full Page Grid</a></li>
-										<li><a href="freelancers-grid-layout.html">Grid Layout</a></li>
-										<li><a href="freelancers-list-layout-1.html">List Layout 1</a></li>
-										<li><a href="freelancers-list-layout-2.html">List Layout 2</a></li>
-									</ul>
-								</li>
-								<li><a href="single-freelancer-profile.html">Freelancer Profile</a></li>
-								<li><a href="dashboard-post-a-job.html">Post a Job</a></li>
-								<li><a href="dashboard-post-a-task.html">Post a Task</a></li>
-							</ul>
-						</li>
-
-						<li><a href="#">Dashboard</a>
-							<ul class="dropdown-nav">
-								<li><a href="dashboard.html">Dashboard</a></li>
-								<li><a href="dashboard-messages.html">Messages</a></li>
-								<li><a href="dashboard-bookmarks.html">Bookmarks</a></li>
-								<li><a href="dashboard-reviews.html">Reviews</a></li>
-								<li><a href="dashboard-manage-jobs.html">Jobs</a>
-									<ul class="dropdown-nav">
-										<li><a href="dashboard-manage-jobs.html">Manage Jobs</a></li>
-										<li><a href="dashboard-manage-candidates.html">Manage Candidates</a></li>
-										<li><a href="dashboard-post-a-job.html">Post a Job</a></li>
-									</ul>
-								</li>
-								<li><a href="dashboard-manage-tasks.html">Tasks</a>
-									<ul class="dropdown-nav">
-										<li><a href="dashboard-manage-tasks.html">Manage Tasks</a></li>
-										<li><a href="dashboard-manage-bidders.html">Manage Bidders</a></li>
-										<li><a href="dashboard-my-active-bids.html">My Active Bids</a></li>
-										<li><a href="dashboard-post-a-task.html">Post a Task</a></li>
-									</ul>
-								</li>
-								<li><a href="dashboard-settings.html">Settings</a></li>
-							</ul>
-						</li>
-
-						<li><a href="#">Pages</a>
-							<ul class="dropdown-nav">
-								<li>
-									<a href="#">Open Street Map</a>
-									<ul class="dropdown-nav">
-										<li><a href="jobs-list-layout-full-page-map-OpenStreetMap.html">Full Page List + Map</a></li>
-										<li><a href="jobs-grid-layout-full-page-map-OpenStreetMap.html">Full Page Grid + Map</a></li>
-										<li><a href="single-job-page-OpenStreetMap.html">Job Page</a></li>
-										<li><a href="single-company-profile-OpenStreetMap.html">Company Profile</a></li>
-										<li><a href="pages-contact-OpenStreetMap.html">Contact</a></li>
-										<li><a href="jobs-list-layout-1-OpenStreetMap.html">Location Autocomplete</a></li>
-									</ul>
-								</li>
-								<li><a href="pages-blog.html">Blog</a></li>
-								<li><a href="pages-pricing-plans.html">Pricing Plans</a></li>
-								<li><a href="pages-checkout-page.html">Checkout Page</a></li>
-								<li><a href="pages-invoice-template.html">Invoice Template</a></li>
-								<li><a href="pages-user-interface-elements.html">User Interface Elements</a></li>
-								<li><a href="pages-icons-cheatsheet.html">Icons Cheatsheet</a></li>
-								<li><a href="pages-login.html">Login & Register</a></li>
-								<li><a href="pages-404.html">404 Page</a></li>
-								<li><a href="pages-contact.html">Contact</a></li>
-							</ul>
-						</li>
-
-					</ul>
-				</nav>
-				<div class="clearfix"></div>
-				<!-- Main Navigation / End -->
-				
-			</div>
-			<!-- Left Side Content / End -->
-
-
-			<!-- Right Side Content / End -->
-			<div class="right-side">
-
-				<!--  User Notifications -->
-				<div class="header-widget hide-on-mobile">
-					
-					<!-- Notifications -->
-					<div class="header-notifications">
-
-						<!-- Trigger -->
-						<div class="header-notifications-trigger">
-							<a href="#"><i class="icon-feather-bell"></i><span>4</span></a>
-						</div>
-
-						<!-- Dropdown -->
-						<div class="header-notifications-dropdown">
-
-							<div class="header-notifications-headline">
-								<h4>Notifications</h4>
-								<button class="mark-as-read ripple-effect-dark" title="Mark all as read" data-tippy-placement="left">
-									<i class="icon-feather-check-square"></i>
-								</button>
-							</div>
-
-							<div class="header-notifications-content">
-								<div class="header-notifications-scroll" data-simplebar>
-									<ul>
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="dashboard-manage-candidates.html">
-												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-												<span class="notification-text">
-													<strong>Michael Shannah</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="dashboard-manage-bidders.html">
-												<span class="notification-icon"><i class=" icon-material-outline-gavel"></i></span>
-												<span class="notification-text">
-													<strong>Gilbert Allanis</strong> placed a bid on your <span class="color">iOS App Development</span> project
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="dashboard-manage-jobs.html">
-												<span class="notification-icon"><i class="icon-material-outline-autorenew"></i></span>
-												<span class="notification-text">
-													Your job listing <span class="color">Full Stack PHP Developer</span> is expiring.
-												</span>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li>
-											<a href="dashboard-manage-candidates.html">
-												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
-												<span class="notification-text">
-													<strong>Sindy Forrest</strong> applied for a job <span class="color">Full Stack Software Engineer</span>
-												</span>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-						</div>
-
-					</div>
-					
-					<!-- Messages -->
-					<div class="header-notifications">
-						<div class="header-notifications-trigger">
-							<a href="#"><i class="icon-feather-mail"></i><span>3</span></a>
-						</div>
-
-						<!-- Dropdown -->
-						<div class="header-notifications-dropdown">
-
-							<div class="header-notifications-headline">
-								<h4>Messages</h4>
-								<button class="mark-as-read ripple-effect-dark" title="Mark all as read" data-tippy-placement="left">
-									<i class="icon-feather-check-square"></i>
-								</button>
-							</div>
-
-							<div class="header-notifications-content">
-								<div class="header-notifications-scroll" data-simplebar>
-									<ul>
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="dashboard-messages.html">
-												<span class="notification-avatar status-online"><img src="images/user-avatar-small-03.jpg" alt=""></span>
-												<div class="notification-text">
-													<strong>David Peterson</strong>
-													<p class="notification-msg-text">Thanks for reaching out. I'm quite busy right now on many...</p>
-													<span class="color">4 hours ago</span>
-												</div>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="dashboard-messages.html">
-												<span class="notification-avatar status-offline"><img src="images/user-avatar-small-02.jpg" alt=""></span>
-												<div class="notification-text">
-													<strong>Sindy Forest</strong>
-													<p class="notification-msg-text">Hi Tom! Hate to break it to you, but I'm actually on vacation until...</p>
-													<span class="color">Yesterday</span>
-												</div>
-											</a>
-										</li>
-
-										<!-- Notification -->
-										<li class="notifications-not-read">
-											<a href="dashboard-messages.html">
-												<span class="notification-avatar status-online"><img src="images/user-avatar-placeholder.png" alt=""></span>
-												<div class="notification-text">
-													<strong>Marcin Kowalski</strong>
-													<p class="notification-msg-text">I received payment. Thanks for cooperation!</p>
-													<span class="color">Yesterday</span>
-												</div>
-											</a>
-										</li>
-									</ul>
-								</div>
-							</div>
-
-							<a href="dashboard-messages.html" class="header-notifications-button ripple-effect button-sliding-icon">View All Messages<i class="icon-material-outline-arrow-right-alt"></i></a>
-						</div>
-					</div>
-
-				</div>
-				<!--  User Notifications / End -->
-
-				<!-- User Menu -->
-				<div class="header-widget">
-
-					<!-- Messages -->
-					<div class="header-notifications user-menu">
-						<div class="header-notifications-trigger">
-							<a href="#"><div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div></a>
-						</div>
-
-						<!-- Dropdown -->
-						<div class="header-notifications-dropdown">
-
-							<!-- User Status -->
-							<div class="user-status">
-
-								<!-- User Name / Avatar -->
-								<div class="user-details">
-									<div class="user-avatar status-online"><img src="images/user-avatar-small-01.jpg" alt=""></div>
-									<div class="user-name">
-										Tom Smith <span>Freelancer</span>
-									</div>
-								</div>
-								
-								<!-- User Status Switcher -->
-								<div class="status-switch" id="snackbar-user-status">
-									<label class="user-online current-status">Online</label>
-									<label class="user-invisible">Invisible</label>
-									<!-- Status Indicator -->
-									<span class="status-indicator" aria-hidden="true"></span>
-								</div>	
-						</div>
-						
-						<ul class="user-menu-small-nav">
-							<li><a href="dashboard.html"><i class="icon-material-outline-dashboard"></i> Dashboard</a></li>
-							<li><a href="dashboard-settings.html"><i class="icon-material-outline-settings"></i> Settings</a></li>
-							<li><a href="index-logged-out.html"><i class="icon-material-outline-power-settings-new"></i> Logout</a></li>
-						</ul>
-
-						</div>
-					</div>
-
-				</div>
-				<!-- User Menu / End -->
-
-				<!-- Mobile Navigation Button -->
-				<span class="mmenu-trigger">
-					<button class="hamburger hamburger--collapse" type="button">
-						<span class="hamburger-box">
-							<span class="hamburger-inner"></span>
-						</span>
-					</button>
-				</span>
-
-			</div>
-			<!-- Right Side Content / End -->
-
-		</div>
-	</div>
-	<!-- Header / End -->
+<?php include 'menu.php' ?>
 
 </header>
 <div class="clearfix"></div>
@@ -407,26 +87,12 @@
 <div class="container">
 	<div class="row">
 		<div class="col-xl-3 col-lg-4">
-			<div class="sidebar-container">
-				
-				<!-- Location -->
-				
-				<!-- Category -->
-				
-
-				<!-- Keywords -->
-				
-
-				<!-- Hourly Rate -->
 			
-
-				<!-- Tags -->
-				
-
-					<!-- More Skills -->
-					
-				</div>
-				
+				<?php $search=$_POST['search']; 
+				if ($search == "") {
+					header("location:home.php?emterr");
+				}
+				?>
 
 			</div>
 		</div>
@@ -434,18 +100,38 @@
 
 			<!--====Search Bar=======-->
 
-			<form class="example" action="/action_page.php">
-				<input type="text" placeholder="Search.." name="search">
-				<button type="submit"><i class="fa fa-search"></i></button>
+
+			<form class="example" action="SearchResult.php" method="post">
+				<input type="text" placeholder="Search..." name="search" value="<?php echo $search; ?>">
+				<button type="submit" ><i class="fa fa-search"></i></button>
 			  </form>
 
 			  <h3>Search Result For:</h3>
+		
 			  <!--==END Search Bar-->
+			  <!-- data of user  -->
+			  	
 			
 			<!-- Freelancers List Container -->
 			<div class="freelancers-container freelancers-list-layout margin-top-35">
 				
 				<!--Freelancer -->
+				<?php  
+
+				$sql="SELECT * FROM user INNER JOIN user_info ON user.unique_id=user_info.uid where user.name LIKE '%$search%' OR user_info.skills LIKE '%$search%'";
+				
+				$run=mysqli_query($conn,$sql);
+				if(mysqli_num_rows($run) > 0){
+				while($row=mysqli_fetch_assoc($run)){
+				$pp=$row['profile_pic'];
+				if($pp==""){
+					 $pp="download.jpg";
+				}
+				$name=$row['name'];
+				$rating=$row['rating'];
+				$skills=$row['skills'];
+				$uid=$row['unique_id'];
+			?>
 				<div class="freelancer">
 
 					<!-- Overview -->
@@ -458,16 +144,16 @@
 							<!-- Avatar -->
 							<div class="freelancer-avatar">
 								<div class="verified-badge"></div>
-								<a href="single-freelancer-profile.html"><img src="images/user-avatar-big-01.jpg" alt=""></a>
+								<a href="user-profile.php?uid=<?php echo $uid; ?>"><img src="dashboard/img/<?php echo $pp; ?>" alt=""></a>
 							</div>
 
 							<!-- Name -->
 							<div class="freelancer-name">
-								<h4><a href="#">Tom Smith <img class="flag" src="images/flags/gb.svg" alt="" title="United Kingdom" data-tippy-placement="top"></a></h4>
-								<span>UI/UX Designer</span>
+								<h4><a href="user-profile.php?uid=<?php echo $uid; ?>"><?php echo $name; ?> </a></h4>
+								<span><?php echo $skills; ?></span>
 								<!-- Rating -->
 								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="4.9"></div>
+									<div class="star-rating" data-rating="<?php echo $rating; ?>"></div>
 								</div>
 								<h4></h4>
 							</div>
@@ -480,17 +166,94 @@
 							<ul>
 								<li></li>
 								<li></li>
-								<li>Country <strong><i class="icon-material-outline-location-on"></i> London</strong></li>
+								<li>Country <strong><i class="icon-material-outline-location-on"></i> India</strong></li>
+								<li></li>
 								<li></li>
 								
 							</ul>
 						</div>
-						<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
+						<a href="user-profile.php?uid=<?php echo $uid; ?>" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
 					</div>
 				</div>
+				<?php
+						}
+					}else{
+				?>
 				<!-- Freelancer / End -->
 
 				<!--Freelancer -->
+				<?php
+					$sql="SELECT * FROM `web_info` WHERE web_name LIKE '%$search%' OR catagory LIKE '%$search%' OR niche LIKE '%$search%'";
+					$run=mysqli_query($conn,$sql);
+					if(mysqli_num_rows($run) > 0){
+					while($result=mysqli_fetch_assoc($run)){
+						$uid=$result['web_uid'];
+						$niche=$result['niche'];
+						$catagory=$result['catagory'];
+						$mpoint=$result['mpoint'];
+						$sql1="SELECT * FROM user WHERE unique_id='$uid'";
+						$run1=mysqli_query($conn,$sql1);
+						$row=mysqli_fetch_assoc($run1);
+						$name=$row['name'];
+						$sql2="SELECT * FROM `user_info` WHERE uid='$uid'";
+						$run2=mysqli_query($conn,$sql2);
+						$row1=mysqli_fetch_assoc($run2);
+						$no_of_web=$row1['no_web'];
+				?>
+				<div class="freelancer">
+
+					<!-- Overview -->
+					<div class="freelancer-overview">
+						<div class="freelancer-overview-inner">							
+							<!-- Bookmark Icon -->
+							<span class="bookmark-icon"></span>
+							<!-- Avatar -->
+							<!-- Name -->
+							<div class="freelancer-name">
+								<h3><?php echo $name; ?></h3>
+								<span>Niche:<?php echo $niche; ?></span><br><br>
+								<h4>Category:<span><?php echo $catagory; ?></span></h4><br>
+								<h4>MPoint:<?php echo $mpoint; ?></h4>
+							</div>
+						</div>
+					</div>
+					
+					<!-- Details -->
+					<div class="freelancer-details">
+						<div class="freelancer-details-list">
+							<ul>
+								<li><h3 style="margin-left: 10ex;"> Total Web:<?php echo $no_of_web; ?></h3> </li>
+								<li></li>
+							</ul>	
+							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">Ping <i class="icon-material-outline-arrow-right-alt"></i></a>
+							
+						</div>
+						
+					</div>
+				</div>
+				<?php
+							}
+						}
+					}
+				?>
+				<!-- Freelancer / End -->
+
+				<!-- for any one search author than -->
+				<?php 
+					$sql2="SELECT * FROM `author` WHERE name LIKE '%$search%' OR skills LIKE '%$search%' OR experties LIKE '%$search%'";
+					$run2=mysqli_query($conn,$sql2);
+					if(mysqli_num_rows($run2) > 0){
+					while($result=mysqli_fetch_assoc($run2)){
+						$name1=$result['name'];
+						$skills=$result['skills'];
+						$experties=$result['experties'];
+						$pp1=$result['profile_pic'];
+						if($pp1==""){
+							$pp1="download.jpg";
+						}
+						$id=$result['auth_id'];
+						$rating=$result['rating'];
+				 ?>
 				<div class="freelancer">
 
 					<!-- Overview -->
@@ -501,17 +264,20 @@
 							<span class="bookmark-icon"></span>
 							
 							<!-- Avatar -->
-							
+							<div class="freelancer-avatar">
+								<div class="verified-badge"></div>
+								<a href="expertprofile.php?authid=<?php echo $id; ?>"><img src="images/<?php echo $pp1; ?>" alt=""></a>
+							</div>
 
 							<!-- Name -->
 							<div class="freelancer-name">
-								<h3>David Peterson</h3>
-								<span>Niche:  photography</span><br><br>
-								<h4>Category:<span>   photography</span></h4><br>
-								<h4>MPoint:10</h4>
-								
-								
-								
+								<h4><a href="expertprofile.php?authid=<?php echo $id; ?>"><?php echo $name1; ?> </a></h4>
+								<span><?php echo $skills; ?></span>
+								<!-- Rating -->
+								<div class="freelancer-rating">
+									<div class="star-rating" data-rating="<?php echo $rating; ?>"></div>
+								</div>
+								<h4></h4>
 							</div>
 						</div>
 					</div>
@@ -522,20 +288,19 @@
 							<ul>
 								<li></li>
 								<li></li>
-								
-								<li><h3 style="margin-left: 10ex;"> Total Web: 20</h3> </li>
+								<li>Country <strong><i class="icon-material-outline-location-on"></i> India</strong></li>
 								<li></li>
-							</ul>	
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">Ping <i class="icon-material-outline-arrow-right-alt"></i></a>
-							
+								<li></li>
+								
+							</ul>
 						</div>
-						
+						<a href="expertprofile.php?authid=<?php echo $id; ?>" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
 					</div>
 				</div>
-				<!-- Freelancer / End -->
-
-				
-				
+				<?php 
+					}
+				}
+				?>
 	
 			
 			<!-- Tasks Container / End -->
@@ -665,8 +430,13 @@
 					<div class="footer-links">
 						<h3>For Experts</h3>
 						<ul>
-							<li><a href="#"><span>Auther Panel</span></a></li>
-							<li><a href="#"><span>Other Blogs</span></a></li>
+					<?php if (isset($_SESSION['uid'])) {
+						echo '<li><a href="#"><span>Log In</span></a></li>
+							<li><a href="#"><span>My Account</span></a></li>';
+					}else{
+						echo '<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>Log In</span></a></li>
+					<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>My Account</span></a></li>';
+					} ?>
 						</ul>
 					</div>
 				</div>
@@ -729,19 +499,19 @@
 
 <!-- Scripts
 ================================================== -->
-<script src="../js/jquery-3.4.1.min.js"></script>
-<script src="../js/jquery-migrate-3.1.0.min.html"></script>
-<script src="../js/mmenu.min.js"></script>
-<script src="../js/tippy.all.min.js"></script>
-<script src="../js/simplebar.min.js"></script>
-<script src="../js/bootstrap-slider.min.js"></script>
-<script src="../js/bootstrap-select.min.js"></script>
-<script src="../js/snackbar.js"></script>
-<script src="../js/clipboard.min.js"></script>
-<script src="../js/counterup.min.js"></script>
-<script src="../js/magnific-popup.min.js"></script>
-<script src="../js/slick.min.js"></script>
-<script src="../js/custom.js"></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/jquery-migrate-3.1.0.min.html"></script>
+<script src="js/mmenu.min.js"></script>
+<script src="js/tippy.all.min.js"></script>
+<script src="js/simplebar.min.js"></script>
+<script src="js/bootstrap-slider.min.js"></script>
+<script src="js/bootstrap-select.min.js"></script>
+<script src="js/snackbar.js"></script>
+<script src="js/clipboard.min.js"></script>
+<script src="js/counterup.min.js"></script>
+<script src="js/magnific-popup.min.js"></script>
+<script src="js/slick.min.js"></script>
+<script src="js/custom.js"></script>
 
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>

@@ -20,7 +20,7 @@
 		$insta = $_POST['insta'];
 		$twitter = $_POST['twit'];
 		$yt = $_POST['yt'];
-		$about = $_POST['intro'];
+		$about =mysqli_real_escape_string($conn,$_POST['intro']);
 	$work = 0;
  if($_FILES["profile-pic"]["name"]!=''){
  		$target_dir = "../dashboard/img/";
@@ -81,21 +81,27 @@ if ($name !="" || $mobi != "" || $email !="") {
  	   	<?php
  	}
  }
-
  	if ($cpass != "" && $npass != "" && $repass != "") {
-	    	$sql = "SELECT * FROM user WHERE `unique_id` ='$uid'";
+	    	$sql = "SELECT `pass` FROM `user` WHERE `pass`='$cpass'";
+	    	
  			$result = $conn->query($sql);
  			if ($result->num_rows > 0) {
  			    // output data of each row
  			    while($row = $result->fetch_assoc()) {
+
+ 			       if ($npass === $repass) {
+ 				       	 $sql = "UPDATE `user` SET `pass`='$npass' WHERE `unique_id`='$uid'";
+
  			       if ($row['pass'] === $cpass && $npass == $repass) {
  				       	 $sql = "UPDATE user SET pass='$npass' WHERE `unique_id`='$uid'";
+
 
  						if (mysqli_query($conn, $sql)) {
  						    ?>
  						    <script type="text/javascript">
+							 	alert("Your Password is updated");
  						    	window.open("../dashboard/dashboard-settings.php", "_self");
- 						    	alert("Your Password is updated");
+ 						    
  						    </script>
  						    <?php
 						} else {

@@ -6,7 +6,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Mayankal</title>
+<title>Mayankal - Blog</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
@@ -222,10 +222,10 @@
 
 				<!-- Pagination -->
 				<div class="clearfix"></div>
-				<div class="row">
-					<div class="col-md-12">
+				<!-- <div class="row">
+					<div class="col-md-12"> -->
 						<!-- Pagination -->
-						<div class="pagination-container margin-top-10 margin-bottom-20">
+						<!-- <div class="pagination-container margin-top-10 margin-bottom-20">
 							<nav class="pagination">
 								<ul>
 									<li><a href="#" class="current-page ripple-effect">1</a></li>
@@ -236,7 +236,7 @@
 							</nav>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<!-- Pagination / End -->
 
 			</div>
@@ -458,8 +458,13 @@
 					<div class="footer-links">
 						<h3>Account</h3>
 						<ul>
-							<li><a href="#"><span>Log In</span></a></li>
-							<li><a href="#"><span>My Account</span></a></li>
+					<?php if (isset($_SESSION['uid'])) {
+						echo '<li><a href="#"><span>Log In</span></a></li>
+							<li><a href="#"><span>My Account</span></a></li>';
+					}else{
+						echo '<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>Log In</span></a></li>
+					<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>My Account</span></a></li>';
+					} ?>
 						</ul>
 					</div>
 				</div>

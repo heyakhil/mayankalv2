@@ -1,4 +1,5 @@
 <?php 
+
 	error_reporting(0);
 	include 'assets/check.php';
 	include 'assets/connect.php';
@@ -11,7 +12,7 @@
 
 <!-- Basic Page Needs
 ================================================== -->
-<title>Mayankal</title>
+<title>Mayankal - Write Guest Post</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
@@ -55,6 +56,7 @@
 		</div>
 		
 		<!-- Search Bar -->
+	<form action="SearchResult.php" method="post">
 		<div class="row">
 			<div class="col-md-12">
 				<div class="intro-banner-search-form margin-top-95">
@@ -62,17 +64,17 @@
 					<!-- Search Field -->
 					<div class="intro-search-field">
 						<label for ="intro-keywords" class="field-title ripple-effect">On What Topic You Want A Guest Post</label>
-						<input id="intro-keywords" type="text" placeholder="Post Topic, Catagory...">
+						<input id="intro-keywords" type="text" name="search"  placeholder="Post Topic, Catagory,User Name..." required >
 					</div>
 
 					<!-- Button -->
 					<div class="intro-search-button">
-						<button class="button ripple-effect" onclick="window.location.href='jobs-list-layout-1.html'">Search</button>
+						<button type="submit" class="button ripple-effect">Search</button>
 					</div>
 				</div>
 			</div>
 		</div>
-
+	</form>
 		<!-- Stats -->
 		<div class="row">
 			<div class="col-md-12">
@@ -196,7 +198,7 @@
 				<div class="col-lg-6 col-md-8 col-sm-12">
 					<h2>Hire experts or be hired. <br> For any job, any time.</h2>
 					<p>Bring to the table win-win survival strategies to ensure proactive domination. At the end of the day, going forward, a new normal that has evolved from generation is on the runway towards.</p>
-					<a href="#" class="button button-sliding-icon ripple-effect big margin-top-20">Get Started <i class="icon-material-outline-arrow-right-alt"></i></a>
+					<a href="expert.php" class="button button-sliding-icon ripple-effect big margin-top-20">Get Started <i class="icon-material-outline-arrow-right-alt"></i></a>
 				</div>
 			</div>
 
@@ -305,134 +307,21 @@
 
 			<div class="col-xl-12">
 				<div class="default-slick-carousel freelancers-container freelancers-grid-layout">
+						 <?php  
+								 $sql="SELECT * FROM `author` order by `rating` desc";
+								 $run=mysqli_query($conn,$sql);
+								 while($result=mysqli_fetch_assoc($run)){
+									 $pp=$result['profile_pic'];
+									 
+									 if($pp==""){
+										 $pp="user-avatar-placeholder.png";
+									 }
 
-					<!--Freelancer -->
-					<div class="freelancer">
+						 ?>
+				
 
-						<!-- Overview -->
-						<div class="freelancer-overview">
-							<div class="freelancer-overview-inner">
-								
-								<!-- Bookmark Icon -->
-								<span class="bookmark-icon"></span>
-								
-								<!-- Avatar -->
-								<div class="freelancer-avatar">
-									<div class="verified-badge"></div>
-									<a href="single-freelancer-profile.html"><img src="images/user-avatar-big-01.jpg" alt=""></a>
-								</div>
 
-								<!-- Name -->
-								<div class="freelancer-name">
-									<h4><a href="single-freelancer-profile.html">Tom Smith <img class="flag" src="images/flags/gb.svg" alt="" title="United Kingdom" data-tippy-placement="top"></a></h4>
-									<span>UI/UX Designer</span>
-								</div>
-
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="5.0"></div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Details -->
-						<div class="freelancer-details">
-							<div class="freelancer-details-list">
-								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> London</strong></li>
-									<li>Rate <strong>$60 / hr</strong></li>
-									<li>Job Success <strong>95%</strong></li>
-								</ul>
-							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-						</div>
-					</div>
-					<!-- Freelancer / End -->
-
-					<!--Freelancer -->
-					<div class="freelancer">
-
-						<!-- Overview -->
-						<div class="freelancer-overview">
-							<div class="freelancer-overview-inner">
-								
-								<!-- Bookmark Icon -->
-								<span class="bookmark-icon"></span>
-								
-								<!-- Avatar -->
-								<div class="freelancer-avatar">
-									<div class="verified-badge"></div>
-									<a href="single-freelancer-profile.html"><img src="images/user-avatar-big-02.jpg" alt=""></a>
-								</div>
-
-								<!-- Name -->
-								<div class="freelancer-name">
-									<h4><a href="#">David Peterson <img class="flag" src="images/flags/de.svg" alt="" title="Germany" data-tippy-placement="top"></a></h4>
-									<span>iOS Expert + Node Dev</span>
-								</div>
-
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="5.0"></div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Details -->
-						<div class="freelancer-details">
-							<div class="freelancer-details-list">
-								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> Berlin</strong></li>
-									<li>Rate <strong>$40 / hr</strong></li>
-									<li>Job Success <strong>88%</strong></li>
-								</ul>
-							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-						</div>
-					</div>
-					<!-- Freelancer / End -->
-
-					<!--Freelancer -->
-					<div class="freelancer">
-
-						<!-- Overview -->
-						<div class="freelancer-overview">
-							<div class="freelancer-overview-inner">
-								<!-- Bookmark Icon -->
-								<span class="bookmark-icon"></span>
-								
-								<!-- Avatar -->
-								<div class="freelancer-avatar">
-									<a href="single-freelancer-profile.html"><img src="images/user-avatar-placeholder.png" alt=""></a>
-								</div>
-
-								<!-- Name -->
-								<div class="freelancer-name">
-									<h4><a href="#">Marcin Kowalski <img class="flag" src="images/flags/pl.svg" alt="" title="Poland" data-tippy-placement="top"></a></h4>
-									<span>Front-End Developer</span>
-								</div>
-
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="4.9"></div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Details -->
-						<div class="freelancer-details">
-							<div class="freelancer-details-list">
-								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> Warsaw</strong></li>
-									<li>Rate <strong>$50 / hr</strong></li>
-									<li>Job Success <strong>100%</strong></li>
-								</ul>
-							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-						</div>
-					</div>
-					<!-- Freelancer / End -->
-
+									
 					<!--Freelancer -->
 					<div class="freelancer">
 
@@ -444,19 +333,18 @@
 								
 								<!-- Avatar -->
 								<div class="freelancer-avatar">
-									<div class="verified-badge"></div>
-									<a href="single-freelancer-profile.html"><img src="images/user-avatar-big-03.jpg" alt=""></a>
+									<a href="expertprofile.php?authid=<?php echo $result['auth_id']; ?>"><img src="images/<?php  echo $pp; ?>" alt=""></a>
 								</div>
 
 								<!-- Name -->
 								<div class="freelancer-name">
-									<h4><a href="#">Sindy Forest <img class="flag" src="images/flags/au.svg" alt="" title="Australia" data-tippy-placement="top"></a></h4>
-									<span>Magento Certified Developer</span>
+									<h4><a href="#"><?php echo $result['name']; ?></a></h4>
+									<span><?php  echo $result['experties']; ?></span>
 								</div>
 
 								<!-- Rating -->
 								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="5.0"></div>
+									<div class="star-rating" data-rating="<?php echo $result['rating']; ?>"></div>
 								</div>
 							</div>
 						</div>
@@ -465,98 +353,18 @@
 						<div class="freelancer-details">
 							<div class="freelancer-details-list">
 								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> Brisbane</strong></li>
-									<li>Rate <strong>$70 / hr</strong></li>
-									<li>Job Success <strong>100%</strong></li>
+									<li>Location <strong><i class="icon-material-outline-location-on"></i> India</strong></li>
+									<li>Rate <strong>150-coins / Post</strong></li>
+									<li>Job Status <strong>Author</strong></li>
 								</ul>
 							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
+							<a href="expertprofile.php?authid=<?php echo $result['auth_id']; ?>" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
 						</div>
 					</div>
 					<!-- Freelancer / End -->
-					
-					<!--Freelancer -->
-					<div class="freelancer">
-
-						<!-- Overview -->
-						<div class="freelancer-overview">
-								<div class="freelancer-overview-inner">
-								<!-- Bookmark Icon -->
-								<span class="bookmark-icon"></span>
-								
-								<!-- Avatar -->
-								<div class="freelancer-avatar">
-									<a href="single-freelancer-profile.html"><img src="images/user-avatar-placeholder.png" alt=""></a>
-								</div>
-
-								<!-- Name -->
-								<div class="freelancer-name">
-									<h4><a href="#">Sebastiano Piccio <img class="flag" src="images/flags/it.svg" alt="" title="Italy" data-tippy-placement="top"></a></h4>
-									<span>Laravel Dev</span>
-								</div>
-
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="4.5"></div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Details -->
-						<div class="freelancer-details">
-							<div class="freelancer-details-list">
-								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> Milan</strong></li>
-									<li>Rate <strong>$80 / hr</strong></li>
-									<li>Job Success <strong>89%</strong></li>
-								</ul>
-							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-						</div>
-					</div>
-					<!-- Freelancer / End -->
-								
-					<!--Freelancer -->
-					<div class="freelancer">
-
-						<!-- Overview -->
-						<div class="freelancer-overview">
-								<div class="freelancer-overview-inner">
-								<!-- Bookmark Icon -->
-								<span class="bookmark-icon"></span>
-								
-								<!-- Avatar -->
-								<div class="freelancer-avatar">
-									<a href="single-freelancer-profile.html"><img src="images/user-avatar-placeholder.png" alt=""></a>
-								</div>
-
-								<!-- Name -->
-								<div class="freelancer-name">
-									<h4><a href="#">Gabriel Lagueux <img class="flag" src="images/flags/fr.svg" alt="" title="France" data-tippy-placement="top"></a></h4>
-									<span>WordPress Expert</span>
-								</div>
-
-								<!-- Rating -->
-								<div class="freelancer-rating">
-									<div class="star-rating" data-rating="5.0"></div>
-								</div>
-							</div>
-						</div>
-						
-						<!-- Details -->
-						<div class="freelancer-details">
-							<div class="freelancer-details-list">
-								<ul>
-									<li>Location <strong><i class="icon-material-outline-location-on"></i> Paris</strong></li>
-									<li>Rate <strong>$50 / hr</strong></li>
-									<li>Job Success <strong>100%</strong></li>
-								</ul>
-							</div>
-							<a href="single-freelancer-profile.html" class="button button-sliding-icon ripple-effect">View Profile <i class="icon-material-outline-arrow-right-alt"></i></a>
-						</div>
-					</div>
-					<!-- Freelancer / End -->
-
+					<?php
+					 }
+					?>
 
 				</div>
 			</div>
@@ -564,6 +372,7 @@
 		</div>
 	</div>
 </div>
+
 
 <!-- Footer
 ================================================== -->
@@ -595,7 +404,7 @@
 								<div class="footer-row-inner">
 									<ul class="footer-social-links">
 										<li>
-											<a href="#" title="Facebook" data-tippy-placement="bottom" data-tippy-theme="light">
+											<a href="https://m.facebook.com/Mayankal-Inc-101756954634208/?fref=none&ref=opera_speed_dial" title="Facebook" data-tippy-placement="bottom" data-tippy-theme="light">
 												<i class="icon-brand-facebook-f"></i>
 											</a>
 										</li>
@@ -663,8 +472,8 @@
 					<div class="footer-links">
 						<h3>For Experts</h3>
 						<ul>
-							<li><a href="#"><span>Auther Panel</span></a></li>
-							<li><a href="#"><span>Other Blogs</span></a></li>
+							<li><a href="../mayankal_admin/index.php"><span>Auther Panel</span></a></li>
+							<li><a href="https://filmyzilla-hollywood-movies-in-hindi.blogspot.com"><span>Other Blogs</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -687,8 +496,13 @@
 					<div class="footer-links">
 						<h3>Account</h3>
 						<ul>
-							<li><a href="#"><span>Log In</span></a></li>
-							<li><a href="#"><span>My Account</span></a></li>
+					<?php if (isset($_SESSION['uid'])) {
+						echo '<li><a href="#"><span>Log In</span></a></li>
+							<li><a href="#"><span>My Account</span></a></li>';
+					}else{
+						echo '<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>Log In</span></a></li>
+					<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>My Account</span></a></li>';
+					} ?>
 						</ul>
 					</div>
 				</div>
@@ -727,6 +541,7 @@
 
 <!-- Scripts
 ================================================== -->
+<script src="js/bootstrap-msg.js"></script>
 <script src="js/jquery-3.4.1.min.js"></script>
 <script src="js/jquery-migrate-3.1.0.min.html"></script>
 <script src="js/mmenu.min.js"></script>
@@ -778,7 +593,13 @@ $('#snackbar-user-status label').click(function() {
 	}
 
 </script>
+<?php 
 
+		if ($_GET['emterr']) {
+		echo "Msg.success('success message', timeout);";
+		}
+
+ ?>
 <!-- Google API -->
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAaoOT9ioUE4SA8h-anaFyU4K63a7H-7bc&amp;libraries=places&amp;callback=initAutocomplete"></script>
 
