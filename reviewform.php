@@ -1,7 +1,7 @@
 
 <?php  
     if(!isset($_GET['uid'])){
-      header('location:mayanka.ml');
+      header('location:http://localhost/project/mayankalv2');
     }
     $uid=$_GET['uid'];
 ?>
