@@ -22,16 +22,16 @@ include 'connect.php';
 					/* print your results */    
 					{
 					//echo $row['web_uid'];
-						echo '<a href="'.$row['web_link'].'" class="task-listing" target="_blank">
+						echo '<div class="task-listing">
 							<!-- Job Listing Details -->
 							<div class="task-listing-details">
-
 								<!-- Details -->
 								<div class="task-listing-description">
-									<h3 class="task-listing-title">'.$row['web_name'].'</h3>
+								<a href="'.$row['web_link'].'" target="_blank">
+									<h3 class="task-listing-title">'.$row['web_name'].'</h3></a>
 									<ul class="task-icons">
 										<li><b>Niche: </b></li>'.$row['niche'].'</li>
-										<li><b>Total Post: </b>'.$row['web_post'].' / month</li>
+										<li><b>Total Post: </b>'.$row['web_post'].'</li>
 									</ul>
 								</div>
 
@@ -43,10 +43,10 @@ include 'connect.php';
 										<strong>'.$row['catagory'].'</strong>
 										<span><strong>Mpoints: '.$row['mpoint'].'</strong></span>
 									</div>
-									<span class="button button-sliding-icon ripple-effect">Ping1 <i class="icon-material-outline-arrow-right-alt"></i></span>
+									<span class="button button-sliding-icon ripple-effect" onclick="pingingto(this.id);" id="'.$row['id'].'">Ping <i class="icon-material-outline-arrow-right-alt"></i></span>
 								</div>
 							</div>
-						</a>';
+						</div>';
 					}
 					mysqli_free_result($result);
 					}   
@@ -89,16 +89,16 @@ include 'connect.php';
 					/* print your results */    
 					{
 					//echo $row['web_uid'];
-						echo '<a href="'.$row['web_link'].'" class="task-listing" target="_blank">
+						echo '<div class="task-listing">
 							<!-- Job Listing Details -->
 							<div class="task-listing-details">
-
 								<!-- Details -->
 								<div class="task-listing-description">
-									<h3 class="task-listing-title">'.$row['web_name'].'</h3>
+								<a href="'.$row['web_link'].'" target="_blank">
+									<h3 class="task-listing-title">'.$row['web_name'].'</h3></a>
 									<ul class="task-icons">
 										<li><b>Niche: </b></li>'.$row['niche'].'</li>
-										<li><b>Total POst: </b>'.$row['web_post'].' / month</li>
+										<li><b>Total Post: </b>'.$row['web_post'].'</li>
 									</ul>
 								</div>
 
@@ -110,10 +110,10 @@ include 'connect.php';
 										<strong>'.$row['catagory'].'</strong>
 										<span><strong>Mpoints: '.$row['mpoint'].'</strong></span>
 									</div>
-									<span class="button button-sliding-icon ripple-effect">Ping1 <i class="icon-material-outline-arrow-right-alt"></i></span>
+									<span class="button button-sliding-icon ripple-effect" onclick="pingingto(this.id);" id="'.$row['id'].'">Ping1<i class="icon-material-outline-arrow-right-alt"></i></span>
 								</div>
 							</div>
-						</a>';
+						</div>';
 					}
 					mysqli_free_result($result);
 					}   
@@ -128,16 +128,16 @@ include 'connect.php';
 					if (mysqli_num_rows($result) > 0) {
 					    // output data of each row
 					    while($row = mysqli_fetch_assoc($result)) {
-					        echo '<a href="'.$row['web_link'].'" class="task-listing" target="_blank">
+					        echo '<div class="task-listing">
 									<!-- Job Listing Details -->
 									<div class="task-listing-details">
-
 										<!-- Details -->
 										<div class="task-listing-description">
-											<h3 class="task-listing-title">'.$row['web_name'].'</h3>
+										<a href="'.$row['web_link'].'" target="_blank">
+											<h3 class="task-listing-title">'.$row['web_name'].'</h3></a>
 											<ul class="task-icons">
 												<li><b>Niche: </b></li>'.$row['niche'].'</li>
-												<li><b>Total POst: </b>'.$row['web_post'].' / month</li>
+												<li><b>Total Post: </b>'.$row['web_post'].'</li>
 											</ul>
 										</div>
 
@@ -149,10 +149,10 @@ include 'connect.php';
 												<strong>'.$row['catagory'].'</strong>
 												<span><strong>Mpoints: '.$row['mpoint'].'</strong></span>
 											</div>
-											<span class="button button-sliding-icon ripple-effect">Ping <i class="icon-material-outline-arrow-right-alt"></i></span>
+											<button class="button button-sliding-icon ripple-effect" onclick="pingingto(this.id);" id="'.$row['id'].'">Ping<i class="icon-material-outline-arrow-right-alt"></i></button>
 										</div>
 									</div>
-								</a>';
+								</div>';
 					    }
 					} else {
 					    echo "0 results";
@@ -161,3 +161,41 @@ include 'connect.php';
 
 
  ?>
+
+<script type="text/javascript">
+function setCookie(name,value,days) {
+    var expires = "";
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days*24*60*60*1000));
+        expires = "; expires=" + date.toUTCString();
+    }
+    document.cookie = name + "=" + (value || "")  + expires + "; path=/";
+	}
+
+function getCookie(name) {
+	    var nameEQ = name + "=";
+	    var ca = document.cookie.split(';');
+	    for(var i=0;i < ca.length;i++) {
+	        var c = ca[i];
+	        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+	        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+	    }
+	    return null;
+	}
+	
+   function pingingto(getlink){
+ 		$.ajax({
+ 			url : 'assets/sendping.php',
+ 			type : 'GET',
+ 			data : {addcid : links},
+
+ 			success: function(data){
+ 				console.log('add bookmark');
+ 			}
+
+ 		});
+ 	}
+
+	
+</script>

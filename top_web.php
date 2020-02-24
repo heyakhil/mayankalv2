@@ -162,7 +162,7 @@
 			<!-- Tasks Container / End -->
 
 			<!-- Pagination -->
-			<div class="clearfix"></div>
+			<!-- <div class="clearfix"></div>
 			<div class="pagination-container margin-top-20 margin-bottom-20">
 				<nav class="pagination">
 					<ul>
@@ -174,7 +174,7 @@
 						<li class="pagination-arrow"><a href="#" class="ripple-effect"><i class="icon-material-outline-keyboard-arrow-right"></i></a></li>
 					</ul>
 				</nav>
-			</div>
+			</div> -->
 			<div class="clearfix"></div>
 			<!-- Pagination / End -->
 

@@ -23,7 +23,9 @@
 <link rel="stylesheet" href="css/aboutus.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 
+
 <link rel="icon" href="https://mayankal.ml/images/mayankal.png" type="image/png" sizes="16x16">
+
  
 
 </head>
@@ -70,12 +72,14 @@
 <div class="container">
 	<div class="col-xs-6 col-md-12">
 		<h1 style="font-size:30px"><b>Our Team</b></h1><br><hr><br><br><br>
+
 	</div>
 </div>
 		
 <!-- ============== -->
 	<div class="container">  
 	<!-- <div class="col-xs-3 col-md-4">    
+
   <img src="images/download.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236"> 
   <h1>Akhil Kumar Srivastava</h1>
   <h3 style="margin-left: 20%;">Founder & CEO</h3>
@@ -96,8 +100,10 @@
 
    <div class="col-md-4">   
    <img src="images/download.jpg" class="rounded-circle" alt="Cinque Terre" width="236" height="236" style="margin-left: 20%;"> 
+
    <h1 style="margin-left: 34%;">Sumit Kumar</h1>
    <h3 style="margin-left: 34%;">Co-Founder & CTO</h3>
+
 
    </div>
 <!-- <div class="col-xs-4 col-md-4"> 
@@ -115,6 +121,7 @@
       <h2 style="font-size: 20px; margin-left:3%;"><b>Mobile No: </b>+91-0123456789</h2>
    
 </div>
+
 <div class="margin-top-80"></div>
 <!-- End Our Introduction -->
 
@@ -281,6 +288,7 @@
 
 <!-- Scripts
 ================================================== -->
+
 <script data-cfasync="false" src="../../cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="js/jquery-3.4.1.min.js"></script>
 <script src="../../../js/jquery-migrate-3.1.0.min.html"></script>
 <script src="../../../js/mmenu.min.js"></script>
@@ -300,6 +308,7 @@
 	  $("button").replaceWith("team@mayankal.ml");
 	});
   });</script>
+
 
 <!-- Snackbar // documentation: https://www.polonel.com/snackbar/ -->
 <script>

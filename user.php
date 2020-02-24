@@ -93,10 +93,10 @@
 				<!-- Job Listing -->
 				<!-- Pagination -->
 				<div class="clearfix"></div>
-				<div class="row">
-					<div class="col-md-12">
+				<!-- <div class="row">
+					<div class="col-md-12"> -->
 						<!-- Pagination -->
-						<div class="pagination-container margin-top-30 margin-bottom-60">
+						<!-- <div class="pagination-container margin-top-30 margin-bottom-60">
 							<nav class="pagination">
 								<ul>
 									<li class="pagination-arrow"><a href="#"><i class="icon-material-outline-keyboard-arrow-left"></i></a></li>
@@ -109,7 +109,7 @@
 							</nav>
 						</div>
 					</div>
-				</div>
+				</div> -->
 				<!-- Pagination / End -->
 
 			</div>
@@ -149,7 +149,7 @@
 								<div class="footer-row-inner">
 									<ul class="footer-social-links">
 										<li>
-											<a href="#" title="Facebook" data-tippy-placement="bottom" data-tippy-theme="light">
+											<a href="https://m.facebook.com/Mayankal-Inc-101756954634208/?fref=none&ref=opera_speed_dial" title="Facebook" data-tippy-placement="bottom" data-tippy-theme="light">
 												<i class="icon-brand-facebook-f"></i>
 											</a>
 										</li>
@@ -217,8 +217,8 @@
 					<div class="footer-links">
 						<h3>For Experts</h3>
 						<ul>
-							<li><a href="#"><span>Auther Panel</span></a></li>
-							<li><a href="#"><span>Other Blogs</span></a></li>
+							<li><a href="../mayankal_admin/index.php"><span>Auther Panel</span></a></li>
+							<li><a href="https://filmyzilla-hollywood-movies-in-hindi.blogspot.com"><span>Other Blogs</span></a></li>
 						</ul>
 					</div>
 				</div>
@@ -241,8 +241,13 @@
 					<div class="footer-links">
 						<h3>Account</h3>
 						<ul>
-							<li><a href="#"><span>Log In</span></a></li>
-							<li><a href="#"><span>My Account</span></a></li>
+					<?php if (isset($_SESSION['uid'])) {
+						echo '<li><a href="#"><span>Log In</span></a></li>
+							<li><a href="#"><span>My Account</span></a></li>';
+					}else{
+						echo '<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>Log In</span></a></li>
+					<li><a href="#sign-in-dialog" class="popup-with-zoom-anim log-in-button"><span>My Account</span></a></li>';
+					} ?>
 						</ul>
 					</div>
 				</div>
