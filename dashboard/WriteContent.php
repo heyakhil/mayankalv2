@@ -18,9 +18,11 @@
 
   <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
 
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
 
 
 </head>
@@ -54,6 +56,7 @@
   <!-- <div style="margin-right:500px; margin-left:200px;"> -->
     <div class="row">
       <div class="col-lg-9">
+
         <div class="form-group">
           <form action="../assets/write_post.php" method="POST">
           <h3>Title</h3>
@@ -62,11 +65,14 @@
             <textarea class="ckeditor" name="editor"></textarea><br> 
             <input type="hidden" name="order_id" value="<?php echo $or_id; ?>">
           <input type="hidden" name="customer" value="<?php echo $customer; ?>">
+
           <input type="submit" class="btn btn-primary" value="Submit" name="submit" style="width:100px;">
+
           </form>
         </div>
       </div>
       <!--  Right Side-->
+
     <div class="col-lg-3" style="margin-top: 55px;">
       <div class="panel-group" id="accordion">
         <div class="panel panel-default">
@@ -137,6 +143,7 @@
         
         
   </div> 
+
 
 </div>
  
