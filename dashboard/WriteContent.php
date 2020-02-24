@@ -15,48 +15,17 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
   <!--<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">-->
   <script type="text/javascript" src="../js/ckeditor/ckeditor.js"></script>
-
-  <script type="text/javascript" src="//cdn.jsdelivr.net/jquery/1/jquery.min.js"></script>
-
-
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-
-
 </head>
 <body style="background-color:#F3ECEC;">
   
-
-<div class="row">
-  <div class="col-sm-8 col-md-8">
-    <div class="form-group" style="margin: 10px;">
-    <form action="../assets/write_post.php" method="POST">
-      <h3>Title</h3>
-      <input type="text" class="form-control" id="usr" placeholder="Enter the title" name="title" required>
-      <hr>
-    <textarea class="ckeditor" name="editor" style="height:100%; margin-left: 2px;"></textarea><br> 
-    <input type="hidden" name="order_id" value="<?php echo $or_id; ?>">
-    <input type="hidden" name="customer" value="<?php echo $customer; ?>">
-    <input type="submit" class="btn btn-primary" value="Submit" name="submit" style="margin-left: 8px;">
-  </form>
-  <script>
-        CKEDITOR.replace( 'editor' );
-        $("form").submit( function(e) {
-            var messageLength = CKEDITOR.instances['editor'].getData().replace(/<[^>]*>/gi, '').length;
-            if( !messageLength ) {
-                alert( 'Please write content then submit' );
-                e.preventDefault();
-            }
-        });
-    </script>
-
-<div class="fluid-container" style="margin-right: 100px; margin-left: 80px">
+<div class="fluid-container" style="margin-left: 200px; margin-right: 70px;" >
   <!-- <div style="margin-right:500px; margin-left:200px;"> -->
     <div class="row">
-      <div class="col-lg-9">
-
+      <div class="col-lg-8">
         <div class="form-group">
           <form action="../assets/write_post.php" method="POST">
           <h3>Title</h3>
@@ -65,13 +34,12 @@
             <textarea class="ckeditor" name="editor"></textarea><br> 
             <input type="hidden" name="order_id" value="<?php echo $or_id; ?>">
           <input type="hidden" name="customer" value="<?php echo $customer; ?>">
-
-          <input type="submit" class="btn btn-primary" value="Submit" name="submit" style="width:100px;">
-
+          <input type="submit" class="btn btn-primary" value="Submit" name="submit" style="width:833px;">
           </form>
         </div>
       </div>
       <!--  Right Side-->
+      <div class="col-lg-1"></div>
 
     <div class="col-lg-3" style="margin-top: 55px;">
       <div class="panel-group" id="accordion">
@@ -143,8 +111,6 @@
         
         
   </div> 
-
-
 </div>
  
  </div>
