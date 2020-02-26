@@ -1,6 +1,6 @@
 <?php 
 		include_once 'connect.php';
-		include_once 'check.php';
+		// include_once 'check.php';
 
 		if (isset($_GET['status']) && isset($_GET['dates'])) {
 			$t_day = date("Y-m-d");
@@ -11,7 +11,7 @@
 			      if ($_COOKIE['entry'] > 3){
 			        ?>
 			        <script>
-			          window.open("https://mayankal.ml", "_self");
+			          window.open("https://www.mayankal.ml/dashboard/earning.php", "_self");
 			          alert("You can Earn Coin Only 3 Times a Day");
 			        </script>
 			        <?php
