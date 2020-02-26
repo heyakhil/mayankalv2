@@ -141,7 +141,7 @@
     
  <script type="text/javascript">
    CKEDITOR.replace('editor',{
-    height:'400',
+    height:'350',
     maxlength:'600'
    });
  </script>
