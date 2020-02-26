@@ -51,6 +51,7 @@
 			<html>
 			<head>
 				<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
+		
 				</head>
 			<body>
 				<center><h1 style='margin-top: 30px;'><i>Mayankal</i></h1></center>

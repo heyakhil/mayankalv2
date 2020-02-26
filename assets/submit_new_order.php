@@ -34,10 +34,51 @@ error_reporting(0);
 		$msg = "You have a new order of ".$cata." catagory please check it out";
 	
         if (mysqli_query($conn, $sql)) {
-            notification($uuid, $msg, $uid);
+			notification($uuid, $msg, $uid);
+			$sql1="SELECT * FROM `user` WHERE `unique_id`='$uuid'";
+			$result=mysqli_query($conn,$sql1);
+			if(mysqli_num_rows($result) > 0){
+				$row=mysqli_fetch_assoc($result);
+				$name=$row['name'];
+				$email=$row['email'];
+				$sql2="SELECT * FROM `user` WHERE `unique_id`='$uid'";
+				$result1=mysqli_query($conn,$sql2);
+				if(mysqli_num_rows($result1) > 0){
+					$row1=mysqli_fetch_assoc($result1);
+					$name1=$row1['name'];
+					
+					$to=$email;
+					$subject = 'New Order';
+					$from="team@mayankal.ml";
+					$headers = "From: ".$from."\r\n";
+					$headers .= "MIME-Version: 1.0\r\n";
+					$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+
+					$message="<html>
+					<head>
+						<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css'>
+						</head>
+					<body>
+						<center><h1 style='margin-top: 30px;'><i>Mayankal</i></h1></center>
+						<div class='container' style='background-color:#F3ECEC; font-size:20px;' >
+						<p style='margin-top: 10px;'><i>Hello <b>".$name."</b></i></p>
+						<p><i>Your got an order of order Id:<mark>".$order_id."</mark> by <b>".$name1.".</b></i></p>
+						<p><i>Please check your order now and completed as fast as possible for better customer experience.</i></p>
+						<p><i><b>Category :</b></i> Sport </p>
+						<p><i><b>Discription : </b></i>".$describe."</p><br>
+						<h5><i>Thankyou</i></h5>
+						<h5><i><b>Mayankal team</b></i></h5><br>
+						</div>
+					</body>
+					</html>";
+					mail($to,$subject,$message,$headers);
+				}
+			}
+
         } else {
             echo "Error: " . $sql . "<br>" . mysqli_error($conn);
-        }
+		}
+	}
 		 if(coin_reduce($uid, $coins_red) == "yes"){
 			 ?>
 			<script type="text/javascript">
@@ -48,7 +89,7 @@ error_reporting(0);
 		 }else{
 			echo "../error404.php";
 		 }
-        }
+        
 	    }else{
 	    	 ?>
 			<script type="text/javascript">
@@ -60,6 +101,7 @@ error_reporting(0);
 	}else{
 		header("location:../index.php");
 	}
-
+	
+	
 
  ?>

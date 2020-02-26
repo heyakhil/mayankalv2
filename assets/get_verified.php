@@ -79,7 +79,27 @@ if (isset($_GET['uid'])) {
 						$message='<!doctype html>
 										<html>
 											<head>
-												<title>E-mail template</title>
+											<style>
+														.button {
+														background-color: #4CAF50; /* Green */
+														border: none;
+														color: white;
+														padding: 15px 32px;
+														text-align: center;
+														text-decoration: none;
+														display: inline-block;
+														font-size: 22px;
+														margin: 8px 2px;
+														cursor: pointer;
+														-webkit-transition-duration: 0.4s; /* Safari */
+														transition-duration: 0.4s;
+														}
+														
+														.button1 {
+														box-shadow: 0 15px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+														}
+											
+											</style>
 												
 												<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 											</head>
@@ -89,7 +109,7 @@ if (isset($_GET['uid'])) {
 												<p style="margin-top: 10px;"><i>Hello <b>'.$name.'</b></i></p>
 												<p><i>Thanks to create an account of <b style="color: rgb(238, 36, 10);">Mayankal.</b></i></p>
 												<p><i>Please verify your account by click on the button below.</i></p>
-												<a href= "http://localhost/project/mayankalv2/assets/user_verified.php?verify='.$verify_code.'&status=ok" type="button" class="btn btn-success" style="width:90px;">Verify</a><br><br>
+												<a href= "http://localhost/project/mayankalv2/assets/user_verified.php?verify='.$verify_code.'&status=ok" type="button" class="button button1" style="width:90px;">Verify</a><br><br>
 												<h5><i>Thankyou</i></h5>
 												<h5><i><b>Mayankal team</b></i></h5><br>
 												</div>
