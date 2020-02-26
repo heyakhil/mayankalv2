@@ -29,7 +29,7 @@
         <div class="form-group">
           <form action="../assets/write_post.php" method="POST">
           <h3>Title</h3>
-          <input type="text" class="form-control" id="usr" placeholder="Enter the title" name="title">
+          <input type="text" class="form-control" id="usr" placeholder="Enter the title" name="title" style="height:60px; font-size: 25px;" >
           <hr>
             <textarea class="ckeditor" name="editor"></textarea><br> 
             <input type="hidden" name="order_id" value="<?php echo $or_id; ?>">
@@ -139,7 +139,12 @@
 
    ?> -->
     
-  <!-- </div> -->
+ <script type="text/javascript">
+   CKEDITOR.replace('editor',{
+    height:'400',
+    maxlength:'600'
+   });
+ </script>
 
 </body>
 </html>
