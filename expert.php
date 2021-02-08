@@ -71,7 +71,7 @@
 
 							<!-- Name -->
 							<div class="freelancer-name">
-								<h4><a href="#"><?php echo $result['name']; ?></a></h4>
+								<h4><a href="expertprofile.php?authid=<?php echo $result['auth_id']; ?>"><?php echo $result['name']; ?></a></h4>
 								<span><?php echo $result['experties'];   ?></span>
 								<!-- Rating -->
 								<div class="freelancer-rating">

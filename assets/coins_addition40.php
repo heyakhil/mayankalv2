@@ -30,7 +30,12 @@
 					        $sql = "UPDATE coins_earn SET coin_earn='$value' WHERE `uid`='$uid'";
 
 							if (mysqli_query($conn, $sql)) {
-							    header("location:https://www.mayankal.ml/dashboard/earning.php");
+								?>
+										<script>
+											alert("40 coins to added to your account");
+											window.location = "https://www.mayankal.ml/dashboard/earning.php";
+										</script>
+								<?php
 							} else {
 							    echo "Error updating record: " . mysqli_error($conn);
 							}

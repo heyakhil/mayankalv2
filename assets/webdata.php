@@ -82,9 +82,11 @@
 	$sql="INSERT INTO `web_info`(`web_uid`, `web_name`, `web_link`, `web_traffic`, `web_post`, `da`, `pa`, `catagory`, `niche`, `code`) VALUES ('$uid', '$webname','$link','$ntraffic','$no_post','$nda','$npa','$catag','$niche', '$verify_code')";
 	$run=mysqli_query($conn,$sql);
 	if ($run) {
-		$sql = "SELECT no_web FROM user_info WHERE `uid`='$uid'";
+	
+		$sql = "SELECT `no_web` FROM `user_info` WHERE `uid`='$uid'";
 		$result = mysqli_query($conn, $sql);
 		if (mysqli_num_rows($result) > 0) {
+			
 		    // output data of each row
 		    while($row = mysqli_fetch_assoc($result)) {
 		        $noweb = $row['no_web'];
@@ -92,6 +94,7 @@
 		        $sql = "UPDATE user_info SET no_web='$noweb' WHERE `uid`='$uid'";
 
 				if (mysqli_query($conn, $sql)) {
+					
 				    ?>
 					<script>
 						window.open("../dashboard/dashboard-settings.php", "_self");
@@ -106,6 +109,7 @@
 		    echo "0 results";
 		}
 	}else{
+		echo "not";
 		?>
 		<script>
 			window.open("../dashboard/dashboard-settings.php", "_self");

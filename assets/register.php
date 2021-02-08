@@ -6,9 +6,11 @@
 		$pass = md5(preg_replace("/[^a-zA-Z0-9 @.]/", "", $_POST['password-register']));
 		$uid = date('y').uniqid().mt_rand(1, 999);
 		$da = date("Y-m-d");
+		if(filter_var($email, FILTER_VALIDATE_EMAIL)
+		&& preg_match('/\A[\w.-]*+@[\w.-]*+\z/',$email)){
 		$sql = "SELECT email FROM user WHERE `email`='$email'";
 		$result = mysqli_query($conn, $sql);
-
+		
 		if (mysqli_num_rows($result) > 0) {
 		    // output data of each row
 			?>
@@ -48,6 +50,13 @@
 			}
 		}
 		
-
+	}else{
+		?>
+			<script>
+						alert("You Enter the Special Charecter in your email");
+						window.location.replace("../index.php");
+			</script>
+		<?php
+	}
 	}
  ?>

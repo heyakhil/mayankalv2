@@ -41,7 +41,12 @@
                     $from="team@mayankal.ml";
                     $headers = "From: ".$from."\r\n";
                     $headers .= "MIME-Version: 1.0\r\n";
+                    $headers .= "Reply-To: <team@mayankal.ml>\r\n";
                     $headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+                    $headers .= "Return-Path:<team@mayankal.ml>\r\n";
+                    $headers .= "X-Priority: 3\r\n";
+                    $headers .= "X-Mailer: PHP". phpversion() ."\r\n";
+                    
                 if(mail($to,$subject,$message,$headers)){
                         ?>
                     <script>

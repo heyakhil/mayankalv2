@@ -5,6 +5,8 @@ session_start();
 	if (isset($_POST['login'])) {
 		$email = $_POST['emailaddress'];
 		$pass = md5($_POST['password']);
+		if(filter_var($email, FILTER_VALIDATE_EMAIL)
+		&& preg_match('/\A[\w.-]*+@[\w.-]*+\z/',$email)){
 
 		$sql = "SELECT `name`, `email`, `pass`, `unique_id`, `date_reg`, `verify` FROM `user` WHERE `email`='$email' AND `pass`='$pass'";
 		$result = mysqli_query($conn, $sql);
@@ -20,10 +22,10 @@ session_start();
 		    ?>
 		    	<script type="text/javascript">
 		    		window.open("../index.php", "_self");
-		    		alert("Sorry Your are not registered OR Wrong password");
+		    		alert("Sorry Your are not registered OR Wrong password Or Entered Wrong Email address");
 		    	</script>
 		    <?php
 		}
-	
+		}
 }
  ?>

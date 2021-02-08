@@ -552,7 +552,6 @@ s0.parentNode.insertBefore(s1,s0);
 </div>
 
 <div id="sign-in-dialog" class="zoom-anim-dialog mfp-hide dialog-with-tabs">
-
 	<!--Tabs -->
 	<div class="sign-in-form">
 

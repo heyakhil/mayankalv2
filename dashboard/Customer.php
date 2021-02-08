@@ -77,7 +77,7 @@
 			<div class="freelancers-container freelancers-grid-layout margin-top-35">
 				
 				<?php 
-					$sql = "SELECT * FROM order_complete where `uid`='$uid'";
+					$sql = "SELECT distinct `orderof_uid` FROM order_complete where `uid`='$uid'";
 					$result = mysqli_query($conn, $sql);
 					$arr = array();
 					if (mysqli_num_rows($result) > 0) {
@@ -89,7 +89,6 @@
 					} else {
 					    echo "0 results";
 					}
-
 			foreach ($arr as $key) {
 				$sql = "SELECT * FROM user, user_info where `unique_id`='$key' AND `uid`='$key'";
 				$result = mysqli_query($conn, $sql);

@@ -1,0 +1,592 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"word",
+				"word-break\tproperty"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"d",
+				"div\tTag"
+			],
+			[
+				"backg",
+				"background-color\tproperty"
+			],
+			[
+				"inline",
+				"inline-block\tdisplay"
+			],
+			[
+				"tran",
+				"transition\tproperty"
+			],
+			[
+				"padding",
+				"padding\tproperty"
+			],
+			[
+				"back",
+				"background-color\tproperty"
+			],
+			[
+				"text",
+				"text-decoration\tproperty"
+			],
+			[
+				"padd",
+				"padding-left\tproperty"
+			],
+			[
+				"inli",
+				"inline-block\tdisplay"
+			],
+			[
+				"margin",
+				"margin\tproperty"
+			],
+			[
+				"paddi",
+				"padding-left\tproperty"
+			],
+			[
+				"over",
+				"overflow\tproperty"
+			],
+			[
+				"borde",
+				"border-collapse\tproperty"
+			],
+			[
+				"mar",
+				"margin-top\tproperty"
+			],
+			[
+				"pad",
+				"padding-top\tproperty"
+			],
+			[
+				"marg",
+				"margin-top\tproperty"
+			],
+			[
+				"paddin",
+				"padding-top\tproperty"
+			],
+			[
+				"background",
+				"background-color\tproperty"
+			],
+			[
+				"backgrun",
+				"background-color\tproperty"
+			],
+			[
+				"co",
+				"cover\tbackground-size"
+			],
+			[
+				"backgro",
+				"background-image\tproperty"
+			],
+			[
+				"li",
+				"link\tTag"
+			],
+			[
+				"tex",
+				"text-decoration\tproperty"
+			],
+			[
+				"overflow",
+				"overflow-x\tproperty"
+			],
+			[
+				"backgrou",
+				"background-repeat\tproperty"
+			],
+			[
+				"font",
+				"font-family\tproperty"
+			],
+			[
+				"session",
+				"session_destroy"
+			],
+			[
+				"Re",
+				"request"
+			],
+			[
+				"fu",
+				"fun\tfunction …"
+			],
+			[
+				"padi",
+				"padding-right\tproperty"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"coo",
+				"cookie_name"
+			],
+			[
+				"set",
+				"setcookie"
+			],
+			[
+				"border",
+				"border-color\tproperty"
+			],
+			[
+				"re",
+				"repeat-x\tbackground-repeat"
+			],
+			[
+				"user_",
+				"user_name"
+			],
+			[
+				"req",
+				"request"
+			],
+			[
+				"margin-",
+				"margin-bottom\tproperty"
+			],
+			[
+				"rand",
+				"randomnum"
+			],
+			[
+				"sumit",
+				"Sumitkumar993618"
+			],
+			[
+				"Dish",
+				"Dish"
+			],
+			[
+				"parent",
+				"parentfun"
+			],
+			[
+				"for",
+				"form\tTag"
+			],
+			[
+				"mysqli_",
+				"mysqli_fetch"
+			],
+			[
+				"coin",
+				"coin_earn"
+			],
+			[
+				"aler",
+				"alert"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"width",
+				"widthpro"
+			],
+			[
+				"ac",
+				"action\tAttr"
+			],
+			[
+				"get",
+				"getElementById"
+			],
+			[
+				"mysqli_fetch",
+				"mysqli_fetch_assoc"
+			],
+			[
+				"php",
+				"php"
+			],
+			[
+				"array",
+				"arrayName"
+			],
+			[
+				"Roll",
+				"Rollno"
+			],
+			[
+				"tra",
+				"transform\tproperty"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"name",
+				"name"
+			],
+			[
+				"_",
+				"_POST"
+			],
+			[
+				"font-",
+				"font-size\tproperty"
+			],
+			[
+				"admin",
+				"admindash"
+			],
+			[
+				"pass",
+				"password"
+			],
+			[
+				"user",
+				"Username"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"opt",
+				"option\tTag"
+			],
+			[
+				"pa",
+				"pages"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"mysqli_fet",
+				"mysqli_fetch_assoc"
+			],
+			[
+				"session_de",
+				"session_destroy"
+			],
+			[
+				"form-",
+				"form-control"
+			],
+			[
+				"session_",
+				"session_start"
+			],
+			[
+				"h",
+				"h1\tTag"
+			],
+			[
+				"query",
+				"query_run"
+			],
+			[
+				"unique",
+				"unique_id"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/xampp/htdocs/sql injection/process.php",
+		"/C/xampp/htdocs/sql injection/form_procceess.php",
+		"/D/css w3schools/border.html",
+		"/D/web design shaw academay/lession 5/portfolio.css",
+		"/D/web design shaw academay/lession 5/portfolio.html",
+		"/D/web design shaw academay/lession 5/mystory.css",
+		"/D/web design shaw academay/lession 5/mystory.html",
+		"/D/web design shaw academay/lession 5/career.html",
+		"/D/web design shaw academay/lession 5/career.css",
+		"/D/web design shaw academay/lession 5/contact.css",
+		"/D/web design shaw academay/lession 5/contact.html",
+		"/D/web design shaw academay/lession 5/education.html",
+		"/D/web design shaw academay/lession 5/education.css",
+		"/D/web design shaw academay/lession 5/home.html",
+		"/D/web design shaw academay/lession 5/home.css",
+		"/D/web design shaw academay/calculator.html",
+		"/D/web design shaw academay/calculator.css",
+		"/D/web design shaw academay/exercise.css",
+		"/D/web design shaw academay/exercise.html",
+		"/D/web design shaw academay/webpage/hello.html",
+		"/D/web design shaw academay/webpage/Desert.jpg",
+		"/C/xampp/htdocs/Rooms_booking/app/Http/Middleware/checkEmail.php",
+		"/C/xampp/htdocs/Rooms_booking/app/users.php",
+		"/C/xampp/htdocs/Rooms_booking/vendor/phpunit/php-code-coverage/src/Report/Html/Renderer/Template/css/nv.d3.min.css",
+		"/C/xampp/htdocs/Rooms_booking/.env",
+		"/C/xampp/htdocs/Rooms_booking/resources/views/home.blade.php",
+		"/C/xampp/htdocs/Rooms_booking/app/User.php",
+		"/C/xampp/htdocs/Rooms_booking/app/Http/Kernel.php",
+		"/C/xampp/htdocs/Rooms_booking/public/css/app.css",
+		"/C/xampp/htdocs/Rooms_booking/public/.htaccess",
+		"/C/xampp/htdocs/Project/mayankalv2/assets/coins_addition40.php",
+		"/C/xampp/htdocs/Project/mayankalv2/expert.php",
+		"/C/Users/SUMIT/Desktop/x.html",
+		"/C/xampp/htdocs/test/check.php",
+		"/C/xampp/htdocs/Project/farhan's  work/mail.html",
+		"/C/Users/SUMIT/Desktop/redirect After 3seconds.html",
+		"/C/xampp/htdocs/Project/farhan's  work/verifiedAcccount.html",
+		"/C/xampp/htdocs/Project/farhan's  work/redirect.html",
+		"/C/xampp/htdocs/Isha's work/page1.html",
+		"/C/xampp/htdocs/Isha's work/css/style.css",
+		"/C/xampp/htdocs/Magnum/app/Http/Controllers/logincontroller.php",
+		"/C/xampp/htdocs/Magnum/resources/views/loginpro.blade.php",
+		"/C/xampp/htdocs/Magnum/.env",
+		"/C/xampp/htdocs/mentor/app/Http/Controllers/Controller.php",
+		"/C/xampp/htdocs/mentor/.env",
+		"/C/xampp/htdocs/mentor/public/index.php",
+		"/C/xampp/htdocs/mentor/public/.htaccess",
+		"/C/xampp/htdocs/laravel/resources/views/welcome.blade.php",
+		"/C/xampp/htdocs/laravel/resources/views/hello1.blade.php",
+		"/C/xampp/htdocs/laravel/resources/views/Expert.blade.php",
+		"/C/xampp/htdocs/laravel/app/admin.php",
+		"/C/xampp/htdocs/Project/farhan's  work/jBox-master/demo/demo.html",
+		"/C/xampp/htdocs/Project/farhan's  work/jBox-master/demo/js/demo.js",
+		"/C/xampp/htdocs/Project/farhan's  work/jBox-master/demo/css/demo.css",
+		"/C/xampp/htdocs/laravel/resources/views/hello2.blade.php",
+		"/C/xampp/htdocs/laravel/resources/views/detail.blade.php",
+		"/C/xampp/htdocs/laravel/resources/views/data.blade.php",
+		"/C/xampp/htdocs/laravel/.env",
+		"/C/xampp/htdocs/mayankal/pagination2.php",
+		"/C/xampp/htdocs/mayankal/pagination.php",
+		"/C/xampp/htdocs/test/emailprocess.php",
+		"/C/xampp/htdocs/Project/mailpro.php",
+		"/C/xampp/htdocs/test/sendmail.php",
+		"/C/xampp/htdocs/test/random.php",
+		"/C/xampp/htdocs/oopsstudy/Abstractclass.php",
+		"/C/xampp/htdocs/oopsstudy/AccessModifier.php",
+		"/C/xampp/htdocs/oopsstudy/constructor.php",
+		"/C/xampp/htdocs/oopsstudy/namespace.php",
+		"/C/xampp/htdocs/test/testing1.php",
+		"/C/xampp/htdocs/test/testingpro.php",
+		"/C/xampp/htdocs/oopsstudy/inheritance.php",
+		"/C/xampp/htdocs/oopsstudy/index.php",
+		"/C/xampp/htdocs/Project/mayankalv2/home.php",
+		"/C/xampp/htdocs/Project/mayankalv2/assets/profile_update.php",
+		"/C/xampp/htdocs/Project/mayankalv2/dashboard/dashmenu.php",
+		"/C/xampp/htdocs/Project/mayankalv2/dashboard/index.php",
+		"/C/xampp/htdocs/Project/mayankalv2/user-profile.php",
+		"/C/xampp/htdocs/Project/mayankalv2/action.php",
+		"/C/xampp/htdocs/test/get.php",
+		"/C/xampp/htdocs/test/getdata.php",
+		"/C/xampp/htdocs/test/sessiondata.php",
+		"/C/Users/SUMIT/Desktop/test.html",
+		"/C/xampp/htdocs/Project/mayankalv2/assets/notifynum.php",
+		"/C/xampp/htdocs/Project/mayankalv2/SearchResult.php",
+		"/C/xampp/htdocs/Project/mayankalv2/forgot_password.php",
+		"/C/xampp/htdocs/Project/mayankalv2/assets/logout.php",
+		"/C/xampp/htdocs/Project/mayankalv2/search_home_result.php",
+		"/C/xampp/htdocs/Project/mayankalv2/dashboard/dashboard-settings.php",
+		"/C/xampp/htdocs/Project/mayankalv2/assets/user_verified.php",
+		"/C/xampp/htdocs/Project/mayankalv2/assets/show_result.php",
+		"/C/xampp/htdocs/Project/mayankalv2/blog.php",
+		"/C/xampp/htdocs/Project/mayankalv2/top_web.php",
+		"/C/xampp/htdocs/Project/mayankalv2/index.php",
+		"/C/xampp/htdocs/Project/mayankalv2/user.php",
+		"/C/xampp/htdocs/test/notification1.php",
+		"/C/xampp/htdocs/test/notification.php",
+		"/C/Users/SUMIT/Downloads/Unconfirmed 469844.crdownload",
+		"/C/xampp/htdocs/mayankalv2/assets/notification.php",
+		"/C/xampp/htdocs/mayankalv2/dashboard/allorders.php",
+		"/C/xampp/htdocs/mayankalv2/dashboard/sidebar.php",
+		"/C/xampp/htdocs/mayankalv2/user.php",
+		"/C/xampp/htdocs/mayankalv2/hey.php",
+		"/C/xampp/htdocs/mayankalv2/assets/order_notify.php",
+		"/C/xampp/htdocs/mayankalv2/assets/coin_reduction.php",
+		"/C/xampp/htdocs/mayankalv2/assets/submit_new_order.php",
+		"/C/xampp/htdocs/mayankalv2/user-profile.php",
+		"/C/xampp/htdocs/mayankal/pagination3.php",
+		"/C/xampp/htdocs/mayankalv2/dashboard/dashboard-settings.php",
+		"/C/xampp/htdocs/mayankalv2/assets/show_result.php",
+		"/C/xampp/htdocs/mayankalv2/dashboard/withdraw.php",
+		"/C/xampp/htdocs/mayankalv2/assets/widthpro.php",
+		"/C/xampp/htdocs/mayankalv2/assets/check.php",
+		"/C/xampp/htdocs/mayankalv2/dashboard/review.php",
+		"/C/xampp/htdocs/test/check_program.php",
+		"/C/xampp/htdocs/mayankalv2/dashboard/index.php",
+		"/C/xampp/htdocs/mayankalv2/index.php",
+		"/C/xampp/htdocs/mayankalv2/s1.php",
+		"/C/xampp/htdocs/sms/css/style.css",
+		"/C/Users/SUMIT/Documents/GitHub/mayankalv2/dashboard/review.php",
+		"/C/xampp/htdocs/sms/function.php",
+		"/C/xampp/htdocs/sms/show.php",
+		"/C/xampp/htdocs/sms/index.php",
+		"/C/xampp/htdocs/sms/Admin/updatedata.php",
+		"/D/Bootstrap/login_in_bootstrap.html",
+		"/C/xampp/htdocs/happy Diwali/index.php",
+		"/C/xampp/htdocs/happy Diwali/diwali.php",
+		"/C/Users/SUMIT/Desktop/crakers.html",
+		"/C/xampp/htdocs/sms/Admin/header.php"
+	],
+	"find":
+	{
+		"height": 31.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 44.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 169.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
