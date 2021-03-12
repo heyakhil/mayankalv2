@@ -74,7 +74,7 @@
 		else{
 			?>
 				<script type="text/javascript">
-					alert("You can Transfer Minimum 50rs");
+					alert("You can Transfer Minimum 50rs to your Bank Account.");
 					window.location.replace("../dashboard/withdraw.php");
 				</script>
 

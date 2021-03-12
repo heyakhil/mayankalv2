@@ -17,7 +17,7 @@
 <body>
     <center><div class="form-gap"></div>
       <div>
-        <h1 style="font-family:fantasy;">Mayankal</h1>
+        <h1 style="font-family:fantasy;">Mayankal-Free Guest Post Writting</h1>
       </div>
     <div class="container" style="background-color:rgb(252, 241, 227); width: 500px;">
         <!-- <div class="row"> -->
@@ -34,7 +34,7 @@
         
                           <div class="form-group">
                             <div class="input-group">
-                              <input id="email" name="email" placeholder="Email or Username" class="form-control"  type="email">
+                              <input id="email" name="email" placeholder="Email or Username" class="form-control"  type="email" required>
                             </div>
                           </div>
                           <div class="form-group">

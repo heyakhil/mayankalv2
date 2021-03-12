@@ -11,7 +11,7 @@
 <head>
 
 <!-- Basic Page Needs-->
-<title>Mayankla - Bookmark</title>
+<title>Mayankal - Bookmark</title>
 <meta charset="utf-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -94,6 +94,7 @@
 							    echo "0 results";
 							}
 							//echo $tak[0];
+							// print_r($tak);
 							$u_name = array();
 							for ($i=0; $i<count($tak); $i++) { 
 								$sql = "SELECT * FROM user where unique_id='$tak[$i]'";
@@ -103,8 +104,18 @@
 								    while($row = mysqli_fetch_assoc($result)) {
 								    		array_push($u_name, $row['name']);	
 							 		}
+								}else{
+									$sql1="SELECT * FROM `author` WHERE `auth_id`='$tak[$i]'";
+									$result1=mysqli_query($conn,$sql1);
+									if(mysqli_num_rows($result1) > 0){
+										$row1=mysqli_fetch_assoc($result1);
+										array_push($u_name,$row1['name']);
+										
+									}
 								}	
 							}
+						// print_r($tak);
+							
 							for ($i=0; $i<count($tak); $i++) { 
 								$sql = "SELECT * FROM user_info where uid='$tak[$i]'";
 								$result = mysqli_query($conn, $sql);
@@ -115,7 +126,8 @@
 								    		$img = "../images/download.jpg";
 								    	}else{
 								    		$img = "img/".$row['profile_pic'];
-								    	}
+										}
+								
 								    echo '<li>
 									<!-- Overview -->
 									<div class="freelancer-overview">
@@ -145,8 +157,44 @@
 								</li>';	
 							 	}
 							} else {
-							    echo "0 results";
-							}
+								$sql2="SELECT * FROM `author` WHERE `auth_id`='$tak[$i]'";
+								$result2=mysqli_query($conn,$sql2);
+								if(mysqli_num_rows($result2) > 0){
+									$row2=mysqli_fetch_assoc($result2);
+							    if ($row['profile_pic']=='') {
+									$img = "../images/download.jpg";
+								}else{
+									$img = "img/".$row2['profile_pic'];
+								}
+								echo '<li>
+								<!-- Overview -->
+								<div class="freelancer-overview">
+									<div class="freelancer-overview-inner">
+
+										<!-- Avatar -->
+										<div class="freelancer-avatar">
+											<a href="#"><img src="'.$img.'" alt=""></a>
+										</div>
+
+										<!-- Name -->
+										<div class="freelancer-name">
+											<h4><a href="#">'.$u_name[$i].'</a></h4>
+											<span>'.$row2['experties'].'</span>
+											<!-- Rating -->
+											<div class="freelancer-rating">
+												<div class="star-rating" data-rating="'.$row2['rating'].'"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Buttons -->
+								<div class="buttons-to-right">
+									<a href="#" class="button red ripple-effect ico" title="Remove" data-tippy-placement="left"><i class="icon-feather-trash-2"></i></a>
+								</div>
+							</li>';	
+								}
+								}
 							}
 							
 							//print_r($u_name);

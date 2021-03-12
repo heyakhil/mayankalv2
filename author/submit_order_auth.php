@@ -41,7 +41,7 @@
 		 if(coin_reduce($uid, $coins_red) == "yes"){
 			 ?>
 			<script type="text/javascript">
-				window.open("expertprofile.php?authid=<?php echo $uuid; ?>", "_self");
+				window.open("http://localhost/project/mayankalv2/expertprofile.php?authid=<?php echo $uuid; ?>", "_self");
              	alert("Your Order is send successfully");
             </script>
 			<?php

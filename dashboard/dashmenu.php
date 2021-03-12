@@ -62,7 +62,7 @@ include '../assets/show_result.php';
 						<div class="header-notifications-trigger" id="noti" onclick="myfun()">
 							<a href="#"><i class="icon-feather-bell"></i><span>
 							<?php 
-							$sql = "SELECT * FROM notification WHERE `send_by`='$uid' AND `seen`='0'";
+							$sql = "SELECT * FROM notification WHERE `uid`='$uid' AND `seen`='0'";
 							$result = mysqli_query($conn, $sql);
 							$num = mysqli_num_rows($result);
 							echo $num;
@@ -83,7 +83,7 @@ include '../assets/show_result.php';
 								<div class="header-notifications-scroll" data-simplebar>
 									<ul>
 										<!-- Notification -->
-						<?php	$sql = "SELECT * FROM notification WHERE `send_by`='$uid' ORDER BY id DESC LIMIT 6";
+						<?php	$sql = "SELECT * FROM `notification` WHERE `uid`='$uid' ORDER BY `id` DESC LIMIT 6";
 							$result = mysqli_query($conn, $sql);
 
 							if (mysqli_num_rows($result) > 0) {
@@ -94,7 +94,7 @@ include '../assets/show_result.php';
 											<a href="dashboard/index.php">
 												<span class="notification-icon"><i class="icon-material-outline-group"></i></span>
 												<span class="notification-text">
-													'.$row['notify'].'someone
+													'.$row['notify'].'
 												</span>
 											</a>
 										</li>';

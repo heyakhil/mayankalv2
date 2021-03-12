@@ -43,7 +43,7 @@ include 'connect.php';
 										<strong>'.$row['catagory'].'</strong>
 										<span><strong>Mpoints: '.$row['mpoint'].'</strong></span>
 									</div>
-									<span class="button button-sliding-icon ripple-effect" onclick="pingingto(this.id);" id="'.$row['id'].'">Ping <i class="icon-material-outline-arrow-right-alt"></i></span>
+									<a href="assets/sendping.php?web_id='.$row['id'].'" class="button button-sliding-icon ripple-effect">Ping <i class="icon-material-outline-arrow-right-alt"></i></a>
 								</div>
 							</div>
 						</div>';
@@ -110,7 +110,7 @@ include 'connect.php';
 										<strong>'.$row['catagory'].'</strong>
 										<span><strong>Mpoints: '.$row['mpoint'].'</strong></span>
 									</div>
-									<span class="button button-sliding-icon ripple-effect" onclick="pingingto(this.id);" id="'.$row['id'].'">Ping1<i class="icon-material-outline-arrow-right-alt"></i></span>
+									<a href="assets/sendping.php?web_id='.$row['id'].'" class="button button-sliding-icon ripple-effect">Ping <i class="icon-material-outline-arrow-right-alt"></i></a>
 								</div>
 							</div>
 						</div>';
@@ -149,7 +149,7 @@ include 'connect.php';
 												<strong>'.$row['catagory'].'</strong>
 												<span><strong>Mpoints: '.$row['mpoint'].'</strong></span>
 											</div>
-											<button class="button button-sliding-icon ripple-effect" onclick="pingingto(this.id);" id="'.$row['id'].'">Ping<i class="icon-material-outline-arrow-right-alt"></i></button>
+											<a href="assets/sendping.php?web_id='.$row['id'].'" class="button button-sliding-icon ripple-effect">Ping <i class="icon-material-outline-arrow-right-alt"></i></a>
 										</div>
 									</div>
 								</div>';
@@ -184,18 +184,18 @@ function getCookie(name) {
 	    return null;
 	}
 	
-   function pingingto(getlink){
- 		$.ajax({
- 			url : 'assets/sendping.php',
- 			type : 'GET',
- 			data : {addcid : links},
+//    function pingingto(getlink){
+//  		$.ajax({
+//  			url : 'assets/sendping.php',
+//  			type : 'GET',
+//  			data : {addcid : links},
 
- 			success: function(data){
- 				console.log('add bookmark');
- 			}
+//  			success: function(data){
+//  				console.log('add bookmark');
+//  			}
 
- 		});
- 	}
+//  		});
+//  	}
 
 	
 </script>

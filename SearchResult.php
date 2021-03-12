@@ -249,7 +249,7 @@
 						$experties=$result['experties'];
 						$pp1=$result['profile_pic'];
 						if($pp1==""){
-							$pp1="download.jpg";
+							$pp1="download1.png";
 						}
 						$id=$result['auth_id'];
 						$rating=$result['rating'];

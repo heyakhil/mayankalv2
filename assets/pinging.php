@@ -11,7 +11,14 @@ include 'notification.php';
 		//Send notification to the user whom user is pinging for purpose
 
 		if (notification($to_user, $msg, $this_user)) {
-		    header("location:../user-profile.php?uid=$to_user");
+			?>
+				<Script>
+					alert("Your Ping Request is send to the User");
+					window.location="../user-profile.php?uid=<?php echo $to_user; ?>";
+				</Script>
+			
+		    
+			<?php
 		} else {
 		    echo "Error: " . $sql . "<br>" . mysqli_error($conn);
 		}

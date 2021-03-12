@@ -4,6 +4,29 @@
   $or_id = $_GET['or_id'];
   
  ?>
+ <?php
+          $sql = "SELECT * FROM orders WHERE `order_id`='$or_id'";
+          $result = mysqli_query($conn, $sql);
+        
+          if (mysqli_num_rows($result) > 0) {
+            $row=mysqli_fetch_assoc($result);
+           $catagory= strtoupper($row['post_cat']);
+           $order_id=$row['order_id'];
+           $notes=$row['imp_not'];
+           $min_words=$row['min_word'];
+           $descrip=$row['descrip'];
+
+          }
+          if(empty($notes)){
+            $notes="Nothing";
+          }
+          if(empty($descrip)){
+            $descrip="Nothing";
+          }
+
+
+
+ ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,6 +61,17 @@
           </form>
         </div>
       </div>
+      <!-- without write any data in editer does not submit button work -->
+      <script>
+        CKEDITOR.replace( 'editor' );
+        $("form").submit( function(e) {
+            var messageLength = CKEDITOR.instances['editor'].getData().replace(/<[^>]*>/gi, '').length;
+            if( !messageLength ) {
+                alert( 'Please write content then submit' );
+                e.preventDefault();
+            }
+        });
+    </script>
       <!--  Right Side-->
       <div class="col-lg-1"></div>
 
@@ -46,64 +80,60 @@
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">Category</a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">----Category----</a>
             </h4>
           </div>
           <div id="collapse1" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <div class="panel-body">
+            <?php echo $catagory; ?>
             </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">Order Id</a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">----Order Id----</a>
             </h4>
           </div>
           <div id="collapse2" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <div class="panel-body">
+            <?php echo $order_id;  ?>
             </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">No. of Words</a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">----No. of Words----</a>
             </h4>
           </div>
           <div id="collapse3" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            <div class="panel-body">
+            <?php echo $min_words; ?>
             </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">Description</a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse4">----Description----</a>
             </h4>
           </div>
           <div id="collapse4" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <div class="panel-body">
+            <?php  echo $descrip; ?>
             </div>
           </div>
         </div>
         <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">Notes</a>
+            <a data-toggle="collapse" data-parent="#accordion" href="#collapse5">----Notes----</a>
             </h4>
           </div>
           <div id="collapse5" class="panel-collapse collapse">
-            <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-            sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            <div class="panel-body">
+            <?php  echo $notes;  ?>
             </div>
           </div>
         </div>
@@ -116,30 +146,7 @@
  </div>
 </div>
 <!-- End Right-side -->
-  <!-- <?php 
-
-  $sql = "SELECT * FROM orders WHERE `order_id`='$or_id'";
-  $result = mysqli_query($conn, $sql);
-
-  if (mysqli_num_rows($result) > 0) {
-      // output data of each row
-      while($row = mysqli_fetch_assoc($result)) {
-          ?>
-          <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>Catagory</u></b> :</span> <?php echo strtoupper($row['post_cat']); ?></p>
-          <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>Order Id</u></b> :</span> <?php echo $row['order_id']; ?></p>
-          <p style="font-size: 20px;"><span style="font-size: 25px; color: red;"><b><u>Notes</u></b> :</span> <?php echo $row['imp_not']; ?></p>
-          <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>No. of Words</u></b> :</span> <?php echo $row['min_word']; ?></p>
-          <p style="font-size: 20px;"><span style="font-size: 25px;"><b><u>Description</u></b> :</span> <?php echo $row['descrip']; ?></p>
-          <?php
-      }
-  } else {
-      echo "0 results";
-  }
-
-
-   ?> -->
-    
-  <!-- </div> -->
+      
 
 
   </div>

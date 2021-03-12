@@ -66,7 +66,7 @@ if (mysqli_num_rows($result) > 0) {
 									<ul>
 										<!-- Notification -->
 						<?php 
-						$sql = "SELECT * FROM notification WHERE `uid`='$uid' ORDER BY id DESC LIMIT 6";
+						$sql = "SELECT * FROM notification WHERE `report_uid`='$uid' ORDER BY id DESC LIMIT 6";
 							$result = mysqli_query($conn, $sql);
 
 							if (mysqli_num_rows($result) > 0) {
